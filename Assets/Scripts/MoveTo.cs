@@ -25,7 +25,7 @@ public class MoveTo : MonoBehaviour
             agent.autoBraking = true;
             return;
         }
-        Vector3 pos = new Vector3(points[index].position.x + Random.Range(-20,20), points[index].position.y + Random.Range(-20, 20), points[index].position.z);
+        Vector3 pos = new Vector3(points[index].position.x + Random.Range(-5,5), points[index].position.y + Random.Range(-5, 5), points[index].position.z);
         agent.destination = pos;
         ++index;
     }
