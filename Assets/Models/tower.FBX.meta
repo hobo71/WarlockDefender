@@ -8,17 +8,32 @@ ModelImporter:
     100000: Box002
     100002: //RootNode
     100004: Tower2
+    100006: Object001
+    100008: Weapon
+    100010: Tower
     400000: Box002
     400002: //RootNode
     400004: Tower2
+    400006: Object001
+    400008: Weapon
+    400010: Tower
     2300000: Box002
     2300002: Tower2
     2300004: //RootNode
+    2300006: Object001
+    2300008: Weapon
+    2300010: Tower
     3300000: Box002
     3300002: Tower2
     3300004: //RootNode
+    3300006: Object001
+    3300008: Weapon
+    3300010: Tower
     4300000: Tower2
     4300002: Box002
+    4300004: Weapon
+    4300006: Object001
+    4300008: Tower
     9500000: //RootNode
   materials:
     importMaterials: 1

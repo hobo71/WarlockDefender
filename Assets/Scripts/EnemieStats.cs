@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemieStats : MonoBehaviour {
 
     public int life = 100;
+    public float animSpeed = 2;
     [SerializeField]
     GameObject enemie;
 

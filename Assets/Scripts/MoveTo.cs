@@ -3,17 +3,20 @@ using System.Collections;
 
 public class MoveTo : MonoBehaviour
 {
-
+    [SerializeField]
+    Animator anim;
     public Transform[] points;
     private int index = 0;
     private NavMeshAgent agent;
     private int approxX, approxY;
+    private float speed = 3;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         ToNextPoint();
+        speed = GetComponent<EnemieStats>().animSpeed;
     }
 
     public void ToNextPoint()
@@ -34,5 +37,7 @@ public class MoveTo : MonoBehaviour
     {
         if (agent.remainingDistance < 0.5f)
             ToNextPoint();
+        if (anim != null)
+            anim.speed = speed;
     }
 }

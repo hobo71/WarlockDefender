@@ -25,12 +25,15 @@ ModelImporter:
     400014: Wing1M
     400016: Wing2M
     400018: Wing3M
+    2300000: HeadM
+    3300000: HeadM
     4300000: PoleM
     4300002: TipM
     4300004: HeadM
     4300006: Wing1M
     4300008: Wing2M
     4300010: Wing3M
+    7400000: Take 001
     9500000: //RootNode
     13700000: HeadM
     13700002: PoleM
