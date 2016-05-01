@@ -16,17 +16,10 @@ public class ObjectPlacement : MonoBehaviour
 
     public float tileSize;
 
-    private float objectHeight;
-
     private GameObject selectionCube;
 
     void Start()
     {
-        Mesh mesh = Object.GetComponentInChildren<MeshFilter>(true).sharedMesh;
-        Vector3 size = mesh.bounds.size;
-        Vector3 scale = Object.transform.localScale;
-
-        objectHeight = size.y * scale.y;
         selectionCube = (GameObject)Instantiate(selectionPrefab, buildingCamera.transform.position, gameObject.transform.rotation);
     }
 
@@ -86,7 +79,7 @@ public class ObjectPlacement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(Object, new Vector3(selectionCube.transform.position.x, objectHeight / 2f, selectionCube.transform.position.z), selectionCube.transform.rotation);
+            Instantiate(Object, new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
         }
 
     }

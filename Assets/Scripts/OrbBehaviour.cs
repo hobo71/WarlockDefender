@@ -4,6 +4,7 @@ using System.Collections;
 public class OrbBehaviour : MonoBehaviour {
 
     public float lifespan = 3f;
+    public float damage = 5f;
 
 	void Start () {
 	
@@ -16,8 +17,10 @@ public class OrbBehaviour : MonoBehaviour {
             Destroy(gameObject);
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision col)
     {
+        if (col.gameObject.tag == "Enemie")
+            col.gameObject.GetComponent<EnemieStats>().ApplyDamage((int)damage);
         Destroy(gameObject);
     }
 }

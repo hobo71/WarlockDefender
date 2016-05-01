@@ -21,5 +21,7 @@ public class FireShotBehaviour : MonoBehaviour {
     {
         if (other.tag == "Player")
             other.GetComponent<PlayerStats>().ApplyDamage(damage);
+        if (other.tag == "Enemie")
+            other.GetComponent<EnemieStats>().ApplyDamage((int)damage);
     }
 }

@@ -379,7 +379,7 @@ MonoBehaviour:
   validMat: {fileID: 2100000, guid: 3a10f05017cf0e44683760eaf7774951, type: 2}
   invalidMat: {fileID: 2100000, guid: ea767eb859206e649935a891c24a2ebc, type: 2}
   selectionPrefab: {fileID: 129896, guid: 81c1b1c1d114bc5468b7c8d13c9afc06, type: 2}
-  Object: {fileID: 114752, guid: 91c006ea25df57f4da960a97d2a4208f, type: 2}
+  Object: {fileID: 156338, guid: 91c006ea25df57f4da960a97d2a4208f, type: 2}
   buildingCamera: {fileID: 1430795685}
   tileSize: 1
 --- !u!154 &158782364
@@ -1267,7 +1267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22440348, guid: 1392000ab9602fc428c333b7df484fa0, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22440348, guid: 1392000ab9602fc428c333b7df484fa0, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1617,7 +1617,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22453174, guid: a058ffe8687d43b4b939b300822cda02, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 22453174, guid: a058ffe8687d43b4b939b300822cda02, type: 2}
       propertyPath: m_AnchoredPosition.x
