@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 438942}
   m_Layer: 0
   m_Name: Tower1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - 23: {fileID: 2325478}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - 114: {fileID: 11410152}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   damage: 20
   attackSpeed: 0.4
   spawn: {fileID: 477496}
+  start: 0
 --- !u!135 &13520706
 SphereCollider:
   m_ObjectHideFlags: 1

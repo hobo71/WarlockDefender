@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemie
+  - Map
+  - POVCamera
+  - Camera45Degreee
+  - Tower
+  - Object
   layers:
   - Default
   - TransparentFX

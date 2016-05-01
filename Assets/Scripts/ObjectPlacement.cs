@@ -46,7 +46,7 @@ public class ObjectPlacement : MonoBehaviour
 
             Physics.SphereCast(pointA, 2.5f, Vector3.down, out objectHitInfo, Mathf.Infinity);
 
-            if (objectHitInfo.collider.tag == "Object")
+            if (objectHitInfo.collider.tag == "Object" || objectHitInfo.collider.tag == "Enemie" || objectHitInfo.collider.tag == "Tower")
             {
                 selectCubeRend.material = invalidMat;
                 canBuild = false;

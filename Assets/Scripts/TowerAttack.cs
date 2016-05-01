@@ -21,6 +21,7 @@ public class TowerAttack : MonoBehaviour {
     private Quaternion lookAt;
     private Vector3 angle;
     private Quaternion startAngle;
+    public bool start = false;
 
     // Use this for initialization
     void Start () {
@@ -35,6 +36,8 @@ public class TowerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (start == false)
+            return;
         if (_enemies.Count == 0)
             return;
         time += Time.deltaTime;
@@ -48,9 +51,8 @@ public class TowerAttack : MonoBehaviour {
         {
             if (_enemies.Count > 0)
             {
-                float angleX = Random.Range(30 / 2, 30);
-                float angleY = Random.Range(20 / 2, 30);
-                if (Random.Range(0f, 1f) > 0.5f) angleY *= -1;
+                if (_enemies[0] == null)
+                    return;
                 enemie = _enemies[0].GetComponent<EnemieStats>();
                 weapon.LookAt(enemie.transform);
                 weapon.rotation = new Quaternion(0, spawn.rotation.y, 0, spawn.rotation.w);
@@ -59,42 +61,15 @@ public class TowerAttack : MonoBehaviour {
         }
         if (_enemies.Count > 0)
         {
-            //float angleX = Random.Range(30 / 2, 30);
-            //float angleY = Random.Range(20 / 2, 30);
-            //if (Random.Range(0f, 1f) > 0.5f) angleY *= -1;
-            //weapon.LookAt(enemie.transform.position);
-            //weapon.rotation = new Quaternion(0, spawn.rotation.y, 0, spawn.rotation.w);
-            //orientationTarget = _enemies[0].transform.position.z;
-            //orientation = weapon.transform.position.z;
-            //if (orientation > orientationTarget)
-            //    lookAt = Quaternion.LookRotation(_enemies[0].transform.position - weapon.position, Vector3.left);
-            //else
-            //    lookAt = Quaternion.LookRotation(_enemies[0].transform.position - weapon.position, Vector3.right);
-            //lookAt.x = 0.0f;
-            //lookAt.z = 0.0f;
-            //weapon.rotation = Quaternion.Lerp(weapon.rotation, lookAt, Time.fixedDeltaTime * 2.0f);
-
             weapon.LookAt(enemie.transform);
             weapon.rotation = new Quaternion(0, weapon.rotation.y, 0, weapon.rotation.w);
-            //weapon.transform.RotateAround(transform.position, transform.up, 90);
-            //weapon.transform.RotateAround(transform.position, transform.up, 90);
-
-            //weapon.rotation = new Quaternion(0, weapon.rotation.y, 0, weapon.rotation.w);
-            //orientation = fire.transform.position.z;
-            //if (orientation > orientationTarget)
-            //    lookAt = Quaternion.LookRotation(_enemies[0].transform.position - spawn.position, Vector3.left);
-            //else
-            //    lookAt = Quaternion.LookRotation(_enemies[0].transform.position - spawn.position, Vector3.right);
-            //lookAt.x = 0.0f;
-            //lookAt.z = 0.0f;
-            //fire.transform.rotation = Quaternion.Lerp(fire.transform.rotation, lookAt, Time.smoothDeltaTime * 1.0f);
         }
         if (time >= attackSpeed)
         {
             arrowClone = (Rigidbody)Instantiate(arrow, spawn.position, weapon.rotation);
+            if (arrowClone == null || enemie == null)
+                return;
             arrowClone.transform.LookAt(enemie.transform);
-
-            //            arrowClone.transform.Rotate(new Vector3(0, weapon.rotation.y, 110));
             enemie.ApplyDamage(damage);
             time = 0.0f;
         }
@@ -118,5 +93,10 @@ public class TowerAttack : MonoBehaviour {
     {
         _enemies.Remove(other.gameObject);
         weapon.rotation = startAngle;
+    }
+
+    public void StartAtt()
+    {
+        start = true;
     }
 }

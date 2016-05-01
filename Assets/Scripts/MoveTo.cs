@@ -10,13 +10,14 @@ public class MoveTo : MonoBehaviour
     private NavMeshAgent agent;
     private int approxX, approxY;
     private float speed = 3;
+    public bool start = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
-        ToNextPoint();
         speed = GetComponent<EnemieStats>().animSpeed;
+        anim.enabled = false;
     }
 
     public void ToNextPoint()
@@ -28,15 +29,23 @@ public class MoveTo : MonoBehaviour
             agent.autoBraking = true;
             return;
         }
-        Vector3 pos = new Vector3(points[index].position.x + Random.Range(-5,5), points[index].position.y + Random.Range(-5, 5), points[index].position.z);
+        Vector3 pos = new Vector3(points[index].position.x + Random.Range(-5, 5), points[index].position.y + Random.Range(-5, 5), points[index].position.z);
         agent.destination = pos;
         ++index;
     }
 
     void Update()
     {
-        if (agent.remainingDistance < 0.5f)
+        if (start)
+        {
+            anim.enabled = true;
             ToNextPoint();
+        }
+        if (agent.remainingDistance < 0.5f && start)
+        {
+            anim.enabled = true;
+            ToNextPoint();
+        }
         if (anim != null)
             anim.speed = speed;
     }
