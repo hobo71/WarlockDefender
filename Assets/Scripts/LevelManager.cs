@@ -6,16 +6,25 @@ public class LevelManager : MonoBehaviour {
 
     public Camera buildingCamera;
     public Camera playerCamera;
-
     public GameObject player;
     public GameObject map;
-
+    public GameObject fpsPanel;
     public GameObject crosshair;
 
     private ObjectPlacement objectPlacement;
+    private FirstPersonController firstPersonController;
+    private FirstPersonShooting firstPersonShooting;
+    private MoveCamera moveCamera;
+    private FPSPanelScript fpsPanelScript;
+
+    private string gameState = "building";
 
     void Start () {
         objectPlacement = map.GetComponent<ObjectPlacement>();
+        firstPersonController = player.GetComponent<FirstPersonController>();
+        firstPersonShooting = player.GetComponent<FirstPersonShooting>();
+        moveCamera = buildingCamera.GetComponent<MoveCamera>();
+        fpsPanelScript = fpsPanel.GetComponent<FPSPanelScript>();
     }
 	
 	void Update () {
@@ -37,7 +46,9 @@ public class LevelManager : MonoBehaviour {
             foreach (Behaviour childCompnent in buildingCamera.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = buildingCamera.enabled;
             Cursor.lockState = CursorLockMode.None;
-            CusorIsVisible(true);
+            Cursor.visible = true;
+            if (buildingCamera.enabled)
+                gameState = "building";
         }
         if (playerCamera != null)
         {
@@ -46,13 +57,36 @@ public class LevelManager : MonoBehaviour {
             foreach (Behaviour childCompnent in player.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = playerCamera.enabled;
 
-            //Cursor.lockState = CursorLockMode.Locked;
-            CusorIsVisible(false);
+            Cursor.visible = false;
+            if (playerCamera.enabled)
+                gameState = "first person";
         }
     }
 
-    public void CusorIsVisible(bool visible)
+    public void EnabledPause()
     {
-        Cursor.visible = visible;
+        firstPersonController.enabled = false;
+        firstPersonShooting.enabled = false;
+        moveCamera.enabled = false;
+        fpsPanelScript.enabled = false;
+        objectPlacement.DesactivateScript();
+        Cursor.visible = true;
+    }
+
+    public void DisabledPause()
+    {
+        if (gameState == "building")
+        {
+            moveCamera.enabled = true;
+            objectPlacement.enabled = true;
+            Cursor.visible = true;
+        }
+        else if (gameState == "first person")
+        {
+            firstPersonController.enabled = true;
+            firstPersonShooting.enabled = true;
+            fpsPanelScript.enabled = true;
+            Cursor.visible = false;
+        }
     }
 }

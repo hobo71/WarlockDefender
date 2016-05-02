@@ -78,14 +78,14 @@ public class FirstPersonShooting : MonoBehaviour {
             if (Map.GetComponent<Collider>().Raycast(ray, out hitInfo, spellRange))
             {
                 spellAreaPosition.x = hitInfo.point.x;
-                spellAreaPosition.y = 2f;
+                spellAreaPosition.y = 1f;
                 spellAreaPosition.z = hitInfo.point.z;
                 spellArea.transform.position = spellAreaPosition;
             }
             else
             {
                 spellAreaPosition = playerCamera.transform.position + playerCamera.transform.forward * spellRange;
-                spellArea.transform.position = new Vector3(spellAreaPosition.x, 2f, spellAreaPosition.z);
+                spellArea.transform.position = new Vector3(spellAreaPosition.x, 1f, spellAreaPosition.z);
             }
         }
 

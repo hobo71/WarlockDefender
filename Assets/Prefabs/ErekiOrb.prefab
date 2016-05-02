@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 3
+  damage: 10
 --- !u!135 &13556142
 SphereCollider:
   m_ObjectHideFlags: 1

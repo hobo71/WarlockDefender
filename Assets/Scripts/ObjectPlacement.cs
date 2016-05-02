@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using System;
 
 public class ObjectPlacement : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class ObjectPlacement : MonoBehaviour
     public float tileSize;
 
     private GameObject selectionCube;
+    private bool isMouseOverGUI = false;
 
     void Start()
     {
@@ -28,8 +31,10 @@ public class ObjectPlacement : MonoBehaviour
         Ray mapRay = buildingCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit mapHitInfo;
         RaycastHit objectHitInfo = new RaycastHit();
-        Renderer selectCubeRend = selectionCube.GetComponent<MeshRenderer>();
         bool canBuild = true;
+
+        if (selectionCube == null)
+            selectionCube = (GameObject)Instantiate(selectionPrefab, buildingCamera.transform.position, gameObject.transform.rotation);
 
         if (GetComponent<Collider>().Raycast(mapRay, out mapHitInfo, Mathf.Infinity))
         {
@@ -48,12 +53,12 @@ public class ObjectPlacement : MonoBehaviour
 
             if (objectHitInfo.collider.tag == "Object" || objectHitInfo.collider.tag == "Enemie" || objectHitInfo.collider.tag == "Tower")
             {
-                selectCubeRend.material = invalidMat;
+                selectionCube.GetComponent<MeshRenderer>().material = invalidMat;
                 canBuild = false;
             }
             else if (objectHitInfo.collider.tag == "Map")
             {
-                selectCubeRend.material = validMat;
+                selectionCube.GetComponent<MeshRenderer>().material = validMat;
                 canBuild = true;
             }
 
@@ -61,7 +66,7 @@ public class ObjectPlacement : MonoBehaviour
         else
         {
             canBuild = false;
-            selectCubeRend.material = invalidMat;
+            selectionCube.GetComponent<MeshRenderer>().material = invalidMat;
 
         }
 
@@ -77,10 +82,29 @@ public class ObjectPlacement : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isMouseOverGUI)
         {
             Instantiate(Object, new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
         }
 
+    }
+
+    public void DesactivateScript()
+    {
+        this.enabled = false;
+        Destroy(selectionCube);
+        selectionCube = null;
+    }
+
+    public void DisabledPlacement()
+    {
+        Debug.Log("Mouse Over GUI");
+        isMouseOverGUI = true;
+    }
+
+    public void EnabledPlacement()
+    {
+        isMouseOverGUI = false;
+        Debug.Log("Mouse Exit GUI");
     }
 }
