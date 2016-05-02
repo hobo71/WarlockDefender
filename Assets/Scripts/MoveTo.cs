@@ -5,19 +5,26 @@ public class MoveTo : MonoBehaviour
 {
     [SerializeField]
     Animator anim;
+    [SerializeField]
+    Animation animClip;
     public Transform[] points;
     private int index = 0;
     private NavMeshAgent agent;
     private int approxX, approxY;
     private float speed = 3;
     public bool start = false;
+    public bool Maj = true;
+    private bool firstTime = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         speed = GetComponent<EnemieStats>().animSpeed;
-        anim.enabled = false;
+        if (anim != null)
+            anim.enabled = false;
+        if (animClip != null)
+            animClip.enabled = false;
     }
 
     public void ToNextPoint()
@@ -36,17 +43,25 @@ public class MoveTo : MonoBehaviour
 
     void Update()
     {
-        if (start)
+        if (start && firstTime)
         {
-            anim.enabled = true;
+            if (anim != null)
+                anim.enabled = true;
+            if (animClip != null)
+                animClip.enabled = true;
             ToNextPoint();
+            firstTime = false;
         }
-        if (agent.remainingDistance < 0.5f && start)
-        {
-            anim.enabled = true;
+        else if (agent.remainingDistance < 0.5f && start)
             ToNextPoint();
-        }
         if (anim != null)
             anim.speed = speed;
+        if (animClip != null)
+        {
+            if (Maj == false)
+                animClip["walk"].speed = speed;
+            if (Maj == true)
+                animClip["Walk"].speed = speed;
+        }
     }
 }
