@@ -203,10 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 103724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e84eff1ffcbcb4080700c8dc02c0a4, type: 3}
+  m_Script: {fileID: 11500000, guid: e427f471982a19e4da774c10623893e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
   speed: 15
   target: {fileID: 0}
 --- !u!1001 &100100000

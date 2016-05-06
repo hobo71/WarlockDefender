@@ -43,7 +43,7 @@ public class MoveTo : MonoBehaviour
 
     void Update()
     {
-        if (start && firstTime)
+        if (firstTime)
         {
             if (anim != null)
                 anim.enabled = true;
@@ -52,7 +52,7 @@ public class MoveTo : MonoBehaviour
             ToNextPoint();
             firstTime = false;
         }
-        else if (agent.remainingDistance < 0.5f && start)
+        else if (agent.remainingDistance < 0.5f)
             ToNextPoint();
         if (anim != null)
             anim.speed = speed;

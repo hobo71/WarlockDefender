@@ -72,7 +72,6 @@ public class LevelManager : MonoBehaviour {
     {
         towerPlacementPanel.SetActive(false);
         fpsPanel.SetActive(true);
-        GetComponentInParent<Spawn>().spawn();
         objectPlacement.DesactivateScript();
         SelectCamera();
     }
