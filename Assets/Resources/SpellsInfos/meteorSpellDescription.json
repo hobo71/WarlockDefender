@@ -1,0 +1,6 @@
+﻿{
+	"id": 1,
+	"imageResourcePath": "SpellsInfos/SpellsImages/meteorSpell",
+	"name" : "Meteor",
+	"description" : "Meteor is huge rock descending from the sky and smashing on the ground dealing tremendous damage."
+}

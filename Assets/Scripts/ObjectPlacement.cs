@@ -17,6 +17,9 @@ public class ObjectPlacement : MonoBehaviour
     public Camera buildingCamera;
 
     public float tileSize;
+	[SerializeField] LevelManager manager;
+	[SerializeField] PanelTowersManager towerManager;
+
 
     private GameObject selectionCube;
     private bool isMouseOverGUI = false;
@@ -82,9 +85,13 @@ public class ObjectPlacement : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) && !isMouseOverGUI)
+		int priceTower = towerManager.getCurrentlySelectedTowerPrice ();
+		Debug.Log (priceTower);
+		Debug.Log (manager.money);
+		if (Input.GetMouseButtonDown(0) && !isMouseOverGUI && priceTower <= manager.money)
         {
             Instantiate(Object, new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
+			manager.money -= priceTower;
         }
 
     }

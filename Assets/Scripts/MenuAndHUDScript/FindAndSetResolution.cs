@@ -14,11 +14,11 @@ public class FindAndSetResolution : MonoBehaviour {
             print(res.width + "x" + res.height);
             listOption.Add(res.width + "x" + res.height);
         }
-        
+        /*
         listOption.Add("1920x1080");
         listOption.Add("1920x1080");
         listOption.Add("1920x1080");
-        listOption.Add("1920x1080");
+        listOption.Add("1920x1080");*/
         
         dropDown.AddOptions(listOption);
 	}

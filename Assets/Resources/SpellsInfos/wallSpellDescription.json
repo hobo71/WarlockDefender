@@ -1,0 +1,6 @@
+﻿{
+	"id": 2,
+	"imageResourcePath": "SpellsInfos/SpellsImages/wallSpell",
+	"name" : "Earth Wall",
+	"description" : "Create a wall that blocks the passage of the enemies."
+}

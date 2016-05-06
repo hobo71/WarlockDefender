@@ -1,0 +1,6 @@
+﻿{
+	"id": 4,
+	"imageResourcePath": "SpellsInfos/SpellsImages/poisonSpell",
+	"name" : "Poison Pool",
+	"description" : "Create circle on the ground which poison enemies and deal damage over time."
+}

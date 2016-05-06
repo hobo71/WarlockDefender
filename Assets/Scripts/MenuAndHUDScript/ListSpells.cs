@@ -19,10 +19,14 @@ public class ListSpells : MonoBehaviour {
 	int nbSelected = 0;
 	int nbMax = 4;
 
-	private static string[] spellsFiles = {"spell1", "spell2"};
+	private static string[] spellsFiles = {"fireSpellDescription",
+											"meteorSpellDescription",
+											"wallSpellDescription",
+											"freezeSpellDescription",
+											"poisonSpellDescription"};
 
 	List<GameObject> buttonsList = new List<GameObject>();
-	List<GameObject> listSpellsSelected = new List<GameObject>();
+	List<SpellsInfos> listSpellsSelected = new List<SpellsInfos>();
 
 	List<SpellsInfos> listSpellsLoaded = new List<SpellsInfos>();
 
@@ -55,15 +59,15 @@ public class ListSpells : MonoBehaviour {
 			line += 1;
 		});
 		content.transform.localPosition = new Vector3(0F, 0F, 0F);
-
 		buttonsList.ForEach (delegate(GameObject but) {
 			but.GetComponentInChildren<Toggle> ().onValueChanged.AddListener ((on) => {
+				int idButton = buttonsList.IndexOf(but);
 				if (on) {
 					nbSelected++;
-					listSpellsSelected.Add(but);
+					listSpellsSelected.Add(listSpellsLoaded[idButton]);
 				} else {
 					nbSelected--;
-					listSpellsSelected.Remove(but);
+					listSpellsSelected.Remove(listSpellsLoaded[idButton]);
 				}
 				if (nbSelected == nbMax) {
 					buttonsList.ForEach (delegate(GameObject but2) {
@@ -90,19 +94,19 @@ public class ListSpells : MonoBehaviour {
 		spellSelectedImage3.enabled = false;
 		spellSelectedImage4.enabled = false;
 		if (listSpellsSelected.Count() > 0) {
-			spellSelectedImage1.sprite = listSpellsSelected [0].transform.Find("SpellsImage").GetComponentInChildren<Image> ().sprite;
+			spellSelectedImage1.sprite = Resources.Load<Sprite> (listSpellsSelected[0].imageResourcePath) as Sprite;//listSpellsSelected [0].transform.Find("SpellsImage").GetComponentInChildren<Image> ().sprite;
 			spellSelectedImage1.enabled = true;
 		}
 		if (listSpellsSelected.Count() > 1) {
-			spellSelectedImage2.sprite = listSpellsSelected [1].transform.Find("SpellsImage").GetComponentInChildren<Image> ().sprite;
+			spellSelectedImage2.sprite = Resources.Load<Sprite> (listSpellsSelected[1].imageResourcePath) as Sprite;
 			spellSelectedImage2.enabled = true;
 		}
 		if (listSpellsSelected.Count() > 2) {
-			spellSelectedImage3.sprite = listSpellsSelected [2].transform.Find("SpellsImage").GetComponentInChildren<Image> ().sprite;
+			spellSelectedImage3.sprite = Resources.Load<Sprite> (listSpellsSelected[2].imageResourcePath) as Sprite;
 			spellSelectedImage3.enabled = true;
 		}
 		if (listSpellsSelected.Count() > 3) {
-			spellSelectedImage4.sprite = listSpellsSelected [3].transform.Find("SpellsImage").GetComponentInChildren<Image> ().sprite;
+			spellSelectedImage4.sprite = Resources.Load<Sprite> (listSpellsSelected[3].imageResourcePath) as Sprite;
 			spellSelectedImage4.enabled = true;
 		}
 	
@@ -135,6 +139,7 @@ public class ListSpells : MonoBehaviour {
 [Serializable]
 public class SpellsInfos
 {
+	public int id;
 	public string imageResourcePath;
 	public string name;
 	public string description;

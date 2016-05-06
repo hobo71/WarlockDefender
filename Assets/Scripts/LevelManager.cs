@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject map;
     public GameObject fpsPanel;
     public GameObject crosshair;
+	public int money;
+	public int waveNb;
 
     private ObjectPlacement objectPlacement;
     private FirstPersonController firstPersonController;
@@ -25,6 +27,8 @@ public class LevelManager : MonoBehaviour {
         firstPersonShooting = player.GetComponent<FirstPersonShooting>();
         moveCamera = buildingCamera.GetComponent<MoveCamera>();
         fpsPanelScript = fpsPanel.GetComponent<FPSPanelScript>();
+		money = 5000;
+		waveNb = 1;
     }
 	
 	void Update () {
