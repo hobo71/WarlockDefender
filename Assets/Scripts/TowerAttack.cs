@@ -4,22 +4,20 @@ using System.Collections.Generic;
 
 public class TowerAttack : MonoBehaviour {
     [SerializeField]
-    Rigidbody arrow;
+    GameObject arrowPrefab;
     [SerializeField]
     Transform weapon;
 
     public int damage = 10;
-    public float attackSpeed = 0.5f;
+    public float fireCooldown = 0.5f;
     public Transform spawn;
     private List<GameObject> _enemies;
-    private EnemieStats enemie;
+    private EnemieStats enemy;
     internal bool _update;
     internal float time;
-    private Rigidbody arrowClone;
     private float orientation;
     private float orientationTarget;
     private Quaternion lookAt;
-    private Vector3 angle;
     private Quaternion startAngle;
     public bool start = false;
 
@@ -28,9 +26,7 @@ public class TowerAttack : MonoBehaviour {
         _enemies = new List<GameObject>();
         _update = true;
         time = 0.0f;
-        arrowClone = null;
         spawn.position = new Vector3(spawn.position.x + 1, spawn.position.y, spawn.position.z);
-        angle = new Vector3(0,0,0);
         startAngle = weapon.rotation;
     }
 	
@@ -41,11 +37,10 @@ public class TowerAttack : MonoBehaviour {
         if (_enemies.Count == 0)
             return;
         time += Time.deltaTime;
-        if (enemie == null && !_update)
+        if (enemy == null && !_update)
         {
             _update = true;
             _enemies.RemoveAt(0);
-            arrowClone = null;
         }
         if (_update)
         {
@@ -53,44 +48,40 @@ public class TowerAttack : MonoBehaviour {
             {
                 if (_enemies[0] == null)
                     return;
-                enemie = _enemies[0].GetComponent<EnemieStats>();
-                weapon.LookAt(enemie.transform);
+                enemy = _enemies[0].GetComponent<EnemieStats>();
+                weapon.LookAt(enemy.transform);
                 weapon.rotation = new Quaternion(0, spawn.rotation.y, 0, spawn.rotation.w);
                 _update = false;
             }
         }
         if (_enemies.Count > 0)
         {
-            weapon.LookAt(enemie.transform);
+            weapon.LookAt(enemy.transform);
             weapon.rotation = new Quaternion(0, weapon.rotation.y, 0, weapon.rotation.w);
         }
-        if (time >= attackSpeed)
+        if (time >= fireCooldown)
         {
-            arrowClone = (Rigidbody)Instantiate(arrow, spawn.position, weapon.rotation);
-            if (arrowClone == null || enemie == null)
+            if (enemy == null)
                 return;
-            arrowClone.transform.LookAt(enemie.transform);
-            enemie.ApplyDamage(damage);
+            GameObject arrow = (GameObject)Instantiate(arrowPrefab, spawn.position, weapon.rotation);
+            ArrowBehaviour a = arrow.GetComponent<ArrowBehaviour>();
+            a.target = enemy.gameObject.transform;
             time = 0.0f;
-        }
-        if (arrowClone != null)
-        {
-            if (_enemies.Count > 0)
-                angle = _enemies[0].transform.position - arrowClone.transform.position;
-            arrowClone.AddForce(angle * 20);
         }
  	}
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemie")
+        if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("Enemy detected");
             _enemies.Add(other.gameObject);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
+        Debug.Log("Enemy out of range");
         _enemies.Remove(other.gameObject);
         weapon.rotation = startAngle;
     }

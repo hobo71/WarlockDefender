@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject map;
     public GameObject fpsPanel;
     public GameObject crosshair;
+    public GameObject towerPlacementPanel;
 	public int money;
 	public int waveNb;
 
@@ -65,6 +66,15 @@ public class LevelManager : MonoBehaviour {
             if (playerCamera.enabled)
                 gameState = "first person";
         }
+    }
+
+    public void ReadyState()
+    {
+        towerPlacementPanel.SetActive(false);
+        fpsPanel.SetActive(true);
+        GetComponentInParent<Spawn>().spawn();
+        objectPlacement.DesactivateScript();
+        SelectCamera();
     }
 
     public void EnabledPause()

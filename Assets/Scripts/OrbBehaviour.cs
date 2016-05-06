@@ -19,7 +19,7 @@ public class OrbBehaviour : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemie")
+        if (col.gameObject.tag == "Enemy")
             col.gameObject.GetComponent<EnemieStats>().ApplyDamage((int)damage);
         Destroy(gameObject);
     }

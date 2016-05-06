@@ -9,7 +9,7 @@ public class KeyDuringGames : MonoBehaviour {
     private LevelManager levelManager;
 
 
-    bool inGame = false;
+    //bool inGame = false;
     
 	// Use this for initialization
 	void Start () {
@@ -30,7 +30,7 @@ public class KeyDuringGames : MonoBehaviour {
 	}
     
     public void SetGameStatus(bool isInGame) {
-        inGame = isInGame;
+        //inGame = isInGame;
     }
     
     public void QuitGame() {

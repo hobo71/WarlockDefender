@@ -12,7 +12,7 @@ public class ObjectPlacement : MonoBehaviour
     public Material invalidMat;
 
     public GameObject selectionPrefab;
-    public GameObject Object;
+    public GameObject[] towers;
 
     public Camera buildingCamera;
 
@@ -27,6 +27,8 @@ public class ObjectPlacement : MonoBehaviour
     void Start()
     {
         selectionCube = (GameObject)Instantiate(selectionPrefab, buildingCamera.transform.position, gameObject.transform.rotation);
+        manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
+        towerManager = GameObject.Find("TowerPlacementTowerSelection").GetComponent<PanelTowersManager>();
     }
 
     void Update()
@@ -86,11 +88,12 @@ public class ObjectPlacement : MonoBehaviour
         }
 
 		int priceTower = towerManager.getCurrentlySelectedTowerPrice ();
-		Debug.Log (priceTower);
-		Debug.Log (manager.money);
-		if (Input.GetMouseButtonDown(0) && !isMouseOverGUI && priceTower <= manager.money)
+        //Debug.Log (priceTower);
+        //Debug.Log(manager.money);
+        if (Input.GetMouseButtonDown(0) && !isMouseOverGUI && priceTower <= manager.money)
         {
-            Instantiate(Object, new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
+            int indexTower = towerManager.getIdTowerCurrentlySelected();
+            Instantiate(towers[indexTower], new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
 			manager.money -= priceTower;
         }
 

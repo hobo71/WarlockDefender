@@ -4,12 +4,11 @@ using System.Collections;
 public class MeteorBehaviour : MonoBehaviour
 {
     public ParticleSystem MeteorExplosionParticleSystem;
-
     public ParticleSystem MeteorShrapnelParticleSystem;
 
     public float meteorImpulse = 30f;
-
     public float damage = 70f;
+    public float lifespan = 5f;
 
     public void Start()
     {
@@ -19,13 +18,18 @@ public class MeteorBehaviour : MonoBehaviour
     public void Update()
     {
         GetComponent<Rigidbody>().AddForce(Vector3.down * 10f, ForceMode.Impulse);
+
+        lifespan -= Time.deltaTime;
+
+        if (lifespan <= 0)
+            Destroy(gameObject);
     }
 
     public void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
             col.gameObject.GetComponent<PlayerStats>().ApplyDamage(damage);
-        if (col.gameObject.tag == "Enemie")
+        if (col.gameObject.tag == "Enemy")
             col.gameObject.GetComponent<EnemieStats>().ApplyDamage((int)damage);
         if (col.gameObject.tag == "Map")
         {
@@ -43,6 +47,8 @@ public class MeteorBehaviour : MonoBehaviour
 
             gameObject.GetComponent<Collider>().enabled = false;
 
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip, transform.localScale.x);
             Destroy(r);
 
             Destroy(gameObject, 1.0f);

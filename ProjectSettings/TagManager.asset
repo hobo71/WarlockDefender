@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemie
+  - Enemy
   - Map
   - POVCamera
   - Camera45Degreee
   - Tower
   - Object
+  - Enemie
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Tower
   - 
   - 
   - 

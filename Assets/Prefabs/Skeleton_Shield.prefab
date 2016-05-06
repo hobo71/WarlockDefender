@@ -166,7 +166,7 @@ GameObject:
   - 114: {fileID: 11455796}
   m_Layer: 0
   m_Name: Skeleton_Shield
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,7 +992,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.73, y: 100.03, z: 10.615119}
+  m_LocalPosition: {x: 24.18, y: 0.0061035156, z: 7.49}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 403470}
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  animClip: {fileID: 0}
+  animClip: {fileID: 11133626}
   points:
   - {fileID: 0}
   - {fileID: 0}

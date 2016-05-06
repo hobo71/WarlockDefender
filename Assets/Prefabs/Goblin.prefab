@@ -4267,7 +4267,7 @@ GameObject:
   - 114: {fileID: 11473526}
   m_Layer: 0
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6049,7 +6049,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114080}
-  m_LocalRotation: {x: 0.66138184, y: -0.32186103, z: 0.3660896, w: 0.5700508}
+  m_LocalRotation: {x: 0.6613819, y: -0.32186106, z: 0.36608964, w: 0.57005084}
   m_LocalPosition: {x: -0.1434544, y: -0.008684998, z: -0.04494271}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children:
@@ -7747,7 +7747,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.416775, y: 100.0061, z: 10.294945}
+  m_LocalPosition: {x: 28.13, y: 2.595395, z: 8.76}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 459042}
@@ -9636,7 +9636,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162488}
-  m_LocalRotation: {x: 0.66138184, y: -0.321861, z: 0.3660895, w: 0.5700511}
+  m_LocalRotation: {x: 0.6613818, y: -0.32186097, z: 0.36608946, w: 0.570051}
   m_LocalPosition: {x: -0.26663175, y: -0.008684978, z: -0.044942692}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -10112,6 +10112,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  start: 0
   Maj: 0
 --- !u!136 &13692170
 CapsuleCollider:
