@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour {
     public GameObject player;
     public GameObject map;
     public GameObject fpsPanel;
-    public GameObject crosshair;
     public GameObject towerPlacementPanel;
 	public int money;
 	public int waveNb;
@@ -58,7 +57,6 @@ public class LevelManager : MonoBehaviour {
         if (playerCamera != null)
         {
             playerCamera.enabled = !playerCamera.enabled;
-            crosshair.SetActive(playerCamera.enabled);
             foreach (Behaviour childCompnent in player.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = playerCamera.enabled;
 

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnMonster : MonoBehaviour {
     public GameObject[] monsters;
+	public AddLifeBarEnemy AddLifeBarToConvas;
     public int numberOfEnemies;
     public float spawnTime = 1.0f;
 
@@ -22,5 +23,6 @@ public class SpawnMonster : MonoBehaviour {
         index = Random.Range(0, monsters.Length);
         GameObject mob = Instantiate(monsters[index], location.position, location.rotation) as GameObject;
         mob.GetComponent<MoveTo>().points = points;
+		AddLifeBarToConvas.addLifeBarToEnemy (mob, mob.GetComponent<EnemieStats>().life);
     }
 }
