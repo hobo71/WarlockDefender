@@ -164,6 +164,8 @@ GameObject:
   - 195: {fileID: 19528298}
   - 114: {fileID: 11438400}
   - 114: {fileID: 11455796}
+  - 135: {fileID: 13555450}
+  - 114: {fileID: 11418628}
   m_Layer: 0
   m_Name: Skeleton_Shield
   m_TagString: Enemy
@@ -992,7 +994,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.18, y: 0.0061035156, z: 7.49}
+  m_LocalPosition: {x: 16.492788, y: 0.0061035156, z: 93.26762}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 403470}
@@ -1211,6 +1213,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11418628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727705a6f7e3d1c438155d7840a86d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!114 &11438400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1224,6 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   animClip: {fileID: 11133626}
+  player: {fileID: 0}
   points:
   - {fileID: 0}
   - {fileID: 0}
@@ -1252,6 +1267,18 @@ MonoBehaviour:
   life: 100
   animSpeed: 1
   enemie: {fileID: 124312}
+--- !u!135 &13555450
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13688770
 CapsuleCollider:
   m_ObjectHideFlags: 1

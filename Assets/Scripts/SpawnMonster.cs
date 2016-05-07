@@ -18,11 +18,12 @@ public class SpawnMonster : MonoBehaviour {
 	
 	}
 
-    public void spawn(Transform location, Transform[] points)
+    public void spawn(Transform location, Transform[] points, Object player)
     {
         index = Random.Range(0, monsters.Length);
         GameObject mob = Instantiate(monsters[index], location.position, location.rotation) as GameObject;
         mob.GetComponent<MoveTo>().points = points;
 		AddLifeBarToConvas.addLifeBarToEnemy (mob, mob.GetComponent<EnemieStats>().life);
+        mob.GetComponent<MoveTo>().player = player;
     }
 }

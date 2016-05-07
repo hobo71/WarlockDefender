@@ -4265,6 +4265,8 @@ GameObject:
   - 136: {fileID: 13692170}
   - 114: {fileID: 11475562}
   - 114: {fileID: 11473526}
+  - 135: {fileID: 13565722}
+  - 114: {fileID: 11408774}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -6049,7 +6051,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114080}
-  m_LocalRotation: {x: 0.6613819, y: -0.32186106, z: 0.36608964, w: 0.57005084}
+  m_LocalRotation: {x: 0.66138184, y: -0.32186103, z: 0.3660896, w: 0.5700508}
   m_LocalPosition: {x: -0.1434544, y: -0.008684998, z: -0.04494271}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children:
@@ -7747,7 +7749,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.13, y: 2.595395, z: 8.76}
+  m_LocalPosition: {x: 22.414276, y: 0.0061035156, z: 93.08437}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 459042}
@@ -9636,7 +9638,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162488}
-  m_LocalRotation: {x: 0.6613818, y: -0.32186097, z: 0.36608946, w: 0.570051}
+  m_LocalRotation: {x: 0.66138184, y: -0.321861, z: 0.3660895, w: 0.5700511}
   m_LocalPosition: {x: -0.26663175, y: -0.008684978, z: -0.044942692}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -10057,9 +10059,9 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400056, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   m_Animations:
-  - {fileID: 7400016, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
-  - {fileID: 7400018, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
+  - {fileID: 7400056, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   - {fileID: 7400020, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
+  - {fileID: 7400018, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   - {fileID: 7400022, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   - {fileID: 7400024, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   - {fileID: 7400026, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
@@ -10073,6 +10075,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11408774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727705a6f7e3d1c438155d7840a86d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!114 &11473526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10100,6 +10114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   animClip: {fileID: 11184720}
+  player: {fileID: 0}
   points:
   - {fileID: 0}
   - {fileID: 0}
@@ -10114,6 +10129,18 @@ MonoBehaviour:
   - {fileID: 0}
   start: 0
   Maj: 0
+--- !u!135 &13565722
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13692170
 CapsuleCollider:
   m_ObjectHideFlags: 1

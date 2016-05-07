@@ -4,6 +4,8 @@ using System.Collections;
 public class SpawnManager : MonoBehaviour {
     [SerializeField]
     GameObject[] particleSpawner;
+    [SerializeField]
+    Object Player;
 
     public SpawnMonster[] Waves;
     public GameObject[] Spawner;
@@ -63,15 +65,22 @@ public class SpawnManager : MonoBehaviour {
                 }
             }
         }
-	}
+    }
 
     IEnumerator SpawnMonster(int index)
     {
         yield return new WaitForSeconds(current.spawnTime);
         Transform[] points = Spawner[index].GetComponent<WayPoints>().points;
-        current.spawn(Spawner[index].transform, points);
+        current.spawn(Spawner[index].transform, points, Player);
         --nbr;
         isSpawning = false;
+    }
+
+    public static bool isEnemiesAlive()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") != null)
+            return true;
+        return false;
     }
 
     public void startWaves() { start = true; }
