@@ -5,6 +5,7 @@ public class FirstPersonShooting : MonoBehaviour {
 
     public Camera playerCamera;
     public GameObject orbPrefab;
+	public FPSPanelScript fpsPanel;
 
     public GameObject[] spellPrefab;
     public GameObject spellAreaPrefab;
@@ -34,6 +35,7 @@ public class FirstPersonShooting : MonoBehaviour {
                 Destroy(spellArea);
                 spellArea = null;
             }
+			fpsPanel.TurnAllSpellsToFalse ();
         }
 
         if (Input.GetButtonDown("Fire2") && spellArea != null)
@@ -48,8 +50,10 @@ public class FirstPersonShooting : MonoBehaviour {
                 Destroy(spellArea);
                 spellArea = null;
             }
+			fpsPanel.StartCoolDownCurrentSpell ();
+			fpsPanel.TurnAllSpellsToFalse ();
         }
-
+		/*
         if (Input.GetKeyDown("1"))
         {
             if (spellArea != null)
@@ -69,7 +73,7 @@ public class FirstPersonShooting : MonoBehaviour {
             }
             spellArea = (GameObject)Instantiate(spellAreaPrefab, gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
             spellIndex = 1;
-        }
+        }*/
 
         if (spellArea != null)
         {
@@ -88,7 +92,16 @@ public class FirstPersonShooting : MonoBehaviour {
                 spellArea.transform.position = new Vector3(spellAreaPosition.x, 0.01f, spellAreaPosition.z);
             }
         }
-
-
     }
+
+	public void newSpellIsSelected(int newSpellId) {
+		if (spellArea != null)
+		{
+			Destroy(spellArea);
+			spellArea = null;
+		}
+		spellArea = (GameObject)Instantiate(spellAreaPrefab, gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
+		spellIndex = newSpellId;
+	}
+
 }

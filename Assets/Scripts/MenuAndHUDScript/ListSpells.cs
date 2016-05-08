@@ -130,17 +130,8 @@ public class ListSpells : MonoBehaviour {
 
     public void LoadGameScene(string name)
     {
+		GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().AddSpellList (listSpellsSelected);
         SceneManager.LoadScene(name);
     }
 
-}
-
-
-[Serializable]
-public class SpellsInfos
-{
-	public int id;
-	public string imageResourcePath;
-	public string name;
-	public string description;
 }

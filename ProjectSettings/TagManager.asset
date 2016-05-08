@@ -11,6 +11,7 @@ TagManager:
   - Tower
   - Object
   - Enemie
+  - MenuDatas
   layers:
   - Default
   - TransparentFX

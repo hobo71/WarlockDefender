@@ -2,5 +2,6 @@
 	"id": 0,
 	"imageResourcePath": "SpellsInfos/SpellsImages/fireSpell",
 	"name" : "Ray of Fire",
-	"description" : "Create a fire that burns the enemies and deals damage."
+	"description" : "Create a fire that burns the enemies and deals damage.",
+	"coolDown": 1
 }
