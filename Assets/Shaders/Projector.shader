@@ -1,18 +1,20 @@
-﻿Shader "Projector/Additive" {
+﻿Shader "Effectronica/Zodiac Additive" {
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
-		_ShadowTex("Cookie", 2D) = "" { TexGen ObjectLinear }
-	_FalloffTex("FallOff", 2D) = "" { TexGen ObjectLinear }
+		_ShadowTex("Cookie", 2D) = "" {}
+	_FalloffTex("FallOff", 2D) = "white" {}
 	}
 		Subshader{
+		Tags{ "RenderType" = "Transparent-1" }
 		Pass{
-		ZWrite off
-		Fog{ Color(1, 1, 1) }
+		ZWrite Off
+		AlphaTest Greater 0
 		ColorMask RGB
-		Blend One One
+		Blend SrcAlpha One
+		Color[_Color]
 		SetTexture[_ShadowTex]{
 		constantColor[_Color]
-		combine texture, ONE - texture
+		combine texture*constant
 		Matrix[_Projector]
 	}
 		SetTexture[_FalloffTex]{

@@ -316,7 +316,13 @@ MonoBehaviour:
   spellPrefab:
   - {fileID: 181626, guid: 9b5f3fa74e05d634481b8f98d0153bb5, type: 2}
   - {fileID: 157396, guid: 685339a5c0fc3464c8d9e08dd4edaff6, type: 2}
-  spellAreaPrefab: {fileID: 132312, guid: 5ff9f0e804aed734aa352704c0d536b7, type: 2}
+  - {fileID: 100000, guid: bfc2c3b66da5d4009ba01159c7e7f42a, type: 2}
+  - {fileID: 157396, guid: 685339a5c0fc3464c8d9e08dd4edaff6, type: 2}
+  spellAreaPrefab:
+  - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
+  - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
+  - {fileID: 129914, guid: 9ee72db488eda584ba8881f6fa0d8c3c, type: 2}
+  - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   spellRange: 20
   Map: {fileID: 158782362}
   orbSpeed: 20
@@ -639,7 +645,7 @@ GameObject:
   - 218: {fileID: 158782365}
   - 154: {fileID: 158782364}
   - 114: {fileID: 158782363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Terrain
   m_TagString: Map
   m_Icon: {fileID: 0}
