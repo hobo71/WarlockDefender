@@ -43,6 +43,7 @@ GameObject:
   - 4: {fileID: 452212}
   - 65: {fileID: 6536676}
   - 65: {fileID: 6580128}
+  - 114: {fileID: 11488214}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Tower
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12.269608, y: 3.290917, z: 53.566372}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 461796}
@@ -282,10 +283,24 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 1e06cf33a720ef549b95f30c1316a41a, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 1e06cf33a720ef549b95f30c1316a41a, type: 3}
-  m_WrapMode: 0
+  m_WrapMode: 1
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11488214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87299d851d0a4ea44bb0ab4a12f43168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 11195982}
+  damage: 10
+  AttackSpeed: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

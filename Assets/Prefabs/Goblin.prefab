@@ -1203,6 +1203,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &118648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 456712}
+  - 135: {fileID: 13561980}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &118734
 GameObject:
   m_ObjectHideFlags: 1
@@ -4265,7 +4281,6 @@ GameObject:
   - 136: {fileID: 13692170}
   - 114: {fileID: 11475562}
   - 114: {fileID: 11473526}
-  - 135: {fileID: 13565722}
   - 114: {fileID: 11408774}
   m_Layer: 0
   m_Name: Goblin
@@ -6051,7 +6066,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114080}
-  m_LocalRotation: {x: 0.66138184, y: -0.32186103, z: 0.3660896, w: 0.5700508}
+  m_LocalRotation: {x: 0.6613819, y: -0.32186106, z: 0.36608964, w: 0.57005084}
   m_LocalPosition: {x: -0.1434544, y: -0.008684998, z: -0.04494271}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children:
@@ -7749,7 +7764,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.414276, y: 0.0061035156, z: 93.08437}
+  m_LocalPosition: {x: 21.750996, y: 0.0061035156, z: 35.858288}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 459042}
@@ -7757,6 +7772,7 @@ Transform:
   - {fileID: 445336}
   - {fileID: 408558}
   - {fileID: 493642}
+  - {fileID: 456712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &454586
@@ -7873,6 +7889,18 @@ Transform:
   - {fileID: 497184}
   m_Father: {fileID: 477584}
   m_RootOrder: 0
+--- !u!4 &456712
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454316}
+  m_RootOrder: 5
 --- !u!4 &456840
 Transform:
   m_ObjectHideFlags: 1
@@ -9638,7 +9666,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162488}
-  m_LocalRotation: {x: 0.66138184, y: -0.321861, z: 0.3660895, w: 0.5700511}
+  m_LocalRotation: {x: 0.6613818, y: -0.32186097, z: 0.36608946, w: 0.570051}
   m_LocalPosition: {x: -0.26663175, y: -0.008684978, z: -0.044942692}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
   m_Children: []
@@ -10129,12 +10157,12 @@ MonoBehaviour:
   - {fileID: 0}
   start: 0
   Maj: 0
---- !u!135 &13565722
+--- !u!135 &13561980
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176324}
+  m_GameObject: {fileID: 118648}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

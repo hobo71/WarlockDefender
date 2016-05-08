@@ -164,7 +164,6 @@ GameObject:
   - 195: {fileID: 19528298}
   - 114: {fileID: 11438400}
   - 114: {fileID: 11455796}
-  - 135: {fileID: 13555450}
   - 114: {fileID: 11418628}
   m_Layer: 0
   m_Name: Skeleton_Shield
@@ -274,6 +273,22 @@ GameObject:
   - 4: {fileID: 431566}
   m_Layer: 0
   m_Name: Bip01 L Thigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &148388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 461142}
+  - 135: {fileID: 13505868}
+  m_Layer: 0
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,6 +924,18 @@ Transform:
   - {fileID: 421090}
   m_Father: {fileID: 491654}
   m_RootOrder: 0
+--- !u!4 &461142
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 476108}
+  m_RootOrder: 2
 --- !u!4 &461204
 Transform:
   m_ObjectHideFlags: 1
@@ -994,11 +1021,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.492788, y: 0.0061035156, z: 93.26762}
+  m_LocalPosition: {x: 19.59457, y: 0.0061035156, z: 31.220644}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 403470}
   - {fileID: 442912}
+  - {fileID: 461142}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &476662
@@ -1267,12 +1295,12 @@ MonoBehaviour:
   life: 100
   animSpeed: 1
   enemie: {fileID: 124312}
---- !u!135 &13555450
+--- !u!135 &13505868
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124312}
+  m_GameObject: {fileID: 148388}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
