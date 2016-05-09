@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject map;
     public GameObject fpsPanel;
     public GameObject towerPlacementPanel;
+	public GameObject EndPanelWin;
+	public GameObject EndPanelLose;
 	public int money;
 	public int waveNb;
 
@@ -18,6 +20,8 @@ public class LevelManager : MonoBehaviour {
     private FirstPersonShooting firstPersonShooting;
     private MoveCamera moveCamera;
     private FPSPanelScript fpsPanelScript;
+
+
 
     private string gameState = "building";
 
@@ -34,6 +38,13 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("c"))
             SelectCamera();
+		if (SpawnManager.isEnemiesAlive () == false) {
+			EndPanelWin.SetActive (true);
+			EnabledPause ();
+		} else if (player.GetComponent<PlayerStats> ().life <= 0 || CastleStats.life <= 0) {
+			EndPanelLose.SetActive (true);
+			EnabledPause ();
+		}
 	}
 
     public void LoadGameScene(string name)
@@ -82,7 +93,8 @@ public class LevelManager : MonoBehaviour {
         fpsPanelScript.enabled = false;
         objectPlacement.DesactivateScript();
         Cursor.visible = true;
-    }
+		Time.timeScale = 0f;
+	}
 
     public void DisabledPause()
     {
@@ -99,5 +111,6 @@ public class LevelManager : MonoBehaviour {
             fpsPanelScript.enabled = true;
             Cursor.visible = false;
         }
+		Time.timeScale = 1.0f;
     }
 }

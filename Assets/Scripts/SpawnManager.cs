@@ -10,11 +10,11 @@ public class SpawnManager : MonoBehaviour {
     public SpawnMonster[] Waves;
     public GameObject[] Spawner;
 
-    private bool start;
+    private static bool start;
     private bool isSpawning;
     private SpawnMonster current;
     private int index;
-    private int nbr;
+    private static int nbr ;
     private int indexSpawner;
     private bool activate;
 
@@ -24,12 +24,13 @@ public class SpawnManager : MonoBehaviour {
         activate = false;
         isSpawning = false;
         current = null;
-        nbr = 0;
+        nbr = 1;
         index = -1;
-        foreach (GameObject sp in particleSpawner)
+        /*foreach (GameObject sp in particleSpawner)
         {
             sp.SetActive(false);
-        }
+        }*/
+		
 	}
 	
 	// Update is called once per frame
@@ -78,9 +79,10 @@ public class SpawnManager : MonoBehaviour {
 
     public static bool isEnemiesAlive()
     {
-        if (GameObject.FindGameObjectWithTag("Enemy") != null)
-            return true;
-        return false;
+		if (GameObject.FindGameObjectWithTag ("Enemy") == null && nbr <= 0) {
+			return false;
+		}
+		return true;
     }
 
     public void startWaves() { start = true; }

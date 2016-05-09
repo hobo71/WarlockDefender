@@ -23,10 +23,10 @@ public class KeyDuringGames : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.P)) {
              PauseCanvas.enabled = false;
         }*/
-        if (Input.GetKeyUp(KeyCode.Escape)) {
+       /* if (Input.GetKeyUp(KeyCode.Escape)) {
             levelManager.EnabledPause();
             pauseCanvas.enabled = true;
-        }
+        }*/
 	}
     
     public void SetGameStatus(bool isInGame) {

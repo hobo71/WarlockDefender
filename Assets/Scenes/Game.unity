@@ -1304,6 +1304,7 @@ GameObject:
   - 114: {fileID: 261721383}
   - 222: {fileID: 261721388}
   - 114: {fileID: 261721387}
+  - 114: {fileID: 261721389}
   m_Layer: 5
   m_Name: PauseMenuCanvas
   m_TagString: Untagged
@@ -1423,6 +1424,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261721382}
+--- !u!114 &261721389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261721382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ca77479d3205b44804546c30174af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 261721385}
+  levelManager: {fileID: 1751323042}
 --- !u!1 &273396668
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,6 +7395,8 @@ MonoBehaviour:
   map: {fileID: 158782362}
   fpsPanel: {fileID: 300731742}
   towerPlacementPanel: {fileID: 1395928441}
+  EndPanelWin: {fileID: 534537423}
+  EndPanelLose: {fileID: 200777087}
   money: 0
   waveNb: 0
 --- !u!4 &1751323043
