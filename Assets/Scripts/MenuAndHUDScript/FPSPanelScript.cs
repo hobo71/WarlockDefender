@@ -28,9 +28,9 @@ public class FPSPanelScript : MonoBehaviour {
 		listSize = listSpells.Count ();
 		for (int i = 0; i < Spells.Length; i++) {
 			if (listSize > i) {
-				int idSpell = i;
 				Spells[i].transform.FindChild("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> (listSpells [i].imageResourcePath) as Sprite;
 				Spells[i].transform.FindChild ("SpellMask").GetComponent<RectTransform> ().localScale = new Vector3 (1, 0, 1);
+				int idSpell = listSpells [i].id;
 				Spells [i].GetComponent<Toggle> ().onValueChanged.AddListener((on) => {
 					if (on) {
 						ShootingManager.newSpellIsSelected(idSpell);
