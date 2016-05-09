@@ -405,6 +405,51 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41612677}
+--- !u!1 &119970376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 119970377}
+  - 114: {fileID: 119970378}
+  m_Layer: 0
+  m_Name: Wave1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &119970377
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119970376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 487999342}
+  m_RootOrder: 0
+--- !u!114 &119970378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119970376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6005fae7e8d3e4f8dfcc5b4899243a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
+  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  AddLifeBarToConvas: {fileID: 156002503}
+  numberOfEnemies: 20
+  spawnTime: 2
 --- !u!1 &129988069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2419,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487999342}
-  - 114: {fileID: 487999341}
   m_Layer: 0
   m_Name: Waves
   m_TagString: Untagged
@@ -2382,23 +2426,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &487999341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 487999340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6005fae7e8d3e4f8dfcc5b4899243a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsters:
-  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
-  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
-  AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
-  spawnTime: 2
 --- !u!4 &487999342
 Transform:
   m_ObjectHideFlags: 0
@@ -2406,9 +2433,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487999340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 669.0428, y: -231, z: -234.34895}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 119970377}
   m_Father: {fileID: 0}
   m_RootOrder: 21
 --- !u!1 &494401330
@@ -7383,7 +7411,7 @@ MonoBehaviour:
   - {fileID: 1714661658}
   Player: {fileID: 39764558}
   Waves:
-  - {fileID: 487999341}
+  - {fileID: 119970378}
   Spawner:
   - {fileID: 1118129173}
   - {fileID: 142359513}
