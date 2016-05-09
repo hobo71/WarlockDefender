@@ -25,16 +25,11 @@ public class TowerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (_enemies.Count == 0)
+        if (_enemies.Count <= 0)
             return;
         time += Time.deltaTime;
-        if (_enemies[0] == null)
-            return;
-        if (_enemies.Count > 0)
-        {
-            weapon.LookAt(_enemies[0].transform);
-            weapon.rotation = new Quaternion(0, spawn.rotation.y, 0, spawn.rotation.w);
-        }
+        if (_enemies.Count > 0 && _enemies[0] == null)
+            _enemies.RemoveAt(0);
         if (_enemies[0] != null)
         {
             weapon.LookAt(_enemies[0].transform);
