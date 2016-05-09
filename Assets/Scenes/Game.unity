@@ -7373,7 +7373,7 @@ GameObject:
   - 114: {fileID: 1751323045}
   m_Layer: 0
   m_Name: _SCRIPTS_
-  m_TagString: Untagged
+  m_TagString: Scripts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

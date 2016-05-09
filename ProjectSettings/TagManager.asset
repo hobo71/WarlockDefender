@@ -12,6 +12,7 @@ TagManager:
   - Object
   - Enemie
   - MenuDatas
+  - Scripts
   layers:
   - Default
   - TransparentFX

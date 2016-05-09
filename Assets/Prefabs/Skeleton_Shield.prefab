@@ -1294,7 +1294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 100
   animSpeed: 1
+  damageToCastle: 10
   enemie: {fileID: 124312}
+  coin: {fileID: 199208, guid: b95b6ef37857fba4e901921e49b6cd5e, type: 2}
 --- !u!135 &13505868
 SphereCollider:
   m_ObjectHideFlags: 1

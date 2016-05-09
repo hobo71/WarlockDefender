@@ -14,9 +14,12 @@ public class SpawnManager : MonoBehaviour {
     private bool isSpawning;
     private SpawnMonster current;
     private int index;
-    private static int nbr ;
-    private int indexSpawner;
+
+    private static int nbr;
+    private static int indexSpawner;
+
     private bool activate;
+    private static int nbrWave;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +29,9 @@ public class SpawnManager : MonoBehaviour {
         current = null;
         nbr = 1;
         index = -1;
-        /*foreach (GameObject sp in particleSpawner)
+        nbrWave = Waves.Length;
+        /*
+        foreach (GameObject sp in particleSpawner)
         {
             sp.SetActive(false);
         }*/
@@ -83,6 +88,13 @@ public class SpawnManager : MonoBehaviour {
 			return false;
 		}
 		return true;
+    }
+
+    public static bool isLastWave()
+    {
+        if (indexSpawner >= nbrWave)
+            return true;
+        return false;
     }
 
     public void startWaves() { start = true; }
