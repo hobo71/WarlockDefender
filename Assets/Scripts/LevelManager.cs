@@ -96,6 +96,12 @@ public class LevelManager : MonoBehaviour {
 		Time.timeScale = 0f;
 	}
 
+    public void CursorVisible()
+    {
+        Cursor.visible = true;
+    }
+
+
     public void DisabledPause()
     {
         if (gameState == "building")
