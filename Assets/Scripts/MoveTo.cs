@@ -13,6 +13,7 @@ public class MoveTo : MonoBehaviour
     private int index = 0;
     internal NavMeshAgent agent;
     private float speed = 3;
+    private float damageToCastle = 10f;
     public bool start = false;
     public bool Maj = true;
     private bool firstTime = true;
@@ -28,6 +29,7 @@ public class MoveTo : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         speed = GetComponent<EnemieStats>().animSpeed;
+        damageToCastle = GetComponent<EnemieStats>().damageToCastle;
         attack = GetComponent<EnemiesAttack>();
         if (anim != null)
             anim.enabled = false;
@@ -68,6 +70,8 @@ public class MoveTo : MonoBehaviour
         }
         else if (agent.remainingDistance < 0.5f && isCastle)
         {
+            CastleStats.life -= damageToCastle;
+            Debug.Log("Damage Castle");
             Destroy(gameObject);
         }
         else if (agent.remainingDistance < 0.5f && !targetPlayer)

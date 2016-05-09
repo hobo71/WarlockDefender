@@ -5,6 +5,7 @@ public class EnemieStats : MonoBehaviour {
 
     public int life = 100;
     public float animSpeed = 2;
+    public float damageToCastle = 10f;
     [SerializeField]
     GameObject enemie;
 
