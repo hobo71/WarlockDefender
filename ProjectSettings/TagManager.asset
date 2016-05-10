@@ -13,6 +13,7 @@ TagManager:
   - Enemie
   - MenuDatas
   - Scripts
+  - Water
   layers:
   - Default
   - TransparentFX

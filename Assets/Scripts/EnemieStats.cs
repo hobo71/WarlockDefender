@@ -10,6 +10,8 @@ public class EnemieStats : MonoBehaviour {
     GameObject enemie;
     [SerializeField]
     GameObject coin;
+    [SerializeField]
+    GameObject potion;
 
     private int random;
 
@@ -26,10 +28,11 @@ public class EnemieStats : MonoBehaviour {
 	void Update () {
         if (life <= 0 && enemie != null)
         {
-            random = Random.Range(0, 5);
-            Debug.Log(random);
+            random = Random.Range(0, 10);
             if (random == 2)
-                Instantiate(coin, new Vector3(enemie.transform.position.x, enemie.transform.position.y + 1, enemie.transform.position.z), enemie.transform.rotation);
+                Instantiate(potion, new Vector3(enemie.transform.position.x + 2, enemie.transform.position.y + 1, enemie.transform.position.z), enemie.transform.rotation);
+            Instantiate(coin, new Vector3(enemie.transform.position.x, enemie.transform.position.y + 1, enemie.transform.position.z), enemie.transform.rotation);
+
             Destroy(enemie);
         }                    
 	}

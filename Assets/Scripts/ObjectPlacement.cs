@@ -53,7 +53,7 @@ public class ObjectPlacement : MonoBehaviour
             //int z = Mathf.FloorToInt(mapHitInfo.point.z / tileSize);
 
             currentTileCoord.x = mapHitInfo.point.x;
-            currentTileCoord.y = 2f;
+            currentTileCoord.y = mapHitInfo.point.y + 2f;
             currentTileCoord.z = mapHitInfo.point.z;
 
             selectionCube.transform.position = currentTileCoord/* * tileSize*/;
@@ -99,7 +99,7 @@ public class ObjectPlacement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isMouseOverGUI && priceTower <= manager.money)
         {
             int indexTower = towerManager.getIdTowerCurrentlySelected();
-            Instantiate(towers[indexTower], new Vector3(selectionCube.transform.position.x, 0f, selectionCube.transform.position.z), selectionCube.transform.rotation);
+            Instantiate(towers[indexTower], new Vector3(selectionCube.transform.position.x, selectionCube.transform.position.y - 2f, selectionCube.transform.position.z), selectionCube.transform.rotation);
 			manager.money -= priceTower;
         }
 

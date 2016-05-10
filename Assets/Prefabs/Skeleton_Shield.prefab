@@ -1297,6 +1297,7 @@ MonoBehaviour:
   damageToCastle: 10
   enemie: {fileID: 124312}
   coin: {fileID: 199208, guid: b95b6ef37857fba4e901921e49b6cd5e, type: 2}
+  potion: {fileID: 100000, guid: e42f2a080d3055a44876877552206485, type: 2}
 --- !u!135 &13505868
 SphereCollider:
   m_ObjectHideFlags: 1

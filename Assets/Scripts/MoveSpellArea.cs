@@ -9,7 +9,7 @@ public class MoveSpellArea : MonoBehaviour {
     private Camera playerCamera;
     private Vector3 spellAreaPosition;
     void Start () {
-        map = GameObject.Find("Terrain");
+        map = GameObject.Find("Map1");
         playerCamera = GameObject.Find("POV Camera").GetComponent<Camera>();
     }
 	

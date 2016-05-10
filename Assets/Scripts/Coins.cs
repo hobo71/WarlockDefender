@@ -20,7 +20,12 @@ public class Coins : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             manager.money += 50;
-            Destroy(coin);
+            AudioSource audio = GetComponentInParent<AudioSource>();
+            audio.PlayOneShot(audio.clip, GetComponentInParent<Transform>().localScale.x);
+
+            Renderer rend = coin.GetComponentInChildren<Renderer>();
+            Destroy(rend);
+            Destroy(coin, 1f);
         }
     }
 }

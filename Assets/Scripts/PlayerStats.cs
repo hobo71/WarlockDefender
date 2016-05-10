@@ -20,4 +20,9 @@ public class PlayerStats : MonoBehaviour {
     {
         life -= damage;
     }
+
+    public void Heal(float potionLife)
+    {
+        life += potionLife;
+    }
 }
