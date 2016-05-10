@@ -12,13 +12,13 @@ public class SpawnManager : MonoBehaviour {
 
     private static bool start;
     private bool isSpawning;
-    private SpawnMonster current;
-    private int index;
+    private static SpawnMonster current;
+    private static int index;
 
-    private static int nbr;
-    private static int indexSpawner;
+    private int nbr;
+    private int indexSpawner;
 
-    private bool activate;
+    private static bool activate;
     private static int nbrWave;
 
 	// Use this for initialization
@@ -27,37 +27,26 @@ public class SpawnManager : MonoBehaviour {
         activate = false;
         isSpawning = false;
         current = null;
-        nbr = 1;
-        index = -1;
+        index = 0;
         nbrWave = Waves.Length;
-        /*
-        foreach (GameObject sp in particleSpawner)
-        {
-            sp.SetActive(false);
-        }*/
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        current = Waves[index];
+        nbr = current.numberOfEnemies;
+    }
+
+    // Update is called once per frame
+    void Update () {
 	    if (start)
         {
-            if (!activate)
-            {
-                foreach (GameObject sp in particleSpawner)
-                {
-                    sp.SetActive(true);
-                }
-                activate = true;
-            }
             if (index < Waves.Length)
             {
                 if (current == null)
                 {
-                    ++index;
                     current = Waves[index];
+                    activate = true;
                     nbr = current.numberOfEnemies;
                 }
+                if (!activate)
+                    activate = true;
                 if (nbr <= 0)
                 {
                     start = false;
@@ -84,7 +73,9 @@ public class SpawnManager : MonoBehaviour {
 
     public static bool isEnemiesAlive()
     {
-		if (GameObject.FindGameObjectWithTag ("Enemy") == null && nbr <= 0) {
+		if (GameObject.FindGameObjectWithTag("Enemy") == null && current == null && activate) {
+            ++index;
+            activate = false;
 			return false;
 		}
 		return true;
@@ -92,14 +83,14 @@ public class SpawnManager : MonoBehaviour {
 
     public static bool isLastWave()
     {
-        if (indexSpawner >= nbrWave)
+        if (index >= nbrWave)
             return true;
         return false;
     }
 
     public void resetWaves()
     {
-        index = -1;
+        index = 0;
         current = null;
         nbrWave = Waves.Length;
         nbr = 1;
