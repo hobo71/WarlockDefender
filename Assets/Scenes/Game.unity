@@ -773,7 +773,7 @@ TerrainCollider:
   m_GameObject: {fileID: 158782362}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 443cb016fc58efc42b2f87e197bd619a, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 6caa31afdfce1964e93d4f96911991e5, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &158782365
 Terrain:
@@ -783,8 +783,8 @@ Terrain:
   m_GameObject: {fileID: 158782362}
   m_Enabled: 1
   serializedVersion: 3
-  m_TerrainData: {fileID: 15600000, guid: 443cb016fc58efc42b2f87e197bd619a, type: 2}
-  m_TreeDistance: 5000
+  m_TerrainData: {fileID: 15600000, guid: 6caa31afdfce1964e93d4f96911991e5, type: 2}
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -804,7 +804,7 @@ Terrain:
   m_LegacyShininess: 0.078125
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.256
+  m_ScaleInLightmap: 1
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &158782366
 Transform:
