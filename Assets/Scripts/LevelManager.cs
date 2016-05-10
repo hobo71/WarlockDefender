@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject towerPlacementPanel;
 	public GameObject EndPanelWin;
 	public GameObject EndPanelLose;
+	public EndWaveScript EndPanelWinWaveScript;
 	public int money;
 	public int waveNb;
 
@@ -38,12 +39,18 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("c"))
             SelectCamera();
-		if (SpawnManager.isEnemiesAlive () == false) {
-			EndPanelWin.SetActive (true);
-			EnabledPause ();
-		} else if (player.GetComponent<PlayerStats> ().life <= 0 || CastleStats.life <= 0) {
-			EndPanelLose.SetActive (true);
-			EnabledPause ();
+		if (gameState != "building") {
+			if (SpawnManager.isEnemiesAlive () == false) {
+				if (SpawnManager.isLastWave ()) {
+					EndPanelWin.SetActive (true);
+					EnabledPause ();			
+				} else {
+					EndPanelWinWaveScript.AffScreen ();
+				}
+			} else if (player.GetComponent<PlayerStats> ().life <= 0 || CastleStats.life <= 0) {
+				EndPanelLose.SetActive (true);
+				EnabledPause ();
+			}
 		}
 	}
 
@@ -84,6 +91,14 @@ public class LevelManager : MonoBehaviour {
         objectPlacement.DesactivateScript();
         SelectCamera();
     }
+
+	public void towerPlacementState()
+	{
+		towerPlacementPanel.SetActive(true);
+		fpsPanel.SetActive(false);
+		objectPlacement.ActivateScript ();
+		SelectCamera();
+	}
 
     public void EnabledPause()
     {

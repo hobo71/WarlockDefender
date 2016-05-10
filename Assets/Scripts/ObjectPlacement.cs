@@ -26,10 +26,16 @@ public class ObjectPlacement : MonoBehaviour
 
     void Start()
     {
-        selectionCube = (GameObject)Instantiate(selectionPrefab, buildingCamera.transform.position, gameObject.transform.rotation);
-        manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
-        towerManager = GameObject.Find("TowerPlacementTowerSelection").GetComponent<PanelTowersManager>();
+		manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
+		towerManager = GameObject.Find("TowerPlacementTowerSelection").GetComponent<PanelTowersManager>();
+		ActivateScript ();
     }
+
+	public void ActivateScript()
+	{
+		selectionCube = (GameObject)Instantiate(selectionPrefab, buildingCamera.transform.position, gameObject.transform.rotation);
+		this.enabled = true;
+	}
 
     void Update()
     {
