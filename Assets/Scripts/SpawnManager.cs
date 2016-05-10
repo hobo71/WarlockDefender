@@ -34,6 +34,7 @@ public class SpawnManager : MonoBehaviour {
         current = Waves[index];
         nbr = current.numberOfEnemies;
         nbrBoss = current.nbrBoss;
+        nbr += nbrBoss;
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class SpawnManager : MonoBehaviour {
                     activate = true;
                     nbr = current.numberOfEnemies;
                     nbrBoss = current.nbrBoss;
+                    nbr += nbrBoss;
                 }
                 if (!activate)
                     activate = true;
