@@ -21,6 +21,8 @@ public class SpawnManager : MonoBehaviour {
     private static bool activate;
     private static int nbrWave;
 
+    private int nbrBoss = 0;
+
 	// Use this for initialization
 	void Start () {
         start = false;
@@ -31,6 +33,7 @@ public class SpawnManager : MonoBehaviour {
         nbrWave = Waves.Length;
         current = Waves[index];
         nbr = current.numberOfEnemies;
+        nbrBoss = current.nbrBoss;
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class SpawnManager : MonoBehaviour {
                     current = Waves[index];
                     activate = true;
                     nbr = current.numberOfEnemies;
+                    nbrBoss = current.nbrBoss;
                 }
                 if (!activate)
                     activate = true;
@@ -66,7 +70,10 @@ public class SpawnManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(current.spawnTime);
         Transform[] points = Spawner[index].GetComponent<WayPoints>().points;
-        current.spawn(Spawner[index].transform, points, Player);
+        if (nbr <= nbrBoss)
+            current.spawBoss(Spawner[index].transform, points, Player);
+        else
+            current.spawn(Spawner[index].transform, points, Player);
         --nbr;
         isSpawning = false;
     }

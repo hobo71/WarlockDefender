@@ -3,9 +3,11 @@ using System.Collections;
 
 public class SpawnMonster : MonoBehaviour {
     public GameObject[] monsters;
+    public GameObject boss;
 	public AddLifeBarEnemy AddLifeBarToConvas;
     public int numberOfEnemies;
     public float spawnTime = 1.0f;
+    public int nbrBoss = 0;
 
     private int index;
 	// Use this for initialization
@@ -24,6 +26,14 @@ public class SpawnMonster : MonoBehaviour {
         GameObject mob = Instantiate(monsters[index], location.position, location.rotation) as GameObject;
         mob.GetComponent<MoveTo>().points = points;
 		AddLifeBarToConvas.addLifeBarToEnemy (mob, mob.GetComponent<EnemieStats>().life);
+        mob.GetComponent<MoveTo>().player = player;
+    }
+
+    public void spawBoss(Transform location, Transform[] points, Object player)
+    {
+        GameObject mob = Instantiate(boss, location.position, location.rotation) as GameObject;
+        mob.GetComponent<MoveTo>().points = points;
+        AddLifeBarToConvas.addLifeBarToEnemy(mob, mob.GetComponent<EnemieStats>().life);
         mob.GetComponent<MoveTo>().player = player;
     }
 }

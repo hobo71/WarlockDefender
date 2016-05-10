@@ -447,9 +447,11 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
   numberOfEnemies: 60
   spawnTime: 2
+  nbrBoss: 2
 --- !u!1 &97993989
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,9 +581,11 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
   numberOfEnemies: 40
   spawnTime: 2
+  nbrBoss: 0
 --- !u!1 &129988069
 GameObject:
   m_ObjectHideFlags: 0
