@@ -45,6 +45,7 @@ public class EndWaveScript : MonoBehaviour {
 			isDisplayed = false;
 			gameObject.SetActive (false);
 			manager.towerPlacementState ();
+			manager.waveNb += 1;
 		}
 	}
 

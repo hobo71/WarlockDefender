@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject EndPanelWin;
 	public GameObject EndPanelLose;
 	public EndWaveScript EndPanelWinWaveScript;
+	public Pause pauseScript;
 	public int money;
 	public int waveNb;
 
@@ -21,7 +22,7 @@ public class LevelManager : MonoBehaviour {
     private FirstPersonShooting firstPersonShooting;
     private MoveCamera moveCamera;
     private FPSPanelScript fpsPanelScript;
-
+	private bool isInPause = false;
 
 
     private string gameState = "building";
@@ -35,19 +36,27 @@ public class LevelManager : MonoBehaviour {
 		money = 5000;
 		waveNb = 1;
     }
-	
+
+	public void reInitStats() {
+		money = 5000;
+		waveNb = 1;
+		player.GetComponent<PlayerStats> ().life = 100;
+		CastleStats.life = 100;
+	}
+
 	void Update () {
         if (Input.GetKeyDown("c"))
             SelectCamera();
-		if (gameState != "building") {
+		if (gameState != "building" && isInPause == false) {
 			if (SpawnManager.isEnemiesAlive () == false) {
 				if (SpawnManager.isLastWave ()) {
 					EndPanelWin.SetActive (true);
-					EnabledPause ();			
+					EnabledPause ();
 				} else {
 					EndPanelWinWaveScript.AffScreen ();
 				}
 			} else if (player.GetComponent<PlayerStats> ().life <= 0 || CastleStats.life <= 0) {
+				Debug.Log ("active LOSE");
 				EndPanelLose.SetActive (true);
 				EnabledPause ();
 			}
@@ -109,6 +118,8 @@ public class LevelManager : MonoBehaviour {
         objectPlacement.DesactivateScript();
         Cursor.visible = true;
 		Time.timeScale = 0f;
+		pauseScript.canBeActivated = false;
+		isInPause = true;
 	}
 
     public void CursorVisible()
@@ -133,5 +144,7 @@ public class LevelManager : MonoBehaviour {
             Cursor.visible = false;
         }
 		Time.timeScale = 1.0f;
+		pauseScript.canBeActivated = true;
+		isInPause = false;
     }
 }

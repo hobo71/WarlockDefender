@@ -13,7 +13,7 @@ public class FPSPanelScript : MonoBehaviour {
 
 	private float life = 100f;
 	private List<SpellsInfos> listSpells;
-	private int listSize;
+	private int listSize = 0;
     private RectTransform transf;
 	private float[] currentCoolDown = new float[4];
 
@@ -24,8 +24,10 @@ public class FPSPanelScript : MonoBehaviour {
     void Start () {
         transf = lifeBar.GetComponent<RectTransform> ();
 		GameObject obj = GameObject.Find ("MenuDatasContainer");
-		listSpells = obj.GetComponent<DataContainerScript> ().listSpellsSelected;
-		listSize = listSpells.Count ();
+		if (obj) {
+			listSpells = obj.GetComponent<DataContainerScript> ().listSpellsSelected;
+			listSize = listSpells.Count ();
+		}	
 		for (int i = 0; i < Spells.Length; i++) {
 			if (listSize > i) {
 				Spells[i].transform.FindChild("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> (listSpells [i].imageResourcePath) as Sprite;

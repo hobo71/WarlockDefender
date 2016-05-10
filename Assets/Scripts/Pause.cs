@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour {
 	public Canvas canvas;
 	private bool isPaused = false;
 	public LevelManager levelManager;
+	public bool canBeActivated = true;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,7 @@ public class Pause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyUp (KeyCode.Escape))
+		if (canBeActivated == true && Input.GetKeyUp (KeyCode.Escape))
 		{
 			MenuDisplay();
 			if (isPaused) {

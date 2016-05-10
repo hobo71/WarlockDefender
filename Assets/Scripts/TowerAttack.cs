@@ -30,7 +30,7 @@ public class TowerAttack : MonoBehaviour {
         time += Time.deltaTime;
         if (_enemies.Count > 0 && _enemies[0] == null)
             _enemies.RemoveAt(0);
-        if (_enemies[0] != null)
+		if (_enemies.Count > 0 && _enemies[0] != null)
         {
             weapon.LookAt(_enemies[0].transform);
             weapon.rotation = new Quaternion(0, weapon.rotation.y, 0, weapon.rotation.w);
