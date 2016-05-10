@@ -97,5 +97,13 @@ public class SpawnManager : MonoBehaviour {
         return false;
     }
 
+    public void resetWaves()
+    {
+        index = -1;
+        current = null;
+        nbrWave = Waves.Length;
+        nbr = 1;
+    }
+
     public void startWaves() { start = true; }
 }
