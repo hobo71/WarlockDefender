@@ -14763,6 +14763,7 @@ GameObject:
   - 224: {fileID: 1270879803}
   - 222: {fileID: 1270879805}
   - 114: {fileID: 1270879804}
+  - 114: {fileID: 1270879806}
   m_Layer: 5
   m_Name: InfosBlockPanel
   m_TagString: Untagged
@@ -14788,7 +14789,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 604.5, y: 245.38}
+  m_SizeDelta: {x: 438.9, y: 288}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1270879804
 MonoBehaviour:
@@ -14812,6 +14813,33 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1270879802}
+--- !u!114 &1270879806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270879802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.603}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 95752585d2628e249a55994d62a92b08, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1 &1290165406 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 126564, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
@@ -16667,7 +16695,7 @@ MonoBehaviour:
   towersSprite:
   - {fileID: 21300000, guid: db12930735b5e6e4daae075fe5da8eb6, type: 3}
   - {fileID: 21300000, guid: 72e6aea8405b65945b6f9a8c23215462, type: 3}
-  towersPrice: dc050000bc020000
+  towersPrice: 640000004b000000
 --- !u!114 &1394983136
 MonoBehaviour:
   m_ObjectHideFlags: 0
