@@ -21,9 +21,10 @@ public class ListSpells : MonoBehaviour {
 
 	private static string[] spellsFiles = {"fireSpellDescription",
 											"meteorSpellDescription",
-											"wallSpellDescription",
-											"freezeSpellDescription",
-											"poisonSpellDescription"};
+//											"wallSpellDescription",
+											"freezeSpellDescription"
+//											"poisonSpellDescription"
+	};
 
 	List<GameObject> buttonsList = new List<GameObject>();
 	List<SpellsInfos> listSpellsSelected = new List<SpellsInfos>();
