@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6213e6fc6e5f384e8e1639453db1226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 200
+  life: 500
   animSpeed: 1
   damageToCastle: 10
   enemie: {fileID: 137030}

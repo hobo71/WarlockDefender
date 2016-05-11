@@ -33,12 +33,12 @@ public class LevelManager : MonoBehaviour {
         firstPersonShooting = player.GetComponent<FirstPersonShooting>();
         moveCamera = buildingCamera.GetComponent<MoveCamera>();
         fpsPanelScript = fpsPanel.GetComponent<FPSPanelScript>();
-		money = 700;
+		money = 275;
 		waveNb = 1;
     }
 
 	public void reInitStats() {
-		money = 700;
+		money = 275;
 		waveNb = 1;
 		player.GetComponent<PlayerStats>().ResetLife();
 		CastleStats.life = 100;
@@ -52,9 +52,11 @@ public class LevelManager : MonoBehaviour {
 				if (SpawnManager.isLastWave ()) {
 					EndPanelWin.SetActive (true);
 					EnabledPause ();
+                    Coins.getCoins();
 				} else {
 					EndPanelWinWaveScript.AffScreen ();
-				}
+                    Coins.getCoins();
+                }
 			} else if (player.GetComponent<PlayerStats>().GetCurrentLife() <= 0 || CastleStats.life <= 0) {
 				Debug.Log ("active LOSE");
 				EndPanelLose.SetActive (true);
