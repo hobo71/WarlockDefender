@@ -28,7 +28,7 @@ public class EnemieStats : MonoBehaviour {
 	void Update () {
         if (life <= 0 && enemie != null)
         {
-            random = Random.Range(0, 10);
+            random = Random.Range(0, 20);
             if (random == 2)
                 Instantiate(potion, new Vector3(enemie.transform.position.x + 2, enemie.transform.position.y + 1, enemie.transform.position.z), enemie.transform.rotation);
             Instantiate(coin, new Vector3(enemie.transform.position.x, enemie.transform.position.y + 1, enemie.transform.position.z), enemie.transform.rotation);

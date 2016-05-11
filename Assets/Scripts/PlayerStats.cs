@@ -3,14 +3,15 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
 
-    public float life = 100f;
+    public float maxlife = 100f;
+    private float currentlife = 100f;
 
     void Start () {
-	
-	}
+        currentlife = maxlife;
+    }
 	
 	void Update () {
-        if (life <= 0)
+        if (currentlife <= 0)
         {
             //Destroy(transform.parent.gameObject);
         }
@@ -18,11 +19,24 @@ public class PlayerStats : MonoBehaviour {
 
     public void ApplyDamage(float damage)
     {
-        life -= damage;
+        currentlife -= damage;
     }
 
     public void Heal(float potionLife)
     {
-        life += potionLife;
+        if (currentlife + potionLife > maxlife)
+            currentlife = maxlife;
+        else
+            currentlife += potionLife;
+    }
+
+    public void ResetLife()
+    {
+        currentlife = maxlife;
+    }
+
+    public float GetCurrentLife()
+    {
+        return currentlife;
     }
 }

@@ -20,12 +20,12 @@ public class MoveCamera : MonoBehaviour {
         //Vector3 pos = gameObject.GetComponent<Camera>().ScreenToViewportPoint(Input.mousePosition);
         //Vector3 move = pos;
 
-        if (mouseOrigin.x <= 0 + delta && transform.position.z <= 380f)
+        if (mouseOrigin.x <= 0 + delta && transform.position.z <= 153f)
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
 
-        if (mouseOrigin.x >= (Screen.width - delta) && transform.position.z >= 107f)
+        if (mouseOrigin.x >= (Screen.width - delta) && transform.position.z >= 48f)
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
@@ -35,7 +35,7 @@ public class MoveCamera : MonoBehaviour {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
 
-        if (mouseOrigin.y >= (Screen.height - delta) && transform.position.x <= 370f)
+        if (mouseOrigin.y >= (Screen.height - delta) && transform.position.x <= 137f)
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }

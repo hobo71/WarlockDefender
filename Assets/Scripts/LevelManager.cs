@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour {
 	public void reInitStats() {
 		money = 5000;
 		waveNb = 1;
-		player.GetComponent<PlayerStats> ().life = 100;
+		player.GetComponent<PlayerStats>().ResetLife();
 		CastleStats.life = 100;
 	}
 
@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour {
 				} else {
 					EndPanelWinWaveScript.AffScreen ();
 				}
-			} else if (player.GetComponent<PlayerStats> ().life <= 0 || CastleStats.life <= 0) {
+			} else if (player.GetComponent<PlayerStats>().GetCurrentLife() <= 0 || CastleStats.life <= 0) {
 				Debug.Log ("active LOSE");
 				EndPanelLose.SetActive (true);
 				EnabledPause ();

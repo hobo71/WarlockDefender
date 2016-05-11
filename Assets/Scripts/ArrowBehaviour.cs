@@ -19,7 +19,9 @@ public class ArrowBehaviour : MonoBehaviour {
             return;
         }
 
-        Vector3 direction = target.position - this.transform.localPosition;
+        Vector3 ajustTargetPosition = new Vector3(target.position.x, target.position.y + 1f, target.position.z);
+
+        Vector3 direction = ajustTargetPosition - this.transform.localPosition;
 
         float distThisFrame = speed * Time.deltaTime;
 

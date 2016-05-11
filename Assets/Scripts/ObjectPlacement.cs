@@ -114,13 +114,13 @@ public class ObjectPlacement : MonoBehaviour
 
     public void DisabledPlacement()
     {
-        Debug.Log("Mouse Over GUI");
+        //Debug.Log("Mouse Over GUI");
         isMouseOverGUI = true;
     }
 
     public void EnabledPlacement()
     {
         isMouseOverGUI = false;
-        Debug.Log("Mouse Exit GUI");
+        //Debug.Log("Mouse Exit GUI");
     }
 }

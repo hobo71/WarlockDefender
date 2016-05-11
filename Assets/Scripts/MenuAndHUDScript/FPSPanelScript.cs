@@ -62,7 +62,7 @@ public class FPSPanelScript : MonoBehaviour {
 
 
 
-        life = playerStats.life;
+        life = playerStats.GetCurrentLife();
         transf.sizeDelta = new Vector2(400F * life / 100F, 30F);
 
     }

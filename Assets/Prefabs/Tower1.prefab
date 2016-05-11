@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 143.8021, y: -1.6672308, z: 140.20074}
+  m_LocalPosition: {x: 100.9, y: -1.6672308, z: 138.45}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 411808}
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181510}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 5.3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438942}
@@ -256,7 +256,7 @@ Projector:
   m_FieldOfView: 60
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 8
+  m_OrthographicSize: 13
   m_Material: {fileID: 2100000, guid: 2e7638d632c78774cb6cec59bf8d8dd4, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
@@ -271,7 +271,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2
   m_Center: {x: -0.000000044703484, y: -0.02, z: -3.756022e-15}
 --- !u!208 &20805566
 NavMeshObstacle:
@@ -284,7 +284,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.4, y: 0.532, z: 0.4}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.52900004, z: 0}
   m_TimeToStationary: 0.5

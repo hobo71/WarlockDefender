@@ -18,7 +18,7 @@ public class EnemiesAttack : MonoBehaviour {
     {
         yield return new WaitForSeconds(duration);
         if (move.agent.remainingDistance < 2.5f)
-            player.GetComponent<PlayerStats>().life -= damage;
+            player.GetComponent<PlayerStats>().ApplyDamage(damage);
         move.isAnimating(false);
         move.isWalking = false;
     }
