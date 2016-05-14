@@ -8,9 +8,8 @@ public class ClickColliderLevel : MonoBehaviour
 	public LevelSelection levelSelectionScript;
 	public int idSelectionCastle;
 
-	private Color basicColor = new Color(1, 1, 1);
-	private Color selectedColor = new Color(0, 0, 1);
-	private Color hoverColor = new Color(0.5f, 0.5f, 0.5f);
+	private Color basicColor = new Color(1, 1, 1, 0);
+	private Color hoverColor = new Color(1, 1, 1, 1);
 
 	private bool inTheCollider = false;
 	private bool isSelected = false;
@@ -40,12 +39,13 @@ public class ClickColliderLevel : MonoBehaviour
 		}
 		if(Input.GetMouseButtonDown(0) && inTheCollider == true && isSelected == false) {
 			levelSelectionScript.ChangeSelectedCastles (idSelectionCastle);
-			gameObject.GetComponent<Image> ().color = selectedColor;
+			gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("WorldMaps/levelSelectorReady") as Sprite;
 			isSelected = true;
 		}
 	}
 
 	public void unselectIt() {
+		gameObject.GetComponent<Image> ().sprite = Resources.Load<Sprite> ("WorldMaps/levelSelector") as Sprite;
 		gameObject.GetComponent<Image> ().color = basicColor;
 		isSelected = false;
 	}

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class DataContainerScript : MonoBehaviour {
 
+	public bool TutorialActivation = true;
 	public int levelChoose = -1;
 	public List<SpellsInfos> listSpellsSelected = new List<SpellsInfos>();
 
@@ -21,6 +22,10 @@ public class DataContainerScript : MonoBehaviour {
 
 	public void AddSpellList(List<SpellsInfos> newlistSpells) {
 		listSpellsSelected = newlistSpells;
+	}
+
+	public void SetTutorialActivation(bool isActivate) {
+		TutorialActivation = isActivate;
 	}
 }
 

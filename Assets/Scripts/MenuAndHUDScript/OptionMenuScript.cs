@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class FindAndSetResolution : MonoBehaviour {
-    private Dropdown dropDown;
+public class OptionMenuScript : MonoBehaviour {
+	public Dropdown dropDown;
 	// Use this for initialization
 	void Start () {
-        dropDown = GameObject.Find("Dropdown").GetComponent<Dropdown>();
         List<string> listOption = new List<string>();
         Resolution[] resolutions = Screen.resolutions;
 		string currentRes = Screen.currentResolution.width + "x" + Screen.currentResolution.height;
@@ -21,12 +20,6 @@ public class FindAndSetResolution : MonoBehaviour {
 			}
 			i++;
         }
-        /*
-        listOption.Add("1920x1080");
-        listOption.Add("1920x1080");
-        listOption.Add("1920x1080");
-        listOption.Add("1920x1080");*/
-        
         dropDown.AddOptions(listOption);
 		dropDown.value = resPosition;
 	}
