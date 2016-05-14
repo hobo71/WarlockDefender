@@ -28,18 +28,18 @@ public class LevelSelection : MonoBehaviour {
 
 	public void InitBasicVariables() {
 		GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().levelChoose = selectedCastle;
-		nbCastleUnlock = 3;
+		nbCastleUnlock = 4;
 		selectedCastle = -1;
 		Sprite sprt = Resources.Load<Sprite>("WorldMaps/WorldMap" + nbCastleUnlock + "CastleUnlock") as Sprite;
 		worldMapImage.sprite = sprt;
 		int i = 0;
 		foreach (GameObject obj in listCastleButtonImage)
 		{
-			obj.GetComponent<Button>().interactable = true;
+			obj.GetComponent<ClickColliderLevel> ().unselectIt();
 			if (i < nbCastleUnlock) {
-				obj.GetComponent<Image>().enabled = true;		
+				obj.SetActive (true);
 			} else {
-				obj.GetComponent<Image>().enabled = false;
+				obj.SetActive(false);
 			}
 			i++;
 		}
@@ -62,11 +62,15 @@ public class LevelSelection : MonoBehaviour {
 
 	
 	public void ChangeSelectedCastles(int num) {
-		selectedCastle = num;
 		if (num >= 0 && num < nbCastleUnlock) {
+			if (selectedCastle >= 0 && selectedCastle < nbCastleUnlock) {
+				listCastleButtonImage [selectedCastle].GetComponent<ClickColliderLevel> ().unselectIt ();
+			}
+			selectedCastle = num;
 			textIndication.text = castleNames[num];
-			levelPlayButton.interactable = true;			
+			levelPlayButton.interactable = true;
 		} else {
+			selectedCastle = num;
 			InitBasicVariables();
 		}
 	}

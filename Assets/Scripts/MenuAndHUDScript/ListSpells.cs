@@ -11,6 +11,7 @@ public class ListSpells : MonoBehaviour {
 
 	[SerializeField] GameObject buttonPreFab;
 	[SerializeField] RectTransform content;
+	[SerializeField] Button playButton;
 	[SerializeField] Image spellSelectedImage1;
 	[SerializeField] Image spellSelectedImage2;
 	[SerializeField] Image spellSelectedImage3;
@@ -84,6 +85,11 @@ public class ListSpells : MonoBehaviour {
 					});
 				}
 				updateImages();
+				if (listSpellsSelected.Count() > 0) {
+					playButton.interactable = true;
+				} else {
+					playButton.interactable = false;
+				}
 			});
 		});
 			

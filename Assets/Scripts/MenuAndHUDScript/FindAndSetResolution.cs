@@ -10,9 +10,16 @@ public class FindAndSetResolution : MonoBehaviour {
         dropDown = GameObject.Find("Dropdown").GetComponent<Dropdown>();
         List<string> listOption = new List<string>();
         Resolution[] resolutions = Screen.resolutions;
+		string currentRes = Screen.currentResolution.width + "x" + Screen.currentResolution.height;
+		int resPosition = 0;
+		int i = 0;
         foreach (Resolution res in resolutions) {
-            print(res.width + "x" + res.height);
-            listOption.Add(res.width + "x" + res.height);
+            string resString = res.width + "x" + res.height;
+			listOption.Add(resString);
+			if (resString == currentRes) {
+				resPosition = i;
+			}
+			i++;
         }
         /*
         listOption.Add("1920x1080");
@@ -21,6 +28,7 @@ public class FindAndSetResolution : MonoBehaviour {
         listOption.Add("1920x1080");*/
         
         dropDown.AddOptions(listOption);
+		dropDown.value = resPosition;
 	}
 	
 	// Update is called once per frame
