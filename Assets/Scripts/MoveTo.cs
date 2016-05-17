@@ -17,13 +17,14 @@ public class MoveTo : MonoBehaviour
     public bool start = false;
     public bool Maj = true;
     private bool firstTime = true;
-    private EnemiesAttack attack;
+    private AEnemyAttack attack;
     internal bool targetPlayer;
     internal bool isStop;
     internal bool isAnim;
     internal bool isWalking;
     internal bool isCastle;
     internal float defaultSpeed;
+    public bool isDistante = false;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class MoveTo : MonoBehaviour
         speed = GetComponent<EnemieStats>().animSpeed;
         defaultSpeed = agent.speed;
         damageToCastle = GetComponent<EnemieStats>().damageToCastle;
-        attack = GetComponent<EnemiesAttack>();
+        attack = GetComponent<AEnemyAttack>();
         if (anim != null)
             anim.enabled = false;
         if (animClip != null)
@@ -81,7 +82,7 @@ public class MoveTo : MonoBehaviour
         else if (targetPlayer)
         {
             agent.destination = ((GameObject)player).transform.position;
-            if (agent.remainingDistance < 2.0f)
+            if (agent.remainingDistance <= 20.0f && isDistante)
             {
                 agent.Stop();
                 if (Maj == false && !isAnim)
@@ -89,6 +90,27 @@ public class MoveTo : MonoBehaviour
                     animClip["attack"].speed = 2;
                     animClip.Play("attack");
                     isAnim = true;
+                    agent.transform.LookAt(((GameObject)player).transform.position);
+                    attack.attack(animClip["attack"].length / 2.2f, (GameObject)player, this);
+                }
+                else if (Maj && !isAnim)
+                {
+                    animClip["Attack"].speed = 2;
+                    animClip.Play("Attack");
+                    isAnim = true;
+                    agent.transform.LookAt(((GameObject)player).transform.position);
+                    attack.attack(animClip["Attack"].length / animClip["Attack"].speed, (GameObject)player, this);
+                }
+            }
+            else if (agent.remainingDistance < 2.0f)
+            {
+                agent.Stop();
+                if (Maj == false && !isAnim)
+                {
+                    animClip["attack"].speed = 2;
+                    animClip.Play("attack");
+                    isAnim = true;
+                    agent.transform.LookAt(((GameObject)player).transform.position);
                     attack.attack(animClip["attack"].length / animClip["attack"].speed, (GameObject)player, this);
                 }
                 else if (Maj && !isAnim)
@@ -96,6 +118,7 @@ public class MoveTo : MonoBehaviour
                     animClip["Attack"].speed = 2;
                     animClip.Play("Attack");
                     isAnim = true;
+                    agent.transform.LookAt(((GameObject)player).transform.position);
                     attack.attack(animClip["Attack"].length / animClip["Attack"].speed, (GameObject)player, this);
                 }
             }
@@ -169,6 +192,7 @@ public class MoveTo : MonoBehaviour
                 animClip.Play("Walk");
             else
                 animClip.Play("walk");
+            agent.Resume();
         }
     }
 

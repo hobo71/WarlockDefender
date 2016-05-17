@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemiesAttack : MonoBehaviour {
+public class EnemiesAttack : MonoBehaviour, AEnemyAttack
+{
 
     public int damage = 10;
 	// Use this for initialization
