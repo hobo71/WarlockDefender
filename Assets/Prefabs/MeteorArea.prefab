@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102676}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 3.04, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 464314}
@@ -82,11 +82,11 @@ Projector:
   m_FieldOfView: 60
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 3.83
-  m_Material: {fileID: 2100000, guid: 2e7638d632c78774cb6cec59bf8d8dd4, type: 2}
+  m_OrthographicSize: 3.8
+  m_Material: {fileID: 2100000, guid: 64cf69d3d2539bc42b96b210d957509b, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

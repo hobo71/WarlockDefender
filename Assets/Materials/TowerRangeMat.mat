@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TowerRangeMat
-  m_Shader: {fileID: 4800000, guid: c0ace1ca4bc0718448acf798c93d52d9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2468badc34466fd479ed6933a70fb60c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 14fc2632a4bf06e48a1ec5217f4b47cb, type: 3}
-          m_Scale: {x: 1, y: 0}
+          m_Texture: {fileID: 2800000, guid: 86ccc83e7c4d8d54cb54c17193215b04, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 1, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 86ccc83e7c4d8d54cb54c17193215b04, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -89,7 +89,7 @@ Material:
         first:
           name: _FalloffTex
         second:
-          m_Texture: {fileID: 2800000, guid: 3611f17b335246649b75ffc94f73c59e, type: 3}
+          m_Texture: {fileID: 2800000, guid: 9ff8f26559449f04ebf8991bc720dac5, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -104,11 +104,15 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: 0.5
+        second: 0.871
       data:
         first:
-          name: _InvFade
-        second: 1
+          name: _Shininess
+        second: 0.078125
+      data:
+        first:
+          name: PixelSnap
+        second: 0
       data:
         first:
           name: _Parallax
@@ -145,6 +149,14 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _Attenuation
+        second: 1
     m_Colors:
       data:
         first:
@@ -153,7 +165,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 1, b: 0, a: 1}
+        second: {r: 0, g: 1, b: 0.33793092, a: 1}
       data:
         first:
           name: _TintColor
