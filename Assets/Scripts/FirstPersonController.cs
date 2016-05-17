@@ -37,9 +37,10 @@ public class FirstPersonController : MonoBehaviour {
 
         if (characterController.isGrounded && Input.GetButtonDown("Jump"))
             verticalVelocity = jumpSpeed;
-
         Vector3 speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
-        speed = transform.rotation * speed;
+        if (Input.GetButton("Sprint"))
+            speed *= 1.75f;
+         speed = transform.rotation * speed;
 
         characterController.Move(speed * Time.deltaTime);
 	}

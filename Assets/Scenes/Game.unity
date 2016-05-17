@@ -339,7 +339,7 @@ Transform:
   m_Children:
   - {fileID: 437200033}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &39764562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,9 +535,10 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
   boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 40
   spawnTime: 2
   nbrBoss: 0
 --- !u!1 &129988069
@@ -601,7 +602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
 --- !u!114 &129988072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,7 +651,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 334a4fb9909abd54d8774d3dfddf38c7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 334a4fb9909abd54d8774d3dfddf38c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -3279,7 +3280,7 @@ Transform:
   - {fileID: 690078799}
   - {fileID: 2060333640}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1001 &298700726
 Prefab:
   m_ObjectHideFlags: 0
@@ -4145,7 +4146,7 @@ Transform:
   - {fileID: 119970377}
   - {fileID: 90607083}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1001 &489463048
 Prefab:
   m_ObjectHideFlags: 0
@@ -4183,7 +4184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_LocalScale.x
@@ -4709,7 +4710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448986, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: buildingCamera
@@ -7819,7 +7820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
 --- !u!1 &821736285
 GameObject:
   m_ObjectHideFlags: 0
@@ -11652,7 +11653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_LocalScale.x
@@ -22832,7 +22833,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 456098, guid: 63e58b877ef36964fb45bede61db02d1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 122300, guid: 63e58b877ef36964fb45bede61db02d1, type: 2}
       propertyPath: m_Name
@@ -23144,7 +23145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
       propertyPath: m_TagString

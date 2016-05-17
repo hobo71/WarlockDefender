@@ -3,5 +3,5 @@
 	"imageResourcePath": "SpellsInfos/SpellsImages/freezeSpell",
 	"name" : "Frost Breath",
 	"description" : "Freezes and slows the enemies in a cone.",
-	"coolDown": 1
+	"coolDown": 6
 }

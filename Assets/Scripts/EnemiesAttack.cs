@@ -17,7 +17,7 @@ public class EnemiesAttack : MonoBehaviour {
     IEnumerator attackPlayer(float duration, GameObject player, MoveTo move)
     {
         yield return new WaitForSeconds(duration);
-        if (move.agent.remainingDistance < 2.5f)
+        if (move.agent.remainingDistance < 3.5f)
             player.GetComponent<PlayerStats>().ApplyDamage(damage);
         move.isAnimating(false);
         move.isWalking = false;

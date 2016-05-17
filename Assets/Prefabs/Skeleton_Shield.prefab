@@ -1021,7 +1021,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.59457, y: 0.0061035156, z: 31.220644}
+  m_LocalPosition: {x: 119.47532, y: -1.3957214, z: 74.68983}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 403470}
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 100
-  animSpeed: 1
+  animSpeed: 2
   damageToCastle: 10
   enemie: {fileID: 124312}
   coin: {fileID: 199208, guid: b95b6ef37857fba4e901921e49b6cd5e, type: 2}
@@ -1308,7 +1308,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13688770
 CapsuleCollider:
@@ -1399,7 +1399,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 124312}
   m_Enabled: 1
   m_Radius: 1
-  m_Speed: 2.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

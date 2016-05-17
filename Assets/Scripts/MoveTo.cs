@@ -23,12 +23,14 @@ public class MoveTo : MonoBehaviour
     internal bool isAnim;
     internal bool isWalking;
     internal bool isCastle;
+    internal float defaultSpeed;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         speed = GetComponent<EnemieStats>().animSpeed;
+        defaultSpeed = agent.speed;
         damageToCastle = GetComponent<EnemieStats>().damageToCastle;
         attack = GetComponent<EnemiesAttack>();
         if (anim != null)
@@ -84,30 +86,30 @@ public class MoveTo : MonoBehaviour
                 agent.Stop();
                 if (Maj == false && !isAnim)
                 {
-                    animClip["attack"].speed = 1;
+                    animClip["attack"].speed = 2;
                     animClip.Play("attack");
                     isAnim = true;
-                    attack.attack(animClip["attack"].length, (GameObject)player, this);
+                    attack.attack(animClip["attack"].length / animClip["attack"].speed, (GameObject)player, this);
                 }
                 else if (Maj && !isAnim)
                 {
-                    animClip["Attack"].speed = 1;
+                    animClip["Attack"].speed = 2;
                     animClip.Play("Attack");
                     isAnim = true;
-                    attack.attack(animClip["Attack"].length, (GameObject)player, this);
+                    attack.attack(animClip["Attack"].length / animClip["Attack"].speed, (GameObject)player, this);
                 }
             }
             else
             {
                 if (Maj == false && !isWalking)
                 {
-                    animClip["walk"].speed = speed;
+                    animClip["walk"].speed = speed * 2;
                     animClip.Play("walk");
                     isWalking = true;
                 }
                 else if (Maj && !isWalking)
                 {
-                    animClip["Walk"].speed = speed;
+                    animClip["Walk"].speed = speed * 2;
                     animClip.Play("Walk");
                     isWalking = true;
                 }
@@ -135,6 +137,7 @@ public class MoveTo : MonoBehaviour
             targetPlayer = true;
             isAnim = false;
             isStop = false;
+            agent.speed = defaultSpeed * 2;
         }
     }
 
@@ -158,6 +161,7 @@ public class MoveTo : MonoBehaviour
             }
             ++index;
             agent.destination = new Vector3(points[index].position.x + Random.Range(-5, 5), points[index].position.y, points[index].position.z + Random.Range(-5, 5));
+            agent.speed = defaultSpeed;
             targetPlayer = false;
             isAnim = false;
             isWalking = false;
