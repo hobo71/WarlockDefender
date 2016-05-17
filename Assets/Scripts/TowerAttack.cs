@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TowerAttack : MonoBehaviour {
-    [SerializeField]
-    GameObject arrowPrefab;
+    //[SerializeField]
+    //GameObject arrowPrefab;
     [SerializeField]
     Transform weapon;
+    [SerializeField]
+    TowerStats towerStats; 
 
-    public int damage = 10;
-    public float fireCooldown = 0.5f;
     public Transform spawn;
     private List<GameObject> _enemies;
     internal float time;
@@ -35,9 +35,9 @@ public class TowerAttack : MonoBehaviour {
             weapon.LookAt(_enemies[0].transform);
             weapon.rotation = new Quaternion(0, weapon.rotation.y, 0, weapon.rotation.w);
         }
-        if (time >= fireCooldown)
+        if (time >= towerStats.attackSpeed)
         {
-            GameObject arrow = (GameObject)Instantiate(arrowPrefab, spawn.position, weapon.rotation);
+            GameObject arrow = (GameObject)Instantiate(towerStats.projectilePrefab, spawn.position, weapon.rotation);
             ArrowBehaviour a = arrow.GetComponent<ArrowBehaviour>();
             a.target = _enemies[0].gameObject.transform;
             time = 0.0f;

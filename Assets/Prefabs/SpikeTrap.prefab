@@ -44,6 +44,7 @@ GameObject:
   - 65: {fileID: 6536676}
   - 65: {fileID: 6580128}
   - 114: {fileID: 11488214}
+  - 114: {fileID: 11415218}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Tower
@@ -287,6 +288,25 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11415218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b299532b3e8f1fe4cbaeccf049574ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerInfoPanel: {fileID: 194748, guid: a6ec9925dc6319d45b7884473a79a7a1, type: 2}
+  projectilePrefab: {fileID: 0}
+  towerImage: {fileID: 21300000, guid: 72e6aea8405b65945b6f9a8c23215462, type: 3}
+  towerName: Spike Trap
+  towerDamage: 10
+  attackSpeed: 1
+  attackRange: 10
+  sellPercentage: 20
 --- !u!114 &11488214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,8 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 11195982}
-  damage: 10
-  AttackSpeed: 1
+  towerStats: {fileID: 11415218}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

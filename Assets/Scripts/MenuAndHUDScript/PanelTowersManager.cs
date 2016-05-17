@@ -15,16 +15,18 @@ public class PanelTowersManager : MonoBehaviour {
 
 	private float marge = 30;
 	int idTowerCurrentlySelected;
+    private bool isTowerSelected = false;
 
 	// Use this for initialization
 	void Start () {
-		towerButtonPreFab.SetActive (true);
+        towerButtonPreFab.SetActive (true);
+        isTowerSelected = false;
 		Vector3 vecDefault = towerButtonPreFab.GetComponentInChildren<RectTransform> ().anchoredPosition;
 		float sizeCase = towerButtonPreFab.GetComponentInChildren<RectTransform> ().sizeDelta.x;
 		vecDefault += new Vector3 (marge, 0F, 0F);
 		int i = 0;
 		for (i = 0; i < towersSprite.Length; i++) {
-			GameObject button = (GameObject)Instantiate (towerButtonPreFab);
+			GameObject button = Instantiate (towerButtonPreFab);
 			button.GetComponentInChildren<Toggle> ().isOn = false;
 			RectTransform transf = button.GetComponentInChildren<RectTransform> ();
 			transf.SetParent (panelTowers.transform, false);
@@ -36,9 +38,13 @@ public class PanelTowersManager : MonoBehaviour {
 			int idButton = i;
 			button.GetComponentInChildren<Toggle> ().onValueChanged.AddListener ((on) => {
 				if (on) {
-					idTowerCurrentlySelected = idButton;
-				}
-			});
+                    idTowerCurrentlySelected = idButton;
+                    isTowerSelected = true;
+                }
+                else {
+                    isTowerSelected = false;
+                }
+            });
 			if (i == 0) {
 				button.GetComponentInChildren<Toggle> ().isOn = true;
 			}
@@ -58,7 +64,8 @@ public class PanelTowersManager : MonoBehaviour {
 			if (towersPrice [i] > manager.money) {
 				listButtonCreated [i].GetComponentInChildren<Toggle> ().isOn = false;
 				listButtonCreated [i].GetComponentInChildren<Toggle> ().interactable = false;
-			} else {
+            }
+            else {
 				listButtonCreated [i].GetComponentInChildren<Toggle> ().interactable = true;
 			}
 		}
@@ -72,4 +79,12 @@ public class PanelTowersManager : MonoBehaviour {
 	public int getCurrentlySelectedTowerPrice () {
 		return towersPrice [idTowerCurrentlySelected];
 	}
+
+    public bool GetSelectionStatus() {
+        return isTowerSelected;
+    }
+
+    public void DeselectTower() {
+        listButtonCreated[idTowerCurrentlySelected].GetComponentInChildren<Toggle>().isOn = false;
+    }
 }

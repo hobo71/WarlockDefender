@@ -19,14 +19,14 @@ public class MoveSpellArea : MonoBehaviour {
         if (map.GetComponent<Collider>().Raycast(ray, out hitInfo, spellRange))
         {
             spellAreaPosition.x = hitInfo.point.x;
-            spellAreaPosition.y = 0.01f;
+            spellAreaPosition.y = -1f;
             spellAreaPosition.z = hitInfo.point.z;
             this.transform.position = spellAreaPosition;
         }
         else
         {
             spellAreaPosition = playerCamera.transform.position + playerCamera.transform.forward * spellRange;
-            this.transform.position = new Vector3(spellAreaPosition.x, 0.01f, spellAreaPosition.z);
+            this.transform.position = new Vector3(spellAreaPosition.x, -1f, spellAreaPosition.z);
         }
     }
 }

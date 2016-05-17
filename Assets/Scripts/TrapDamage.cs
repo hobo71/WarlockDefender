@@ -5,8 +5,11 @@ using System.Collections.Generic;
 public class TrapDamage : MonoBehaviour {
     [SerializeField]
     Animation anim;
-    public int damage = 10;
-    public float AttackSpeed = 1.0f;
+    [SerializeField]
+    TowerStats towerStats;
+
+    //public int damage = 10;
+    //public float AttackSpeed = 1.0f;
 
     private List<GameObject> _enemies;
     internal float _time;
@@ -22,7 +25,7 @@ public class TrapDamage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         _time += Time.deltaTime;
-        if (_enemies.Count > 0 && _time >= AttackSpeed)
+        if (_enemies.Count > 0 && _time >= towerStats.attackSpeed)
         {
             StartCoroutine(ApplyDamage());
         }
@@ -36,7 +39,7 @@ public class TrapDamage : MonoBehaviour {
         {
             if (enemy == null)
                 continue;
-            enemy.GetComponent<EnemieStats>().ApplyDamage(damage);
+            enemy.GetComponent<EnemieStats>().ApplyDamage((int)towerStats.towerDamage);
             _anim = true;
         }
         if (_anim)
