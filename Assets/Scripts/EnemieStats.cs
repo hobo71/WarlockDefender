@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemieStats : MonoBehaviour {
 
-    public int life = 100;
+    public float life = 100f;
     public float animSpeed = 2;
     public float damageToCastle = 10f;
     [SerializeField]
@@ -19,7 +19,7 @@ public class EnemieStats : MonoBehaviour {
     void Start () {
 	}
 	
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(float damage)
     {
         life -= damage;
     }

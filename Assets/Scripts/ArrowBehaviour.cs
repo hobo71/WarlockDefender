@@ -3,8 +3,11 @@ using System.Collections;
 
 public class ArrowBehaviour : MonoBehaviour {
 
-    public int damage = 10;
+    public LayerMask enemyLayer;
+
+    public float damage = 10;
     public float speed = 15f;
+    public float areaOfEffect = 0f;
     public Transform target;
 
 	void Start () {
@@ -37,8 +40,17 @@ public class ArrowBehaviour : MonoBehaviour {
 	}
 
     void DoArrowHit() {
-        EnemieStats enemy = target.GetComponentInParent<EnemieStats>();
-        enemy.ApplyDamage(damage);
+        if (areaOfEffect > 0f) {
+            Collider[] colliders = Physics.OverlapSphere(target.position, areaOfEffect, enemyLayer);
+            foreach (var coll in colliders) {
+                EnemieStats enemy = coll.gameObject.GetComponentInParent<EnemieStats>();
+                enemy.ApplyDamage(damage);
+            }
+        }
+        else {
+            EnemieStats enemy = target.GetComponentInParent<EnemieStats>();
+            enemy.ApplyDamage(damage);
+        }
         Destroy(gameObject);
     }
 }

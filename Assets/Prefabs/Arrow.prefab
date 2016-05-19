@@ -206,8 +206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e427f471982a19e4da774c10623893e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   damage: 10
   speed: 15
+  areaOfEffect: 0
   target: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

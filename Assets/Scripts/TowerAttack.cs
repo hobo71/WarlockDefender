@@ -37,8 +37,12 @@ public class TowerAttack : MonoBehaviour {
         }
         if (time >= towerStats.attackSpeed)
         {
+            Debug.Log("Shoot");
             GameObject arrow = (GameObject)Instantiate(towerStats.projectilePrefab, spawn.position, weapon.rotation);
             ArrowBehaviour a = arrow.GetComponent<ArrowBehaviour>();
+            a.areaOfEffect = towerStats.spreadZone;
+            a.damage = towerStats.projectileDamage;
+            a.speed = towerStats.projectileSpeed;
             a.target = _enemies[0].gameObject.transform;
             time = 0.0f;
         }
