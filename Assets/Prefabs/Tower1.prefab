@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 486486}
-  towerStats: {fileID: 0}
+  towerStats: {fileID: 11483628}
   spawn: {fileID: 477496}
 --- !u!114 &11483628
 MonoBehaviour:
