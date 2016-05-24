@@ -18,26 +18,9 @@ Platform assembly: D:\Repository\WarlockDefender-Game-Project-2-master\warlockde
 Loading D:\Repository\WarlockDefender-Game-Project-2-master\warlockdefender_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Repository\WarlockDefender-Game-Project-2-master\warlockdefender_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Repository\WarlockDefender-Game-Project-2-master\warlockdefender_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
+- Completed reload, in  0.124 seconds
 Platform assembly: D:\Repository\WarlockDefender-Game-Project-2-master\warlockdefender_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Repository\WarlockDefender-Game-Project-2-master\warlockdefender_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 0.496762 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 14e4 -> priority: 1 
-  Thread -> id: 2fac -> priority: 1 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.985594 ms
-
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2667.
-Total: 0.889656 ms (FindLiveObjects: 0.075130 ms CreateObjectMapping: 0.054602 ms MarkObjects: 0.678634 ms  DeleteObjects: 0.077593 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 26.252047 ms
-
-Unloading 589 unused Assets to reduce memory usage. Loaded Objects now: 1609.
-Total: 2.298244 ms (FindLiveObjects: 0.114953 ms CreateObjectMapping: 0.053781 ms MarkObjects: 0.642506 ms  DeleteObjects: 1.485771 ms)
-

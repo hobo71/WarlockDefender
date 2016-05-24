@@ -58,7 +58,6 @@ public class LevelManager : MonoBehaviour {
                     Coins.getCoins();
                 }
 			} else if (player.GetComponent<PlayerStats>().GetCurrentLife() <= 0 || CastleStats.life <= 0) {
-				Debug.Log ("active LOSE");
 				EndPanelLose.SetActive (true);
 				EnabledPause ();
 			}

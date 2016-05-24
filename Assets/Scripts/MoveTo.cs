@@ -25,7 +25,9 @@ public class MoveTo : MonoBehaviour
     internal bool isCastle;
     internal float defaultSpeed;
     public bool isDistante = false;
-
+    internal float timeDistanceAtt = 0.0f;
+    internal float attAnimDuration = 0.0f;
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -43,6 +45,11 @@ public class MoveTo : MonoBehaviour
         isAnim = false;
         isWalking = false;
         isCastle = false;
+        if (Maj == false)
+            attAnimDuration = animClip["attack"].length;
+        else
+            attAnimDuration = animClip["Attack"].length;
+        timeDistanceAtt = attAnimDuration;
     }
 
     public void ToNextPoint()
@@ -62,6 +69,7 @@ public class MoveTo : MonoBehaviour
 
     void Update()
     {
+        timeDistanceAtt += Time.deltaTime;
         if (firstTime)
         {
             if (anim != null)
@@ -74,7 +82,6 @@ public class MoveTo : MonoBehaviour
         else if (agent.remainingDistance < 0.5f && isCastle)
         {
             CastleStats.life -= damageToCastle;
-            Debug.Log("Damage Castle");
             Destroy(gameObject);
         }
         else if (agent.remainingDistance < 0.5f && !targetPlayer)
@@ -82,24 +89,34 @@ public class MoveTo : MonoBehaviour
         else if (targetPlayer)
         {
             agent.destination = ((GameObject)player).transform.position;
-            if (agent.remainingDistance <= 20.0f && isDistante)
+            if (agent.remainingDistance <= 40.0f && isDistante)
             {
                 agent.Stop();
-                if (Maj == false && !isAnim)
+                agent.transform.LookAt(((GameObject)player).transform.position);
+                if (timeDistanceAtt > attAnimDuration)
                 {
-                    animClip["attack"].speed = 2;
-                    animClip.Play("attack");
-                    isAnim = true;
-                    agent.transform.LookAt(((GameObject)player).transform.position);
-                    attack.attack(animClip["attack"].length / 2.2f, (GameObject)player, this);
+                    if (Maj == false && !isAnim)
+                    {
+                        animClip["attack"].speed = 2;
+                        animClip.Play("attack");
+                        isAnim = true;
+                        attack.attack(animClip["attack"].length / 3.5f, (GameObject)player, this);
+                    }
+                    else if (Maj && !isAnim)
+                    {
+                        animClip["Attack"].speed = 2;
+                        animClip.Play("Attack");
+                        isAnim = true;
+                        attack.attack(animClip["Attack"].length / 3.5f, (GameObject)player, this);
+                    }
+                    timeDistanceAtt = 0.0f;
                 }
-                else if (Maj && !isAnim)
+                else
                 {
-                    animClip["Attack"].speed = 2;
-                    animClip.Play("Attack");
-                    isAnim = true;
-                    agent.transform.LookAt(((GameObject)player).transform.position);
-                    attack.attack(animClip["Attack"].length / animClip["Attack"].speed, (GameObject)player, this);
+                    if (Maj && !isAnim)
+                        animClip.Play("Idle");
+                    else if (!Maj && !isAnim)
+                        animClip.Play("idle");
                 }
             }
             else if (agent.remainingDistance < 2.0f)
@@ -140,15 +157,6 @@ public class MoveTo : MonoBehaviour
                 isStop = false;
             }
 
-        }
-        if (anim != null)
-            anim.speed = speed;
-        if (animClip != null)
-        {
-            if (Maj == false)
-                animClip["walk"].speed = speed;
-            if (Maj == true)
-                animClip["Walk"].speed = speed;
         }
     }
 

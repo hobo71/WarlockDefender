@@ -457,10 +457,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters:
-  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
   boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 10
   spawnTime: 2
   nbrBoss: 0
 --- !u!1 &129988069
@@ -573,7 +573,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 334a4fb9909abd54d8774d3dfddf38c7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 334a4fb9909abd54d8774d3dfddf38c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -4466,7 +4466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448986, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: buildingCamera
@@ -11267,7 +11267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6418957ec12e8d44d8134359916e9a21, type: 3}
       propertyPath: m_LocalScale.x
@@ -13357,7 +13357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f82f093ed301824892c000848244efe, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f82f093ed301824892c000848244efe, type: 3}
       propertyPath: m_TagString
@@ -22151,7 +22151,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 456098, guid: 63e58b877ef36964fb45bede61db02d1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 122300, guid: 63e58b877ef36964fb45bede61db02d1, type: 2}
       propertyPath: m_Name
@@ -22463,7 +22463,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6d261572b8dfb574888f3be9287f022b, type: 3}
       propertyPath: m_TagString
