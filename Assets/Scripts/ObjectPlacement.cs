@@ -20,6 +20,7 @@ public class ObjectPlacement : MonoBehaviour
 	[SerializeField] PanelTowersManager towerManager;
     [SerializeField]
     GameObject currentInfoPanel = null;
+    TowerStats currentTowerStats = null;
 
 
     private GameObject selectionCube;
@@ -48,14 +49,19 @@ public class ObjectPlacement : MonoBehaviour
                         if (currentInfoPanel) {
                             Destroy(currentInfoPanel);
                             currentInfoPanel = null;
+                            currentTowerStats = null;
                         }
-                        TowerStats towerStats = hitInfo.collider.GetComponentInParent<TowerStats>();
-                        currentInfoPanel = towerStats.ShowTowerInfo();
+                        currentTowerStats = hitInfo.collider.GetComponentInParent<TowerStats>();
+                        currentInfoPanel = currentTowerStats.ShowTowerInfo();
                     }
                     else {
                         if (currentInfoPanel) {
-                            Destroy(currentInfoPanel);
-                            currentInfoPanel = null;
+                            FillTowerInfoPanel panelScript = currentInfoPanel.GetComponent<FillTowerInfoPanel>();
+                            if (!panelScript.GetOnInfoPanel()) {
+                                Destroy(currentInfoPanel);
+                                currentInfoPanel = null;
+                                currentTowerStats = null;
+                            }
                         }
                     }
                 }
@@ -106,10 +112,26 @@ public class ObjectPlacement : MonoBehaviour
 
     }
 
+    public void SellTower() {
+        if (!currentTowerStats || !currentInfoPanel)
+            return;
+
+        GameObject tower = currentTowerStats.transform.root.gameObject;
+        manager.money += Mathf.RoundToInt((currentTowerStats.towerPrice * currentTowerStats.sellPercentage) / 100);
+
+        Destroy(tower);
+        currentTowerStats = null;
+        Destroy(currentInfoPanel);
+        currentInfoPanel = null;
+    }
+
     public void DesactivateScript() {
         this.enabled = false;
         Destroy(selectionCube);
         selectionCube = null;
+        currentTowerStats = null;
+        Destroy(currentInfoPanel);
+        currentInfoPanel = null;
     }
 
     public void DisabledPlacement() {

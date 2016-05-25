@@ -305,8 +305,12 @@ MonoBehaviour:
   towerName: Spike Trap
   towerDamage: 10
   attackSpeed: 1
+  projectileDamage: 10
+  projectileSpeed: 15
   attackRange: 10
-  sellPercentage: 20
+  spreadZone: 0
+  towerPrice: 75
+  sellPercentage: 33
 --- !u!114 &11488214
 MonoBehaviour:
   m_ObjectHideFlags: 1
