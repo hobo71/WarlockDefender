@@ -46,9 +46,15 @@ public class MoveTo : MonoBehaviour
         isWalking = false;
         isCastle = false;
         if (Maj == false)
+        {
             attAnimDuration = animClip["attack"].length;
+            animClip["walk"].speed = speed;
+        }
         else
+        {
             attAnimDuration = animClip["Attack"].length;
+            animClip["Walk"].speed = speed;
+        }
         timeDistanceAtt = attAnimDuration;
     }
 

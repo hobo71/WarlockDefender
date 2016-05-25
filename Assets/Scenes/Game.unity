@@ -412,6 +412,9 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
+  - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
   numberOfEnemies: 30
@@ -457,10 +460,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters:
-  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
+  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
+  - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 10
+  numberOfEnemies: 20
   spawnTime: 2
   nbrBoss: 0
 --- !u!1 &129988069
