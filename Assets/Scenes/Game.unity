@@ -5068,8 +5068,12 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
+      propertyPath: traps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: towers.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 448986, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5170,7 +5174,7 @@ Prefab:
     - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: towers.Array.data[1]
       value: 
-      objectReference: {fileID: 160726, guid: e9248a725cf697846843411a7cd62545, type: 2}
+      objectReference: {fileID: 110896, guid: dd2ff2eb2d6c8154eade103ede5c418f, type: 2}
     - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
       propertyPath: towerInfoPanel
       value: 
@@ -5183,6 +5187,10 @@ Prefab:
       propertyPath: roadTextureId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11445810, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
+      propertyPath: traps.Array.data[0]
+      value: 
+      objectReference: {fileID: 160726, guid: e9248a725cf697846843411a7cd62545, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6431294527be01a4db3cd876042b3eb3, type: 2}
   m_IsPrefabParent: 0
