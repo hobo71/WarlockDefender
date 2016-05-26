@@ -13,6 +13,7 @@ public class ObjectPlacement : MonoBehaviour
 
     public GameObject selectionPrefab;
     public GameObject[] towers;
+    public GameObject[] traps;
 
     public Camera buildingCamera;
 
@@ -22,9 +23,14 @@ public class ObjectPlacement : MonoBehaviour
     GameObject currentInfoPanel = null;
     TowerStats currentTowerStats = null;
 
-
     private GameObject selectionCube;
     private bool isMouseOverGUI = false;
+
+    [SerializeField] Terrain terrain;
+    [SerializeField] int roadTextureId = 0;
+
+    bool canPlace = false;
+    bool isRoad = false;
 
     void Start() {
 		manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
@@ -87,25 +93,36 @@ public class ObjectPlacement : MonoBehaviour
 
             Physics.SphereCast(pointA, 2.5f, Vector3.down, out objectHitInfo, Mathf.Infinity);
 
-            if (objectHitInfo.collider.tag == "Object" || objectHitInfo.collider.tag == "Enemie" || objectHitInfo.collider.tag == "Tower") {
-                selectionCube.GetComponent<MeshRenderer>().material = invalidMat;
+            int indexTower = towerManager.getIdTowerCurrentlySelected();
+            int price = towerManager.getCurrentlySelectedTowerPrice();
+            if (objectHitInfo.collider.tag == "Object" || objectHitInfo.collider.tag == "Enemie" || objectHitInfo.collider.tag == "Tower" ||
+                price > manager.money || IsRoadMainTexture() == (indexTower < towers.Length))
+            {
+                    canPlace = false;
+                    selectionCube.GetComponent<MeshRenderer>().material = invalidMat;
             }
             else if (objectHitInfo.collider.tag == "Map") {
+                canPlace = true;
                 selectionCube.GetComponent<MeshRenderer>().material = validMat;
             }
 
         }
         else {
+            canPlace = false;
             selectionCube.GetComponent<MeshRenderer>().material = invalidMat;
-
         }
 
 		int priceTower = towerManager.getCurrentlySelectedTowerPrice ();
 
-        if (Input.GetMouseButtonDown(0) && !isMouseOverGUI && priceTower <= manager.money) {
+        if (Input.GetMouseButtonDown(0) && canPlace && !isMouseOverGUI && priceTower <= manager.money)
+        {
             int indexTower = towerManager.getIdTowerCurrentlySelected();
-            Instantiate(towers[indexTower], new Vector3(selectionCube.transform.position.x, selectionCube.transform.position.y - 2f, selectionCube.transform.position.z), selectionCube.transform.rotation);
-			manager.money -= priceTower;
+            var position = new Vector3(selectionCube.transform.position.x, selectionCube.transform.position.y - 2f, selectionCube.transform.position.z);
+            if (indexTower < towers.Length)
+                Instantiate(towers[indexTower], position, selectionCube.transform.rotation);
+            else
+                Instantiate(traps[indexTower - towers.Length], position, selectionCube.transform.rotation);
+            manager.money -= priceTower;
             towerManager.DeselectTower();
             Destroy(selectionCube);
         }
@@ -141,5 +158,31 @@ public class ObjectPlacement : MonoBehaviour
 
     public void EnabledPlacement() {
         isMouseOverGUI = false;
+    }
+    
+    float[] GetTextureMix(Vector3 position)
+    {
+        var mapX = ((position.x - terrain.transform.position.x) / terrain.terrainData.size.x) * terrain.terrainData.alphamapWidth;
+        var mapZ = ((position.z - terrain.transform.position.z) / terrain.terrainData.size.z) * terrain.terrainData.alphamapHeight;
+
+        var splatData = terrain.terrainData.GetAlphamaps((int)mapX, (int)mapZ, 1, 1);
+        float[] cellMix = new float[splatData.GetUpperBound(2) + 1];
+        for (var i = 0; i<cellMix.Length; i++)
+        {
+            cellMix[i] = splatData[0, 0, i];
+        }
+        return cellMix;
+    }
+
+    bool IsRoadMainTexture()
+    {
+        float[] mix = GetTextureMix(selectionCube.transform.position);
+        float roadMix = mix[roadTextureId];
+
+        for (var i = 0; i<mix.Length; i++)
+            if (mix[i] > roadMix)
+                return false;
+        isRoad = true;
+        return true;
     }
 }
