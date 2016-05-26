@@ -9,6 +9,8 @@ public class FillTowerInfoPanel : MonoBehaviour {
     [SerializeField]
     GameObject towerType;
 
+    private bool onInfoPanel = false;
+
     void Start () {
 	
 	}
@@ -17,13 +19,19 @@ public class FillTowerInfoPanel : MonoBehaviour {
 	
 	}
 
-    public void SetTowerTypeInfo(string type)
-    {
+    public void SetTowerTypeInfo(string type) {
         towerType.GetComponent<Text>().text = type;
     }
 
-    public void SetTowerImageInfo(Sprite image)
-    {
+    public void SetTowerImageInfo(Sprite image) {
         towerImage.GetComponent<Image>().sprite = image;
+    }
+
+    public void SetOnInfoPanel(bool state) {
+        onInfoPanel = state;
+    }
+
+    public bool GetOnInfoPanel() {
+        return onInfoPanel;
     }
 }

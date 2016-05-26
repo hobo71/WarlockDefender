@@ -15,6 +15,7 @@ public class TowerStats : MonoBehaviour {
     public float projectileSpeed = 15f;
     public float attackRange = 10f;
     public float spreadZone = 0f;
+    public float towerPrice = 100f;
     public float sellPercentage = 20f;
 
     void Start () {
