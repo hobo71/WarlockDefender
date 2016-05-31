@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectionScript: {fileID: 259163292}
-  idSelectionCastle: 1
+  idSelectionCastle: 2
 --- !u!1 &927508670
 GameObject:
   m_ObjectHideFlags: 0
