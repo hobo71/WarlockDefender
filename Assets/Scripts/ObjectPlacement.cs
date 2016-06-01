@@ -14,10 +14,12 @@ public class ObjectPlacement : MonoBehaviour
     public GameObject selectionPrefab;
     public GameObject[] towers;
     public GameObject[] traps;
+    public GameObject TowerBlipPrefab;
+    public GameObject cameraTexture;
 
     public Camera buildingCamera;
 
-	[SerializeField] LevelManager manager;
+    [SerializeField] LevelManager manager;
 	[SerializeField] PanelTowersManager towerManager;
     [SerializeField]
     GameObject currentInfoPanel = null;
@@ -116,12 +118,17 @@ public class ObjectPlacement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && canPlace && !isMouseOverGUI && priceTower <= manager.money)
         {
+            GameObject placedTower = null;
             int indexTower = towerManager.getIdTowerCurrentlySelected();
             var position = new Vector3(selectionCube.transform.position.x, selectionCube.transform.position.y - 2f, selectionCube.transform.position.z);
             if (indexTower < towers.Length)
-                Instantiate(towers[indexTower], position, selectionCube.transform.rotation);
+                placedTower = (GameObject)Instantiate(towers[indexTower], position, selectionCube.transform.rotation);
             else
-                Instantiate(traps[indexTower - towers.Length], position, selectionCube.transform.rotation);
+                placedTower = (GameObject)Instantiate(traps[indexTower - towers.Length], position, selectionCube.transform.rotation);
+            GameObject towerBlip = Instantiate(TowerBlipPrefab);
+            towerBlip.transform.SetParent(cameraTexture.transform, false);
+            BlipScript scriptBlip = towerBlip.GetComponent<BlipScript>();
+            scriptBlip.target = placedTower.transform;
             manager.money -= priceTower;
             towerManager.DeselectTower();
             Destroy(selectionCube);
