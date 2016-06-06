@@ -9,6 +9,9 @@ public class SpawnMonster : MonoBehaviour {
     public float spawnTime = 1.0f;
     public int nbrBoss = 0;
 
+    public GameObject EnemyBlipPrefab;
+    public GameObject cameraTexture;
+
     private int index;
 	// Use this for initialization
 	void Start () {
@@ -27,6 +30,11 @@ public class SpawnMonster : MonoBehaviour {
         mob.GetComponent<MoveTo>().points = points;
 		AddLifeBarToConvas.addLifeBarToEnemy (mob, mob.GetComponent<EnemieStats>().life);
         mob.GetComponent<MoveTo>().player = player;
+
+        GameObject enemyBlip = Instantiate(EnemyBlipPrefab, location.position, location.rotation) as GameObject;
+        enemyBlip.transform.SetParent(cameraTexture.transform, false);
+        BlipScript scriptBlip = enemyBlip.GetComponent<BlipScript>();
+        scriptBlip.target = mob.transform;
     }
 
     public void spawBoss(Transform location, Transform[] points, Object player)
@@ -35,5 +43,10 @@ public class SpawnMonster : MonoBehaviour {
         mob.GetComponent<MoveTo>().points = points;
         AddLifeBarToConvas.addLifeBarToEnemy(mob, mob.GetComponent<EnemieStats>().life);
         mob.GetComponent<MoveTo>().player = player;
+
+        GameObject enemyBlip = Instantiate(EnemyBlipPrefab, location.position, location.rotation) as GameObject;
+        enemyBlip.transform.SetParent(cameraTexture.transform, false);
+        BlipScript scriptBlip = enemyBlip.GetComponent<BlipScript>();
+        scriptBlip.target = mob.transform;
     }
 }

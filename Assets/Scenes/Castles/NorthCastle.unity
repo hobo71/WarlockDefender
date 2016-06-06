@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.48
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a6ff3903b752b4094baefd8399a240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
+  maxlife: 100
 --- !u!114 &102795116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,8 +613,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 102795114}
-  m_LocalRotation: {x: 0, y: -0.59106654, z: 0, w: 0.80662286}
-  m_LocalPosition: {x: 135.69, y: 99.625, z: 406.64}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 137.95192, y: 66.98552, z: 53.59551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2069822559}
@@ -795,8 +795,8 @@ Canvas:
 --- !u!1 &158782362
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 124718, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+  m_PrefabInternal: {fileID: 427318452}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 158782366}
@@ -813,8 +813,9 @@ GameObject:
 --- !u!114 &158782363
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11438502, guid: c0dfff6a0815f95488ce6f2d8c1fa580,
+    type: 2}
+  m_PrefabInternal: {fileID: 427318452}
   m_GameObject: {fileID: 158782362}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -825,15 +826,19 @@ MonoBehaviour:
   invalidMat: {fileID: 2100000, guid: ea767eb859206e649935a891c24a2ebc, type: 2}
   selectionPrefab: {fileID: 129896, guid: 81c1b1c1d114bc5468b7c8d13c9afc06, type: 2}
   towers: []
+  traps: []
   buildingCamera: {fileID: 1608422642}
-  tileSize: 1
   manager: {fileID: 0}
   towerManager: {fileID: 0}
+  currentInfoPanel: {fileID: 0}
+  terrain: {fileID: 0}
+  roadTextureId: 0
 --- !u!154 &158782364
 TerrainCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 15402392, guid: c0dfff6a0815f95488ce6f2d8c1fa580,
+    type: 2}
+  m_PrefabInternal: {fileID: 427318452}
   m_GameObject: {fileID: 158782362}
   m_Material: {fileID: 0}
   m_Enabled: 1
@@ -842,13 +847,14 @@ TerrainCollider:
 --- !u!218 &158782365
 Terrain:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 21896596, guid: c0dfff6a0815f95488ce6f2d8c1fa580,
+    type: 2}
+  m_PrefabInternal: {fileID: 427318452}
   m_GameObject: {fileID: 158782362}
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 443cb016fc58efc42b2f87e197bd619a, type: 2}
-  m_TreeDistance: 2000
+  m_TreeDistance: 300
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -861,7 +867,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialType: 0
+  m_MaterialType: 1
   m_LegacySpecular:
     serializedVersion: 2
     rgba: 4286545791
@@ -873,8 +879,8 @@ Terrain:
 --- !u!4 &158782366
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+  m_PrefabInternal: {fileID: 427318452}
   m_GameObject: {fileID: 158782362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -100, z: 0}
@@ -1842,6 +1848,56 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 414597839}
+--- !u!1001 &427318452
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450584, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 124718, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: m_Name
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438502, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+      propertyPath: buildingCamera
+      value: 
+      objectReference: {fileID: 1608422642}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c0dfff6a0815f95488ce6f2d8c1fa580, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &439324004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,9 +2435,11 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 321176915}
   numberOfEnemies: 2
   spawnTime: 2
+  nbrBoss: 0
 --- !u!1 &488879014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +2474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 488879020}
   levelManager: {fileID: 1571320679}
+  canBeActivated: 1
 --- !u!114 &488879016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6192,6 +6251,7 @@ MonoBehaviour:
   EndPanelWin: {fileID: 1286947915}
   EndPanelLose: {fileID: 1110068788}
   EndPanelWinWaveScript: {fileID: 1551825440}
+  pauseScript: {fileID: 0}
   money: 0
   waveNb: 0
 --- !u!114 &1571320680
@@ -6821,9 +6881,11 @@ MonoBehaviour:
   monsters:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 321176915}
   numberOfEnemies: 2
   spawnTime: 2
+  nbrBoss: 0
 --- !u!1 &1769301265
 GameObject:
   m_ObjectHideFlags: 0
@@ -7119,8 +7181,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.71
+  m_Color: {r: 1, g: 0.9937456, b: 0.9485294, a: 1}
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -8113,6 +8175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a801fc4d301147409fbad0abbd71d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropDown: {fileID: 0}
 --- !u!114 &2038920330
 MonoBehaviour:
   m_ObjectHideFlags: 0
