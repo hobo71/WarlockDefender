@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialActivation: 0
   levelChoose: -1
-  unlockCastle: 2
+  unlockCastle: 4
   listSpellsSelected: []
 --- !u!4 &673879629
 Transform:
@@ -2332,7 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectionScript: {fileID: 259163292}
-  idSelectionCastle: 2
+  idSelectionCastle: 1
 --- !u!1 &927508670
 GameObject:
   m_ObjectHideFlags: 0
