@@ -28,7 +28,6 @@ public class ObjectPlacement : MonoBehaviour
 
     void Start() {
 		manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
-		towerManager = GameObject.Find("TowerPlacementTowerSelection").GetComponent<PanelTowersManager>();
 		ActivateScript ();
     }
 
@@ -135,7 +134,6 @@ public class ObjectPlacement : MonoBehaviour
     }
 
     public void DisabledPlacement() {
-		Debug.Log ("plop");
         isMouseOverGUI = true;
     }
 

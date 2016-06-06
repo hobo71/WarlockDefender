@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class OptionMenuScript : MonoBehaviour {
 	public Dropdown dropDown;
+	
+	public Toggle tutoToggle;
+	
+	public DataContainerScript datasContainer;
 	// Use this for initialization
 	void Start () {
         List<string> listOption = new List<string>();
@@ -22,6 +26,7 @@ public class OptionMenuScript : MonoBehaviour {
         }
         dropDown.AddOptions(listOption);
 		dropDown.value = resPosition;
+		tutoToggle.isOn = datasContainer.TutorialActivation;
 	}
 	
 	// Update is called once per frame

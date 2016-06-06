@@ -536,6 +536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caad66c6a4dc1e489ce314302b62e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  datasContainer: {fileID: 673879628}
+  TutoLevel: {fileID: 1492662808}
 --- !u!1 &265677329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1064,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropDown: {fileID: 456328567}
+  tutoToggle: {fileID: 1644598170}
+  datasContainer: {fileID: 673879628}
 --- !u!1 &456328565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,8 +1644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71e966eb999bd94488075ee51d2a40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialActivation: 1
+  TutorialActivation: 0
   levelChoose: -1
+  unlockCastle: 2
   listSpellsSelected: []
 --- !u!4 &673879629
 Transform:
@@ -4449,7 +4454,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1654147931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5589,8 @@ MonoBehaviour:
   spellSelectedImage2: {fileID: 927508671}
   spellSelectedImage3: {fileID: 78608003}
   spellSelectedImage4: {fileID: 931975047}
+  TutoSpells: {fileID: 1964048845}
+  datasContainer: {fileID: 673879628}
 --- !u!1 &2034174641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5811,6 +5818,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2008851263}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2008851267}
+        m_MethodName: ClearSpells
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

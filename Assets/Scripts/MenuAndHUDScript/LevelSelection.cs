@@ -13,6 +13,10 @@ public class LevelSelection : MonoBehaviour {
 	private int nbCastleUnlock;
 	private int selectedCastle = -1;
 	
+	public DataContainerScript datasContainer;
+	
+	public GameObject TutoLevel;
+	
 	private static string[] castleNames = {"West Castle Selected", "North Castle Selected", "East Castle Selected", "South Castle Selected"};
 	//private string castleSpritesNames[4] = {"WorldMap1CastleUnlock", "WorldMap1CastleUnlock", "WorldMap1CastleUnlock", "WorldMap1CastleUnlock"};
 
@@ -27,8 +31,8 @@ public class LevelSelection : MonoBehaviour {
 	}
 
 	public void InitBasicVariables() {
-		GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().levelChoose = selectedCastle;
-		nbCastleUnlock = 4;
+		datasContainer.levelChoose = selectedCastle;
+		nbCastleUnlock = datasContainer.unlockCastle;
 		selectedCastle = -1;
 		Sprite sprt = Resources.Load<Sprite>("WorldMaps/WorldMap" + nbCastleUnlock + "CastleUnlock") as Sprite;
 		worldMapImage.sprite = sprt;
@@ -55,7 +59,9 @@ public class LevelSelection : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if (TutoLevel.activeSelf != datasContainer.TutorialActivation) {
+			TutoLevel.SetActive(datasContainer.TutorialActivation);
+		}
 		
 	
 	}

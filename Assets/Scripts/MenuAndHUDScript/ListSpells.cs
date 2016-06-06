@@ -17,6 +17,8 @@ public class ListSpells : MonoBehaviour {
 	[SerializeField] Image spellSelectedImage3;
 	[SerializeField] Image spellSelectedImage4;
 
+	[SerializeField] GameObject TutoSpells;
+	[SerializeField] DataContainerScript datasContainer;
 	int nbSelected = 0;
 	int nbMax = 4;
 
@@ -121,7 +123,13 @@ public class ListSpells : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if (TutoSpells.activeSelf != datasContainer.TutorialActivation) {
+			TutoSpells.SetActive(datasContainer.TutorialActivation);
+		}
+	}
+
+	public void ClearSpells() {
+		listSpellsSelected.Clear();
 	}
 
 	private void LoadSpellsList () {

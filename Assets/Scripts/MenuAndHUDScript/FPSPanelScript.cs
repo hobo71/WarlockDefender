@@ -6,11 +6,14 @@ using System.Linq;
 
 public class FPSPanelScript : MonoBehaviour {
 
+	public GameObject TextTuto;
 	public GameObject lifeBar;
 	public FirstPersonShooting ShootingManager;
 	public GameObject[] Spells;
     public PlayerStats playerStats;
 
+
+	public bool tuto;
 	private float life = 100f;
 	private List<SpellsInfos> listSpells;
 	private int listSize = 0;
@@ -19,6 +22,8 @@ public class FPSPanelScript : MonoBehaviour {
 
 
 	private int currentIdSpellOn = -1;
+
+	private int stateOfTuto = 0;
 
     // Use this for initialization
     void Start () {
@@ -39,6 +44,19 @@ public class FPSPanelScript : MonoBehaviour {
 					}
 				});
 				currentCoolDown [i] = 0;
+			}
+		}
+		if (tuto) {
+			TextTuto.SetActive(true);
+		}
+	}
+	
+	public void removeTuto() {
+		if (tuto) {
+			TextTuto.SetActive(false);
+			GameObject obj = GameObject.Find ("MenuDatasContainer");
+			if (obj) {
+				obj.GetComponent<DataContainerScript> ().SetTutorialActivation(false);
 			}
 		}
 	}

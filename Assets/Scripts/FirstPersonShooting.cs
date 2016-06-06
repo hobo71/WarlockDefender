@@ -52,6 +52,7 @@ public class FirstPersonShooting : MonoBehaviour {
             }
 			fpsPanel.StartCoolDownCurrentSpell ();
 			fpsPanel.TurnAllSpellsToFalse ();
+            fpsPanel.removeTuto();
         }
 		/*
         if (Input.GetKeyDown("1"))
