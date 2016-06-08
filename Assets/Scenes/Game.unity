@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 437200037}
-  orbPrefab: {fileID: 115694, guid: 3110385d3d7eae641836e2cf2e2574ba, type: 2}
   fpsPanel: {fileID: 300731744}
   spellPrefab:
   - {fileID: 181626, guid: 9b5f3fa74e05d634481b8f98d0153bb5, type: 2}
@@ -363,7 +362,6 @@ MonoBehaviour:
   - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   spellRange: 20
   Map: {fileID: 0}
-  orbSpeed: 20
 --- !u!114 &39764563
 MonoBehaviour:
   m_ObjectHideFlags: 0

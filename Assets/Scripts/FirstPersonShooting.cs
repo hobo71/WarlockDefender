@@ -4,7 +4,7 @@ using System.Collections;
 public class FirstPersonShooting : MonoBehaviour {
 
     public Camera playerCamera;
-    public GameObject orbPrefab;
+    //public GameObject orbPrefab;
 	public FPSPanelScript fpsPanel;
 
     public GameObject[] spellPrefab;
@@ -13,7 +13,7 @@ public class FirstPersonShooting : MonoBehaviour {
 
     public GameObject Map;
 
-    public float orbSpeed = 20f;
+    //public float orbSpeed = 20f;
 
     private GameObject currentSpellArea;
     private Vector3 spellAreaPosition;
@@ -24,21 +24,21 @@ public class FirstPersonShooting : MonoBehaviour {
     }
 	
 	void Update () {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            GameObject currentOrb = (GameObject)Instantiate(orbPrefab, playerCamera.transform.position + playerCamera.transform.forward, playerCamera.transform.rotation);
-            currentOrb.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * orbSpeed, ForceMode.Impulse);
+   //     if (Input.GetButtonDown("Fire1"))
+   //     {
+   //         GameObject currentOrb = (GameObject)Instantiate(orbPrefab, playerCamera.transform.position + playerCamera.transform.forward, playerCamera.transform.rotation);
+   //         currentOrb.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * orbSpeed, ForceMode.Impulse);
 
-            Physics.IgnoreCollision(currentOrb.GetComponent<Collider>(), GetComponent<Collider>());
-            if (currentSpellArea != null)
-            {
-                Destroy(currentSpellArea);
-                currentSpellArea = null;
-            }
-			fpsPanel.TurnAllSpellsToFalse ();
-        }
+   //         Physics.IgnoreCollision(currentOrb.GetComponent<Collider>(), GetComponent<Collider>());
+   //         if (currentSpellArea != null)
+   //         {
+   //             Destroy(currentSpellArea);
+   //             currentSpellArea = null;
+   //         }
+			//fpsPanel.TurnAllSpellsToFalse ();
+   //     }
 
-        if (Input.GetButtonDown("Fire2") && currentSpellArea != null)
+        if (Input.GetButtonDown("Fire1") && currentSpellArea != null)
         {
             Transform BaseSpellTransform = spellPrefab[spellIndex].GetComponent<Transform>();
             Vector3 positionSpell = new Vector3(currentSpellArea.transform.position.x, BaseSpellTransform.position.y, currentSpellArea.transform.position.z);
