@@ -3732,7 +3732,7 @@ MonoBehaviour:
   - {fileID: 347999413}
   - {fileID: 961715252}
   playerStats: {fileID: 39764563}
-  tuto: 1
+  tuto: 0
 --- !u!114 &300731745
 MonoBehaviour:
   m_ObjectHideFlags: 0

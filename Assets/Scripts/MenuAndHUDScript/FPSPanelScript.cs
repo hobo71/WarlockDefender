@@ -32,6 +32,7 @@ public class FPSPanelScript : MonoBehaviour {
 		if (obj) {
 			listSpells = obj.GetComponent<DataContainerScript> ().listSpellsSelected;
 			listSize = listSpells.Count ();
+			tuto = obj.GetComponent<DataContainerScript> ().TutorialActivation;
 		}	
 		for (int i = 0; i < Spells.Length; i++) {
 			if (listSize > i) {
@@ -58,6 +59,7 @@ public class FPSPanelScript : MonoBehaviour {
 			if (obj) {
 				obj.GetComponent<DataContainerScript> ().SetTutorialActivation(false);
 			}
+			tuto = false;
 		}
 	}
 	

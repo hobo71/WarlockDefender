@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialActivation: 0
   levelChoose: -1
-  unlockCastle: 4
+  unlockCastle: 2
   listSpellsSelected: []
 --- !u!4 &673879629
 Transform:
