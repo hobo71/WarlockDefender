@@ -84,7 +84,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: 0.16666667
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: f612ca237cfb3f64d94b5cda519f1e61, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 260154a2e47515e4b8a43ae8eb089d53, type: 2}
 --- !u!1 &1909221
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,12 +132,12 @@ MonoBehaviour:
   - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
-  AddLifeBarToConvas: {fileID: 0}
+  AddLifeBarToConvas: {fileID: 156002503}
   numberOfEnemies: 30
   spawnTime: 2
   nbrBoss: 2
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
-  cameraTexture: {fileID: 1710975021}
+  cameraTexture: {fileID: 1925780564}
 --- !u!1 &10128161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 437200037}
-  orbPrefab: {fileID: 115694, guid: 3110385d3d7eae641836e2cf2e2574ba, type: 2}
   fpsPanel: {fileID: 300731744}
   spellPrefab:
   - {fileID: 181626, guid: 9b5f3fa74e05d634481b8f98d0153bb5, type: 2}
@@ -1867,7 +1866,6 @@ MonoBehaviour:
   - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   spellRange: 20
   Map: {fileID: 1794461602}
-  orbSpeed: 20
 --- !u!114 &39764563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22684,12 +22682,12 @@ MonoBehaviour:
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 0}
-  AddLifeBarToConvas: {fileID: 0}
+  AddLifeBarToConvas: {fileID: 156002503}
   numberOfEnemies: 20
   spawnTime: 2
   nbrBoss: 0
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
-  cameraTexture: {fileID: 1710975021}
+  cameraTexture: {fileID: 1925780564}
 --- !u!1 &1448012206
 GameObject:
   m_ObjectHideFlags: 0
@@ -23502,7 +23500,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1794461603}
           m_MethodName: DisabledPlacement
           m_Mode: 1
           m_Arguments:
@@ -23519,7 +23517,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1794461603}
           m_MethodName: EnabledPlacement
           m_Mode: 1
           m_Arguments:
@@ -23617,7 +23615,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1794461603}
         m_MethodName: DesactivateScript
         m_Mode: 1
         m_Arguments:
@@ -24789,10 +24787,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690993857}
   m_Mesh: {fileID: 4300074, guid: 08969648eac6acf4da5bfd2458b6c084, type: 3}
---- !u!1 &1710975021 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 167758, guid: 88d0ea870c74d9b4f96a31dd06690a5b, type: 2}
-  m_PrefabInternal: {fileID: 1290961306}
 --- !u!1 &1717238353
 GameObject:
   m_ObjectHideFlags: 0
@@ -26554,9 +26548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd3ae835c3e9214999f36d0f063651d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSpawner:
-  - {fileID: 0}
-  - {fileID: 0}
+  particleSpawner: []
   Player: {fileID: 39764558}
   Waves:
   - {fileID: 1445215582}
@@ -26565,7 +26557,6 @@ MonoBehaviour:
   - {fileID: 1046616268}
   - {fileID: 1883908658}
   - {fileID: 397740138}
-  - {fileID: 1046616268}
 --- !u!1 &1758138676
 GameObject:
   m_ObjectHideFlags: 0
@@ -26967,7 +26958,7 @@ MonoBehaviour:
   traps:
   - {fileID: 160726, guid: e9248a725cf697846843411a7cd62545, type: 2}
   TowerBlipPrefab: {fileID: 128886, guid: 79cf481320e8b80438462d67e93d68fd, type: 2}
-  cameraTexture: {fileID: 1710975021}
+  cameraTexture: {fileID: 1925780564}
   buildingCamera: {fileID: 1430795685}
   manager: {fileID: 1751323042}
   towerManager: {fileID: 1394983135}
@@ -31259,6 +31250,10 @@ MonoBehaviour:
   timeToWait: 5
   textTime: {fileID: 634690380}
   manager: {fileID: 1751323042}
+--- !u!1 &1925780564 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190484, guid: 2f332583e474b294c989059a74a0962a, type: 2}
+  m_PrefabInternal: {fileID: 666999318}
 --- !u!1 &1932874353
 GameObject:
   m_ObjectHideFlags: 0
