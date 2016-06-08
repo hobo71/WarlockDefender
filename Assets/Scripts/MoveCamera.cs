@@ -8,10 +8,10 @@ public class MoveCamera : MonoBehaviour {
     
     private bool goToCastle = false;
     private bool goToStartPoint = false;
-    public GameObject TutoSpawn;
-    public GameObject TutoCastle;
-    public GameObject TutoTowers;
-    public GameObject blackBackground;
+    public GameObject TutoSpawn = null;
+    public GameObject TutoCastle = null;
+    public GameObject TutoTowers = null;
+    public GameObject blackBackground = null;
     
     public GameObject infoPanel;
     public GameObject castleInfosPanel;
@@ -45,10 +45,12 @@ public class MoveCamera : MonoBehaviour {
             towerPlacementPanel.SetActive(false);
         } else {
             transform.position = startPoint;
-            TutoSpawn.SetActive(false);
-            TutoCastle.SetActive(false);
-            TutoTowers.SetActive(false);
-            blackBackground.SetActive(false);
+            if (TutoSpawn && TutoCastle && TutoTowers && blackBackground) {
+                TutoSpawn.SetActive(false);
+                TutoCastle.SetActive(false);
+                TutoTowers.SetActive(false);
+                blackBackground.SetActive(false);                
+            }
             infoPanel.SetActive(true);
             castleInfosPanel.SetActive(true);
             towerPlacementPanel.SetActive(true);
