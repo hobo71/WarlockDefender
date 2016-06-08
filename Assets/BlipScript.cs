@@ -19,6 +19,6 @@ public class BlipScript : MonoBehaviour {
             return;
         }
         Vector2 newPosition = map.TransformPosition(target.position);
-        myRectTransform.anchoredPosition = newPosition;
+        myRectTransform.localPosition = newPosition;
     }
 }

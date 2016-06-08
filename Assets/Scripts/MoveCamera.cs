@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MoveCamera : MonoBehaviour {
     public float panSpeed = 30.0f;
+    public float[] xPoints;
+    public float[] zPoints;
 
     public bool tutoMode;
     
@@ -115,16 +117,16 @@ public class MoveCamera : MonoBehaviour {
         mouseOrigin = Input.mousePosition;
         //Vector3 pos = gameObject.GetComponent<Camera>().ScreenToViewportPoint(Input.mousePosition);
         //Vector3 move = pos;
-        if (mouseOrigin.x <= 0 + delta && transform.position.z <= 153f) {
+        if (mouseOrigin.x <= 0 + delta && transform.position.z <= zPoints[0]) {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
-        if (mouseOrigin.x >= (Screen.width - delta) && transform.position.z >= 48f) {
+        if (mouseOrigin.x >= (Screen.width - delta) && transform.position.z >= zPoints[1]) {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
-        if (mouseOrigin.y <= 0 + delta && transform.position.x >= 5f) {
+        if (mouseOrigin.y <= 0 + delta && transform.position.x >= xPoints[0]) {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
-        if (mouseOrigin.y >= (Screen.height - delta) && transform.position.x <= 137f) {
+        if (mouseOrigin.y >= (Screen.height - delta) && transform.position.x <= xPoints[1]) {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
     }

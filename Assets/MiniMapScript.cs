@@ -7,7 +7,6 @@ public class MiniMapScript : MonoBehaviour {
     public RectTransform mapRect;
 
     void Start () {
-	    mapRect = GetComponent<RectTransform>();
     }
 	
 	void Update () {
@@ -17,11 +16,9 @@ public class MiniMapScript : MonoBehaviour {
     public Vector2 TransformPosition(Vector3 position)
     {
         Vector2 ScreenPos = cam.WorldToViewportPoint(position);
+        //Debug.Log(mapRect.sizeDelta);
         ScreenPos.x *= mapRect.sizeDelta.x;
         ScreenPos.y *= mapRect.sizeDelta.y;
-
-        ScreenPos.x -= mapRect.sizeDelta.x * mapRect.pivot.x;
-        ScreenPos.y -= mapRect.sizeDelta.y * mapRect.pivot.y;
 
         return ScreenPos;
     }
