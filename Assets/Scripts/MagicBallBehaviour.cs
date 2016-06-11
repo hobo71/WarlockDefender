@@ -8,7 +8,7 @@ public class MagicBallBehaviour : MonoBehaviour {
     public float speed = 20f;
 
     void Start () {
-        Camera playerCamera = GameObject.Find("POV Camera").GetComponent<Camera>();
+        //Camera playerCamera = GameObject.Find("POV Camera").GetComponent<Camera>();
         //GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * speed, ForceMode.Impulse);
     }
 	
