@@ -23,7 +23,7 @@ public class FPSPanelScript : MonoBehaviour {
 
 	private int currentIdSpellOn = -1;
 
-	private int stateOfTuto = 0;
+	//private int stateOfTuto = 0;
 
     // Use this for initialization
     void Start () {

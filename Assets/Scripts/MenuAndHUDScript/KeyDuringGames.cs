@@ -5,16 +5,16 @@ public class KeyDuringGames : MonoBehaviour {
 
     
 
-    private Canvas pauseCanvas;
-    private LevelManager levelManager;
+    //private Canvas pauseCanvas;
+    //private LevelManager levelManager;
 
 
     //bool inGame = false;
     
 	// Use this for initialization
 	void Start () {
-        pauseCanvas = GameObject.Find("PauseMenuCanvas").GetComponent<Canvas>();
-        levelManager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
+        //pauseCanvas = GameObject.Find("PauseMenuCanvas").GetComponent<Canvas>();
+        //levelManager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
     }
 	
 	// Update is called once per frame

@@ -32,7 +32,7 @@ public class ObjectPlacement : MonoBehaviour
     [SerializeField] int roadTextureId = 0;
 
     bool canPlace = false;
-    bool isRoad = false;
+    //bool isRoad = false;
 
     void Start() {
 		manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
@@ -187,7 +187,7 @@ public class ObjectPlacement : MonoBehaviour
         for (var i = 0; i<mix.Length; i++)
             if (mix[i] > roadMix)
                 return false;
-        isRoad = true;
+        //isRoad = true;
         return true;
     }
 }

@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71e966eb999bd94488075ee51d2a40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialActivation: 0
+  TutorialActivation: 1
   levelChoose: -1
   unlockCastle: 2
   listSpellsSelected: []

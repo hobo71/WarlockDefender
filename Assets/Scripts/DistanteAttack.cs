@@ -4,7 +4,7 @@ using System.Collections;
 public class DistanteAttack : MonoBehaviour, AEnemyAttack {
     public int damage = 20;
     public GameObject projectile;
-    private Rigidbody rdby = null;
+    //private Rigidbody rdby = null;
     // Use this for initialization
     void Start()
     {

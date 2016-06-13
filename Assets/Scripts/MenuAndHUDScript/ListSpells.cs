@@ -25,8 +25,8 @@ public class ListSpells : MonoBehaviour {
 	private static string[] spellsFiles = {"fireSpellDescription",
 											"meteorSpellDescription",
 //											"wallSpellDescription",
-											"freezeSpellDescription",
-											"magicBallSpellDescription"
+											"freezeSpellDescription"
+//											"magicBallSpellDescription"
 //											"poisonSpellDescription"
 	};
 
@@ -147,6 +147,10 @@ public class ListSpells : MonoBehaviour {
     public void LoadGameScene(string name)
     {
 		GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().AddSpellList (listSpellsSelected);
+		int idCastle = GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().levelChoose;
+		name = name + idCastle.ToString();
+		if (name != "Game0")
+			GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().TutorialActivation = false;
         SceneManager.LoadScene(name);
     }
 
