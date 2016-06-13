@@ -39,15 +39,20 @@ public class FirstPersonShooting : MonoBehaviour {
 			//fpsPanel.TurnAllSpellsToFalse ();
    //     }
 
-        if (Input.GetButtonDown("Fire1") && spellReady)
-        {
-            Transform BaseSpellTransform = spellPrefab[spellIndex].GetComponent<Transform>();
-            Vector3 positionSpell = new Vector3(currentSpellArea.transform.position.x, BaseSpellTransform.position.y, currentSpellArea.transform.position.z);
-            Instantiate(spellPrefab[spellIndex], positionSpell, BaseSpellTransform.transform.rotation);
+        if (Input.GetButtonDown("Fire1") && spellReady) {
+			Transform BaseSpellTransform = spellPrefab [spellIndex].GetComponent<Transform> ();
+			Vector3 positionSpell;
+
+			if (currentSpellArea) {
+				positionSpell = new Vector3 (currentSpellArea.transform.position.x, BaseSpellTransform.position.y, currentSpellArea.transform.position.z);
+			} else {
+				positionSpell = playerCamera.transform.position + playerCamera.transform.forward;
+			}
+			GameObject spell = (GameObject)Instantiate(spellPrefab[spellIndex], positionSpell, BaseSpellTransform.transform.rotation);
+			Physics.IgnoreCollision(spell.GetComponent<Collider>(), GetComponent<Collider>());
 
 
-            if (currentSpellArea != null)
-            {
+            if (currentSpellArea != null) {
                 Destroy(currentSpellArea);
                 currentSpellArea = null;
             }
@@ -56,38 +61,16 @@ public class FirstPersonShooting : MonoBehaviour {
 			fpsPanel.TurnAllSpellsToFalse ();
             fpsPanel.removeTuto();
         }
-		/*
-        if (Input.GetKeyDown("1"))
-        {
-            if (spellArea != null)
-            {
-                Destroy(spellArea);
-                spellArea = null;
-            }
-            spellArea = (GameObject)Instantiate(spellAreaPrefab, gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
-            spellIndex = 0;
-        }
-        else if (Input.GetKeyDown("2"))
-        {
-            if (spellArea != null)
-            {
-                Destroy(spellArea);
-                spellArea = null;
-            }
-            spellArea = (GameObject)Instantiate(spellAreaPrefab, gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
-            spellIndex = 1;
-        }*/
     }
 
 	public void newSpellIsSelected(int newSpellId) {
-		if (currentSpellArea != null)
-		{
+		if (currentSpellArea != null) {
 			Destroy(currentSpellArea);
             currentSpellArea = null;
 		}
-        if (!spellAreaPrefab[newSpellId])
-            return;
-        currentSpellArea = (GameObject)Instantiate(spellAreaPrefab[newSpellId], gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
+        if (spellAreaPrefab[newSpellId])
+        	currentSpellArea = (GameObject)Instantiate(spellAreaPrefab[newSpellId], gameObject.transform.position + (gameObject.transform.forward * 10), gameObject.transform.rotation);
+		
 		spellIndex = newSpellId;
         spellReady = true;
 	}

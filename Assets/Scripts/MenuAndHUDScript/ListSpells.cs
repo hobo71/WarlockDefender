@@ -25,8 +25,9 @@ public class ListSpells : MonoBehaviour {
 	private static string[] spellsFiles = {"fireSpellDescription",
 											"meteorSpellDescription",
 //											"wallSpellDescription",
-											"freezeSpellDescription"
-//											"magicBallSpellDescription"
+											"freezeSpellDescription",
+											"magicBallSpellDescription",
+											"ThunderSpellDescription"
 //											"poisonSpellDescription"
 	};
 

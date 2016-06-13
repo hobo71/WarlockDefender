@@ -13,10 +13,17 @@ public class EnemieStats : MonoBehaviour {
     [SerializeField]
     GameObject potion;
 
-    private int random;
+	private MoveTo moveToScript;
+
+	private int random;
+	private bool isStun;
+    private float stunTime;
 
     // Use this for initialization
     void Start () {
+		moveToScript = GetComponent<MoveTo> ();
+		isStun = false;
+		stunTime = 0f;
 	}
 	
     public void ApplyDamage(float damage)
@@ -24,8 +31,24 @@ public class EnemieStats : MonoBehaviour {
         life -= damage;
     }
 
+	public void ApplyStun(float time)
+	{
+		stunTime = time;
+		isStun = true;
+		moveToScript.StopMovement(true);
+		Debug.Log ("Apply Stun");
+	}
+
 	// Update is called once per frame
 	void Update () {
+		if (isStun && stunTime > 0f) {
+			stunTime -= Time.deltaTime;
+		} else if (isStun && stunTime <= 0f) {
+			isStun = false;
+			stunTime = 0f;
+			moveToScript.StopMovement(false);
+		}
+
         if (life <= 0 && enemie != null)
         {
             random = Random.Range(0, 20);

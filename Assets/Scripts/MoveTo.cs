@@ -214,4 +214,20 @@ public class MoveTo : MonoBehaviour
     {
         isAnim = anim;
     }
+
+	public void StopMovement(bool state) {
+		if (state) {
+			agent.Stop ();
+			if (Maj)
+				animClip.Play("Idle");
+			else if (!Maj)
+				animClip.Play("idle");
+		} else {
+			agent.Resume ();
+			if (Maj)
+				animClip.Play("Walk");
+			else if (!Maj)
+				animClip.Play("walk");
+		}
+	}
 }

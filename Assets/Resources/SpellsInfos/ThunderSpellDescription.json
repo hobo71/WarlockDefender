@@ -1,0 +1,7 @@
+﻿{
+	"id": 4,
+	"imageResourcePath": "SpellsInfos/SpellsImages/thunderSpell",
+	"name" : "Thunder Strike",
+	"description" : "Cast a Thunder that smash on the ground dealing damage in an area and stun the enemies.",
+	"coolDown": 5
+}
