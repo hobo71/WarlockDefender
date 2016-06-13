@@ -26948,7 +26948,7 @@ GameObject:
   - 154: {fileID: 1794461604}
   - 114: {fileID: 1794461603}
   m_Layer: 9
-  m_Name: MergeMap
+  m_Name: Map1
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
