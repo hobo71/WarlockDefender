@@ -3,23 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-public class DataContainerScript : MonoBehaviour {
+public class DataContainerScript {
 
-	public bool TutorialActivation;
+	public bool TutorialActivation = false;
 	public int levelChoose = -1;
-	public int unlockCastle;
+	public int unlockCastle = 2;
 	public List<SpellsInfos> listSpellsSelected = new List<SpellsInfos>();
 
+	 static private DataContainerScript _instance;
+     static public DataContainerScript instance {
+         get {
+             if(_instance == null)
+                 _instance = new DataContainerScript();
+             return _instance;
+         }
+	 }
 
-	void Start () {
-		UnityEngine.Object.DontDestroyOnLoad (gameObject);
-		if (GameObject.FindGameObjectsWithTag("MenuDatas").Length > 1)
-		{
-			Destroy(gameObject);
-		}
-
-			//uncomment for load save
-		/*if (File.Exists(Application.persistentDataPath + "/save.json")) {
+	 protected DataContainerScript () {
+		 /*if (File.Exists(Application.persistentDataPath + "/save.json")) {
 			string jsonText = "{}";
 			FileStream fs = File.Open(Application.persistentDataPath + "/save.json", FileMode.Open);
 			if (fs != null) {
@@ -33,17 +34,13 @@ public class DataContainerScript : MonoBehaviour {
 				}
 			}
 		}*/
-
-
-	}
-
-	void Update () {}
+	 }
 
 	public void AddSpellList(List<SpellsInfos> newlistSpells) {
 		listSpellsSelected = newlistSpells;
 	}
 
-	public void saveCurrentSettings() {
+	private void saveCurrentSettings() {
 		SaveDatas infos = new SaveDatas();
 		infos.Tutorial = TutorialActivation ? 1 : 0;
 		infos.UnlockLevels = unlockCastle;

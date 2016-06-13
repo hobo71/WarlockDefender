@@ -7,8 +7,6 @@ public class OptionMenuScript : MonoBehaviour {
 	public Dropdown dropDown;
 	
 	public Toggle tutoToggle;
-	
-	public DataContainerScript datasContainer;
 	// Use this for initialization
 	void Start () {
         List<string> listOption = new List<string>();
@@ -26,7 +24,7 @@ public class OptionMenuScript : MonoBehaviour {
         }
         dropDown.AddOptions(listOption);
 		dropDown.value = resPosition;
-		tutoToggle.isOn = datasContainer.TutorialActivation;
+		tutoToggle.isOn = DataContainerScript.instance.TutorialActivation;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +32,10 @@ public class OptionMenuScript : MonoBehaviour {
 	
 	}
     
+	public void ChangeTutorialActivation(bool isActivate) {
+		DataContainerScript.instance.SetTutorialActivation(isActivate);
+	}
+	
     
     public void ChangeResolution(int num) {
         Resolution[] resolutions = Screen.resolutions;

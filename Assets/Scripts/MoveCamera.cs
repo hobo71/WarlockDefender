@@ -32,10 +32,8 @@ public class MoveCamera : MonoBehaviour {
     private float journeyLength;
     // Use this for initialization
     void Start () {
-        GameObject obj = GameObject.Find ("MenuDatasContainer");
-		if (obj) {
-			tutoMode = obj.GetComponent<DataContainerScript> ().TutorialActivation;
-        }
+
+        tutoMode = DataContainerScript.instance.TutorialActivation;
         if (tutoMode) {
             transform.position = spawnPoint;
             TutoSpawn.SetActive(true);

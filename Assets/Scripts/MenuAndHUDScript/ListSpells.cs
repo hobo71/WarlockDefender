@@ -18,7 +18,6 @@ public class ListSpells : MonoBehaviour {
 	[SerializeField] Image spellSelectedImage4;
 
 	[SerializeField] GameObject TutoSpells;
-	[SerializeField] DataContainerScript datasContainer;
 	int nbSelected = 0;
 	int nbMax = 4;
 
@@ -124,13 +123,16 @@ public class ListSpells : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (TutoSpells.activeSelf != datasContainer.TutorialActivation) {
-			TutoSpells.SetActive(datasContainer.TutorialActivation);
+		if (TutoSpells.activeSelf != DataContainerScript.instance.TutorialActivation) {
+			TutoSpells.SetActive(DataContainerScript.instance.TutorialActivation);
 		}
 	}
 
 	public void ClearSpells() {
 		listSpellsSelected.Clear();
+		buttonsList.ForEach (delegate(GameObject but) {
+			but.GetComponentInChildren<Toggle> ().isOn = false;
+		});
 	}
 
 	private void LoadSpellsList () {
@@ -146,12 +148,12 @@ public class ListSpells : MonoBehaviour {
 
     public void LoadGameScene(string name)
     {
-		GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().AddSpellList (listSpellsSelected);
-		int idCastle = GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().levelChoose;
-		name = name + idCastle.ToString();
-		if (name != "Game0")
-			GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().TutorialActivation = false;
-        SceneManager.LoadScene(name);
+		DataContainerScript.instance.AddSpellList (listSpellsSelected);
+		int idCastle = DataContainerScript.instance.levelChoose;
+		string nameScene = name + idCastle.ToString();
+		if (nameScene != "Game0")
+			DataContainerScript.instance.SetTutorialActivation(false);
+        SceneManager.LoadScene(nameScene);
     }
 
 }

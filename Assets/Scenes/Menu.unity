@@ -536,7 +536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caad66c6a4dc1e489ce314302b62e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  datasContainer: {fileID: 673879628}
   TutoLevel: {fileID: 1492662808}
 --- !u!1 &265677329
 GameObject:
@@ -1065,7 +1064,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropDown: {fileID: 456328567}
   tutoToggle: {fileID: 1644598170}
-  datasContainer: {fileID: 673879628}
 --- !u!1 &456328565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,49 +1615,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 658514403}
---- !u!1 &673879627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 673879629}
-  - 114: {fileID: 673879628}
-  m_Layer: 0
-  m_Name: MenuDatasContainer
-  m_TagString: MenuDatas
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &673879628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 673879627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71e966eb999bd94488075ee51d2a40d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TutorialActivation: 1
-  levelChoose: -1
-  unlockCastle: 2
-  listSpellsSelected: []
---- !u!4 &673879629
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 673879627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 318, y: 179, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &689402638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1492662809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4441,8 +4396,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 673879628}
-        m_MethodName: SetTutorialActivation
+      - m_Target: {fileID: 400991847}
+        m_MethodName: ChangeTutorialActivation
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5445,7 +5400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1964048846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5590,7 +5545,6 @@ MonoBehaviour:
   spellSelectedImage3: {fileID: 78608003}
   spellSelectedImage4: {fileID: 931975047}
   TutoSpells: {fileID: 1964048845}
-  datasContainer: {fileID: 673879628}
 --- !u!1 &2034174641
 GameObject:
   m_ObjectHideFlags: 0

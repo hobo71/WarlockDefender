@@ -28,12 +28,9 @@ public class FPSPanelScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         transf = lifeBar.GetComponent<RectTransform> ();
-		GameObject obj = GameObject.Find ("MenuDatasContainer");
-		if (obj) {
-			listSpells = obj.GetComponent<DataContainerScript> ().listSpellsSelected;
-			listSize = listSpells.Count ();
-			tuto = obj.GetComponent<DataContainerScript> ().TutorialActivation;
-		}	
+		listSpells = DataContainerScript.instance.listSpellsSelected;
+		listSize = listSpells.Count ();
+		tuto = DataContainerScript.instance.TutorialActivation;
 		for (int i = 0; i < Spells.Length; i++) {
 			if (listSize > i) {
 				Spells[i].transform.FindChild("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> (listSpells [i].imageResourcePath) as Sprite;
@@ -55,10 +52,7 @@ public class FPSPanelScript : MonoBehaviour {
 	public void removeTuto() {
 		if (tuto) {
 			TextTuto.SetActive(false);
-			GameObject obj = GameObject.Find ("MenuDatasContainer");
-			if (obj) {
-				obj.GetComponent<DataContainerScript> ().SetTutorialActivation(false);
-			}
+			DataContainerScript.instance.SetTutorialActivation(false);
 			tuto = false;
 		}
 	}
