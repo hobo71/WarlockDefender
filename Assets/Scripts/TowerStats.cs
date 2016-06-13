@@ -7,6 +7,7 @@ public class TowerStats : MonoBehaviour {
     GameObject towerInfoPanel;
 
     public GameObject projectilePrefab;
+    public GameObject projectilePrefabLvl2;
     public Sprite towerImage;
     public string towerName = "Tower";
     public float towerDamage = 10f;
@@ -17,9 +18,16 @@ public class TowerStats : MonoBehaviour {
     public float spreadZone = 0f;
     public float towerPrice = 100f;
     public float sellPercentage = 20f;
+    public float towerPriceUp;
+    public int lvl = 1;
+    public bool isUpdate = false;
+    private GameObject infoPanel;
+
+    private LevelManager manager;
 
     void Start () {
-
+        manager = GameObject.Find("_SCRIPTS_").GetComponent<LevelManager>();
+        towerPriceUp = towerPrice * 5;
 	}
 	
 	void Update () {
@@ -28,11 +36,16 @@ public class TowerStats : MonoBehaviour {
 
     public GameObject ShowTowerInfo() {
         Debug.Log("Show Info Panel");
-        GameObject infoPanel = Instantiate(towerInfoPanel);
+        if (infoPanel != null)
+            Destroy(infoPanel);
+        infoPanel = Instantiate(towerInfoPanel);
         infoPanel.transform.SetParent(GameObject.Find("GameHUDCanvas").transform, false);
         FillTowerInfoPanel fillTowerInfo = infoPanel.GetComponent<FillTowerInfoPanel>();
         fillTowerInfo.SetTowerImageInfo(towerImage);
         fillTowerInfo.SetTowerTypeInfo(towerName);
+        fillTowerInfo.SetTowerLevel("Level : " + lvl.ToString());
+        fillTowerInfo.SetTowerPrice("Price for up : " + towerPriceUp.ToString());
         return infoPanel;
     }
+
 }

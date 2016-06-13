@@ -255,6 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerInfoPanel: {fileID: 194748, guid: a6ec9925dc6319d45b7884473a79a7a1, type: 2}
   projectilePrefab: {fileID: 103724, guid: 24637d1e28e29724fb142aacedfe347a, type: 2}
+  projectilePrefabLvl2: {fileID: 165782, guid: f672e7d657c0c2f4280bc0be343338f7, type: 2}
   towerImage: {fileID: 21300000, guid: db12930735b5e6e4daae075fe5da8eb6, type: 3}
   towerName: Arrow Tower
   towerDamage: 10
@@ -265,6 +266,9 @@ MonoBehaviour:
   spreadZone: 0
   towerPrice: 100
   sellPercentage: 33
+  towerPriceUp: 0
+  lvl: 1
+  isUpdate: 0
 --- !u!119 &11954238
 Projector:
   m_ObjectHideFlags: 1
