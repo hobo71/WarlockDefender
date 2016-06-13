@@ -190,4 +190,23 @@ public class ObjectPlacement : MonoBehaviour
         //isRoad = true;
         return true;
     }
+
+  public void UpdateTower(GameObject button)
+    {
+        if (currentTowerStats == null)
+            return;
+        GameObject tower = currentTowerStats.transform.root.gameObject;
+
+        if (manager.money >= currentTowerStats.towerPrice)
+        {
+            currentTowerStats.isUpdate = true;
+            currentTowerStats.projectileDamage += 10;
+            currentTowerStats.lvl += 1;
+            currentTowerStats.ShowTowerInfo();
+            currentTowerStats.projectilePrefab = currentTowerStats.projectilePrefabLvl2;
+            manager.money -= (int)currentTowerStats.towerPriceUp;
+            button.SetActive(false);
+        }
+    }
+
 }

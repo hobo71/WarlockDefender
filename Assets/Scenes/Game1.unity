@@ -20330,7 +20330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448312, guid: 88d0ea870c74d9b4f96a31dd06690a5b, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d0ea870c74d9b4f96a31dd06690a5b, type: 2}
@@ -25601,7 +25601,7 @@ GameObject:
   - 154: {fileID: 1794461604}
   - 114: {fileID: 1794461603}
   m_Layer: 9
-  m_Name: MergeMap
+  m_Name: Map1
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

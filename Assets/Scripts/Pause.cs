@@ -17,18 +17,27 @@ public class Pause : MonoBehaviour {
 	void Update () {
 		if (canBeActivated == true && Input.GetKeyUp (KeyCode.Escape))
 		{
-			MenuDisplay();
-			if (isPaused) {
-				levelManager.EnabledPause ();
-			} else {
-				levelManager.DisabledPause ();
+			if (isPaused == false) {
+				isPaused = true;
+				canvas.enabled = true;
+				levelManager.EnabledPause ();	
 			}
 		}
 	}
-
-	public void MenuDisplay()
+	
+	public void DisablePause()
 	{
-		isPaused = !isPaused;
-		canvas.enabled = isPaused;
+		if (isPaused == true) {
+			isPaused = false;
+			canvas.enabled = false;
+			levelManager.DisabledPause ();	
+		}
+	}
+	
+	public void GoToMenu()
+	{
+		levelManager.DisabledPause ();
+		levelManager.CursorVisible ();
+		levelManager.LoadGameScene ("Menu");
 	}
 }

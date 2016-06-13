@@ -24,8 +24,9 @@ public class ListSpells : MonoBehaviour {
 	private static string[] spellsFiles = {"fireSpellDescription",
 											"meteorSpellDescription",
 //											"wallSpellDescription",
-											"freezeSpellDescription"
-//											"magicBallSpellDescription"
+											"freezeSpellDescription",
+											"magicBallSpellDescription",
+											"ThunderSpellDescription"
 //											"poisonSpellDescription"
 	};
 
@@ -153,6 +154,7 @@ public class ListSpells : MonoBehaviour {
 		string nameScene = name + idCastle.ToString();
 		if (nameScene != "Game0")
 			DataContainerScript.instance.SetTutorialActivation(false);
+		Time.timeScale = 1f;
         SceneManager.LoadScene(nameScene);
     }
 

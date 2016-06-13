@@ -3,5 +3,5 @@
 	"imageResourcePath": "SpellsInfos/SpellsImages/magicBallSpell",
 	"name" : "Magic Ball",
 	"description" : "Throw a Magic Ball at the enemies.",
-	"coolDown": 1
+	"coolDown": 3
 }

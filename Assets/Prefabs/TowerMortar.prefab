@@ -564,9 +564,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 103724, guid: 24637d1e28e29724fb142aacedfe347a, type: 2}
   towerImage: {fileID: 21300000, guid: 27d3dba514182754a918fd15a808b143, type: 3}
   towerName: Mortar Tower
-  towerDamage: 20
-  attackSpeed: 0.8
-  projectileDamage: 20
+  towerDamage: 15
+  attackSpeed: 1
+  projectileDamage: 15
   projectileSpeed: 10
   attackRange: 10
   spreadZone: 5
