@@ -152,6 +152,7 @@ public class ListSpells : MonoBehaviour {
 		name = name + idCastle.ToString();
 		if (name != "Game0")
 			GameObject.Find ("MenuDatasContainer").GetComponent<DataContainerScript> ().TutorialActivation = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(name);
     }
 
