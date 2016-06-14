@@ -197,7 +197,7 @@ public class ObjectPlacement : MonoBehaviour
             return;
         GameObject tower = currentTowerStats.transform.root.gameObject;
 
-        if (manager.money >= currentTowerStats.towerPrice)
+        if (manager.money >= currentTowerStats.towerPriceUp)
         {
             currentTowerStats.isUpdate = true;
             currentTowerStats.projectileDamage += 10;
