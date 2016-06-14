@@ -1785,11 +1785,13 @@ MonoBehaviour:
   - {fileID: 181626, guid: 9b5f3fa74e05d634481b8f98d0153bb5, type: 2}
   - {fileID: 157396, guid: 685339a5c0fc3464c8d9e08dd4edaff6, type: 2}
   - {fileID: 100000, guid: bfc2c3b66da5d4009ba01159c7e7f42a, type: 2}
-  - {fileID: 157396, guid: 685339a5c0fc3464c8d9e08dd4edaff6, type: 2}
+  - {fileID: 100012, guid: 3159b9d05d687484cafe288ad479ff30, type: 2}
+  - {fileID: 100000, guid: 9680fdee2d8014d93863eb27387ae851, type: 2}
   spellAreaPrefab:
   - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   - {fileID: 129914, guid: 9ee72db488eda584ba8881f6fa0d8c3c, type: 2}
+  - {fileID: 0}
   - {fileID: 126110, guid: b8776f7ef45cd0244adcd91b93bfe581, type: 2}
   spellRange: 20
   Map: {fileID: 1794461602}
