@@ -17,6 +17,8 @@ public class LevelSelection : MonoBehaviour {
 	
 	private static string[] castleNames = {"West Castle Selected", "North Castle Selected", "East Castle Selected", "South Castle Selected"};
 	//private string castleSpritesNames[4] = {"WorldMap1CastleUnlock", "WorldMap1CastleUnlock", "WorldMap1CastleUnlock", "WorldMap1CastleUnlock"};
+	
+	public bool objectAreInit;
 
 	private void InitObjectsVariables() {
 		listCastleButtonImage.Add(GameObject.Find("SelectWestCastleButton"));
@@ -26,27 +28,30 @@ public class LevelSelection : MonoBehaviour {
 		textIndication = GameObject.Find("CastleSelectionTextIndication").GetComponent<Text>();
 		worldMapImage = GameObject.Find("WorldMapImage").GetComponent<Image>();
 		levelPlayButton = GameObject.Find("LevelSelectionPlayButton").GetComponent<Button>();
+		objectAreInit = true;
 	}
 
 	public void InitBasicVariables() {
-		DataContainerScript.instance.levelChoose = selectedCastle;
-		nbCastleUnlock = DataContainerScript.instance.unlockCastle;
-		selectedCastle = -1;
-		Sprite sprt = Resources.Load<Sprite>("WorldMaps/WorldMap" + nbCastleUnlock + "CastleUnlock") as Sprite;
-		worldMapImage.sprite = sprt;
-		int i = 0;
-		foreach (GameObject obj in listCastleButtonImage)
-		{
-			obj.GetComponent<ClickColliderLevel> ().unselectIt();
-			if (i < nbCastleUnlock) {
-				obj.SetActive (true);
-			} else {
-				obj.SetActive(false);
+		if (objectAreInit) {
+			DataContainerScript.instance.levelChoose = selectedCastle;
+			nbCastleUnlock = DataContainerScript.instance.unlockCastle;
+			selectedCastle = -1;
+			Sprite sprt = Resources.Load<Sprite>("WorldMaps/WorldMap" + nbCastleUnlock + "CastleUnlock") as Sprite;
+			worldMapImage.sprite = sprt;
+			int i = 0;
+			foreach (GameObject obj in listCastleButtonImage)
+			{
+				obj.GetComponent<ClickColliderLevel> ().unselectIt();
+				if (i < nbCastleUnlock) {
+					obj.SetActive (true);
+				} else {
+					obj.SetActive(false);
+				}
+				i++;
 			}
-			i++;
+			levelPlayButton.interactable = false;
+			textIndication.text = "No Castle Selected";
 		}
-		levelPlayButton.interactable = false;
-		textIndication.text = "No Castle Selected";
 	}
 
 	// Use this for initialization

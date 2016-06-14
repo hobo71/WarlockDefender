@@ -89,6 +89,7 @@ public class FPSPanelScript : MonoBehaviour {
 	}
 
 	public void TurnAllSpellsToFalse() {
+		ShootingManager.RemoveCurrentArea();
 		for (int i = 0; i < Spells.Length; i++) {
 			Spells[i].GetComponent<Toggle> ().isOn = false;
 		}

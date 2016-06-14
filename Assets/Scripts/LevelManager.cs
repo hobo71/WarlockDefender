@@ -53,7 +53,9 @@ public class LevelManager : MonoBehaviour {
 					EndPanelWin.SetActive (true);
 					EnabledPause ();
                     Coins.getCoins();
+                    DataContainerScript.instance.UnlockAll();
 				} else {
+                    fpsPanel.GetComponent<FPSPanelScript>().TurnAllSpellsToFalse();
 					EndPanelWinWaveScript.AffScreen ();
                     Coins.getCoins();
                 }

@@ -74,5 +74,12 @@ public class FirstPersonShooting : MonoBehaviour {
 		spellIndex = newSpellId;
         spellReady = true;
 	}
+    
+    public void RemoveCurrentArea() {
+        if (currentSpellArea != null) {
+            Destroy(currentSpellArea);
+            currentSpellArea = null;
+        }
+    }
 
 }

@@ -36,7 +36,14 @@ public class OptionMenuScript : MonoBehaviour {
 		DataContainerScript.instance.SetTutorialActivation(isActivate);
 	}
 	
+	public void ClearSave() {
+		DataContainerScript.instance.RelockAll();
+	}
     
+	public void CheatUnlock() {
+		DataContainerScript.instance.UnlockAll();
+	}
+	
     public void ChangeResolution(int num) {
         Resolution[] resolutions = Screen.resolutions;
         if (num < resolutions.Length) {

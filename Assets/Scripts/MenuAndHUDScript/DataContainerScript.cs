@@ -7,7 +7,8 @@ public class DataContainerScript {
 
 	public bool TutorialActivation = false;
 	public int levelChoose = -1;
-	public int unlockCastle = 2;
+	public int unlockCastle = 1;
+	public int unlockSpells = 3;
 	public List<SpellsInfos> listSpellsSelected = new List<SpellsInfos>();
 
 	 static private DataContainerScript _instance;
@@ -20,7 +21,7 @@ public class DataContainerScript {
 	 }
 
 	 protected DataContainerScript () {
-		 /*if (File.Exists(Application.persistentDataPath + "/save.json")) {
+		 if (File.Exists(Application.persistentDataPath + "/save.json")) {
 			string jsonText = "{}";
 			FileStream fs = File.Open(Application.persistentDataPath + "/save.json", FileMode.Open);
 			if (fs != null) {
@@ -31,9 +32,10 @@ public class DataContainerScript {
 				if (infos != null) {
 					TutorialActivation = infos.Tutorial == 0 ? false : true;	
 					unlockCastle = infos.UnlockLevels;
+					unlockSpells = infos.UnlockSpells;
 				}
 			}
-		}*/
+		}
 	 }
 
 	public void AddSpellList(List<SpellsInfos> newlistSpells) {
@@ -44,6 +46,7 @@ public class DataContainerScript {
 		SaveDatas infos = new SaveDatas();
 		infos.Tutorial = TutorialActivation ? 1 : 0;
 		infos.UnlockLevels = unlockCastle;
+		infos.UnlockSpells = unlockSpells;
 		string json = JsonUtility.ToJson(infos);
 
 		FileStream fs = File.Open(Application.persistentDataPath + "/save.json", FileMode.Create);
@@ -52,13 +55,22 @@ public class DataContainerScript {
 			writer.Write(json);
 			writer.Close();
 		}
-		
-		
 	}
 
 	public void SetTutorialActivation(bool isActivate) {
-		Debug.Log(isActivate);
 		TutorialActivation = isActivate;
+		saveCurrentSettings();
+	}
+	
+	public void RelockAll() {
+		unlockSpells = 3;
+		unlockCastle = 1;
+		saveCurrentSettings();
+	}
+	
+	public void UnlockAll() {
+		unlockSpells = 5;
+		unlockCastle = 2;
 		saveCurrentSettings();
 	}
 }
@@ -79,4 +91,5 @@ public class SaveDatas
 {
 	public int UnlockLevels;
 	public int Tutorial;
+	public int UnlockSpells;
 }

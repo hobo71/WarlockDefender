@@ -42,6 +42,7 @@ public class EndWaveScript : MonoBehaviour {
 	public void stopScreen() {
 		if (isDisplayed == true) {
 			//manager.DisabledPause ();
+			manager.fpsPanel.GetComponent<FPSPanelScript>().TurnAllSpellsToFalse();
 			isDisplayed = false;
 			gameObject.SetActive (false);
 			manager.towerPlacementState ();

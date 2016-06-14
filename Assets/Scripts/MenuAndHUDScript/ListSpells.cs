@@ -35,8 +35,14 @@ public class ListSpells : MonoBehaviour {
 
 	List<SpellsInfos> listSpellsLoaded = new List<SpellsInfos>();
 
-	// Use this for initialization
-	void Start () {
+	public void InitListSpellsAndButtons() {
+		content.sizeDelta = new Vector2 (650F, 190F);
+		buttonsList.ForEach (delegate(GameObject but) {
+			but.transform.SetParent(null);
+		});
+		buttonsList.Clear();
+		listSpellsSelected.Clear();
+		listSpellsLoaded.Clear();
 		LoadSpellsList ();
 		Vector3 vec =  new Vector3(50F, -50F, 0F);
 		Vector3 secondX = new Vector3(600F, 0F, 0F);
@@ -95,7 +101,11 @@ public class ListSpells : MonoBehaviour {
 				}
 			});
 		});
-			
+	}
+
+	// Use this for initialization
+	void Start () {
+		InitListSpellsAndButtons();
 	}
 
 	private void updateImages () {
@@ -136,8 +146,12 @@ public class ListSpells : MonoBehaviour {
 		});
 	}
 
-	private void LoadSpellsList () {
-		for (int i = 0; i < spellsFiles.Count(); i++) {
+	public void LoadSpellsList () {	
+		int nbSpellToUnlock = DataContainerScript.instance.unlockSpells;
+		if (nbSpellToUnlock > spellsFiles.Count()) {
+			nbSpellToUnlock = spellsFiles.Count();
+		}
+		for (int i = 0; i < nbSpellToUnlock; i++) {
 			TextAsset file = Resources.Load("SpellsInfos/" + spellsFiles [i]) as TextAsset;
 		
 			string jsonText = file.text;
