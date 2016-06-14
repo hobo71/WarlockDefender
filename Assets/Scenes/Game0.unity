@@ -16821,7 +16821,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db12930735b5e6e4daae075fe5da8eb6, type: 3}
   - {fileID: 21300000, guid: 27d3dba514182754a918fd15a808b143, type: 3}
   - {fileID: 21300000, guid: 72e6aea8405b65945b6f9a8c23215462, type: 3}
-  towersPrice: 64000000960000004b000000
+  towersPrice: c80000002c01000096000000
 --- !u!114 &1394983136
 MonoBehaviour:
   m_ObjectHideFlags: 0

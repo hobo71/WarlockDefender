@@ -19,7 +19,7 @@ public class Coins : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            manager.money += 10;
+            manager.money += 30;
             AudioSource audio = GetComponentInParent<AudioSource>();
             audio.PlayOneShot(audio.clip, GetComponentInParent<Transform>().localScale.x);
 
@@ -36,7 +36,7 @@ public class Coins : MonoBehaviour {
             return;
         foreach (GameObject coin in coins)
         {
-            manager.money += 10;
+            manager.money += 30;
             Destroy(coin);
         }
     }

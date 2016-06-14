@@ -33,12 +33,12 @@ public class LevelManager : MonoBehaviour {
         firstPersonShooting = player.GetComponent<FirstPersonShooting>();
         moveCamera = buildingCamera.GetComponent<MoveCamera>();
         fpsPanelScript = fpsPanel.GetComponent<FPSPanelScript>();
-		money = 275;
+		money = 600;
 		waveNb = 1;
     }
 
 	public void reInitStats() {
-		money = 275;
+		money = 600;
 		waveNb = 1;
 		player.GetComponent<PlayerStats>().ResetLife();
 		CastleStats.life = 100;
