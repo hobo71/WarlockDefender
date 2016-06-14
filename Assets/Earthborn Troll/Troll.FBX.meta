@@ -266,7 +266,7 @@ ModelImporter:
     400258: //RootNode
     400260: Troll
     4300000: Troll
-    7400000: Idle_01
+    7400000: Idle
     7400002: Idle_02
     7400004: Walk
     7400006: Run
@@ -299,7 +299,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle_01
+      name: Idle
       takeName: 
       firstFrame: 20
       lastFrame: 140
