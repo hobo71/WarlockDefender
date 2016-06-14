@@ -8,6 +8,7 @@ public class SpawnMonster : MonoBehaviour {
     public int numberOfEnemies;
     public float spawnTime = 1.0f;
     public int nbrBoss = 0;
+    public float lifeMultiplicator = 1.0f;
 
     public GameObject EnemyBlipPrefab;
     public GameObject cameraTexture;
@@ -28,6 +29,8 @@ public class SpawnMonster : MonoBehaviour {
         index = Random.Range(0, monsters.Length);
         GameObject mob = Instantiate(monsters[index], location.position, location.rotation) as GameObject;
         mob.GetComponent<MoveTo>().points = points;
+        if (lifeMultiplicator != 1.0f)
+            mob.GetComponent<EnemieStats>().life *= lifeMultiplicator;
 		AddLifeBarToConvas.addLifeBarToEnemy (mob, mob.GetComponent<EnemieStats>().life);
         mob.GetComponent<MoveTo>().player = player;
 
