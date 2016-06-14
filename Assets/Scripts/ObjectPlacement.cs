@@ -201,6 +201,7 @@ public class ObjectPlacement : MonoBehaviour
         {
             currentTowerStats.isUpdate = true;
             currentTowerStats.projectileDamage += 10;
+            currentTowerStats.attackSpeed -= 0.1f;
             currentTowerStats.lvl += 1;
             currentTowerStats.ShowTowerInfo();
             currentTowerStats.projectilePrefab = currentTowerStats.projectilePrefabLvl2;

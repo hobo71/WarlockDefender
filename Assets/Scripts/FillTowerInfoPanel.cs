@@ -12,6 +12,16 @@ public class FillTowerInfoPanel : MonoBehaviour {
     GameObject towerLevel;
     [SerializeField]
     GameObject towerPrice;
+    [SerializeField]
+    GameObject towerDamage;
+    [SerializeField]
+    GameObject towerAttackSpeed;
+    [SerializeField]
+    GameObject towerUpDamage;
+    [SerializeField]
+    GameObject towerUpAttackSpeed;
+    [SerializeField]
+    GameObject towerUp;
     private bool onInfoPanel = false;
 
     void Start () {
@@ -46,5 +56,33 @@ public class FillTowerInfoPanel : MonoBehaviour {
 
     public bool GetOnInfoPanel() {
         return onInfoPanel;
+    }
+
+    public void SetTowerDamage(string damage)
+    {
+        towerDamage.GetComponent<Text>().text = damage;
+    }
+
+    public void SetTowerAttackSpeed(string attSpeed)
+    {
+        towerAttackSpeed.GetComponent<Text>().text = attSpeed;
+    }
+    public void SetTowerUpDamage(string damage)
+    {
+        towerUpDamage.GetComponent<Text>().text = damage;
+        towerUpDamage.GetComponent<Text>().color = Color.green;
+    }
+
+    public void SetTowerUpAttackSpeed(string attSpeed)
+    {
+        towerUpAttackSpeed.GetComponent<Text>().text = attSpeed;
+        towerUpAttackSpeed.GetComponent<Text>().color = Color.green;
+    }
+
+    public void SetButtonActive(bool isActive)
+    {
+        towerUp.SetActive(isActive);
+        towerUpAttackSpeed.SetActive(isActive);
+        towerUpDamage.SetActive(isActive);
     }
 }

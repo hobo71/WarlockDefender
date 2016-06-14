@@ -45,6 +45,15 @@ public class TowerStats : MonoBehaviour {
         fillTowerInfo.SetTowerTypeInfo(towerName);
         fillTowerInfo.SetTowerLevel("Level : " + lvl.ToString());
         fillTowerInfo.SetTowerPrice("Price for up : " + towerPriceUp.ToString());
+        fillTowerInfo.SetTowerDamage("Damage : " + projectileDamage.ToString());
+        var DamageSec = projectileDamage / attackSpeed;
+        fillTowerInfo.SetTowerAttackSpeed("Damage/S : " + DamageSec.ToString("F1"));
+        float upDamage = projectileDamage + 10.0f;
+        fillTowerInfo.SetTowerUpDamage("Up Damage : " + upDamage.ToString());
+        float upSpeed = upDamage / (attackSpeed - 0.1f);
+        fillTowerInfo.SetTowerUpAttackSpeed("Up Damage/S : " + upSpeed.ToString("F1"));
+        if (isUpdate)
+            fillTowerInfo.SetButtonActive(false);        
         return infoPanel;
     }
 
