@@ -2776,9 +2776,10 @@ MonoBehaviour:
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 10
   spawnTime: 3
   nbrBoss: 0
+  lifeMultiplicator: 1
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1001 &223953650
@@ -7399,11 +7400,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsters:
   - {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
-  boss: {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 25
+  numberOfEnemies: 20
   spawnTime: 1.5
-  nbrBoss: 10
+  nbrBoss: 0
+  lifeMultiplicator: 1.7
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1 &690078798
@@ -12125,12 +12127,12 @@ MonoBehaviour:
   - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
   - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
-  - {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 15
   spawnTime: 2.5
-  nbrBoss: 3
+  nbrBoss: 1
+  lifeMultiplicator: 1.3
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1 &1057432615
@@ -17104,9 +17106,10 @@ MonoBehaviour:
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 30
+  numberOfEnemies: 10
   spawnTime: 3
   nbrBoss: 1
+  lifeMultiplicator: 1.1
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1 &1430795681
@@ -17341,12 +17344,12 @@ MonoBehaviour:
   - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
   - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
-  - {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 15
   spawnTime: 2
-  nbrBoss: 7
+  nbrBoss: 2
+  lifeMultiplicator: 1.4
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1 &1466552681
@@ -22800,9 +22803,10 @@ MonoBehaviour:
   - {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   boss: {fileID: 0}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 30
+  numberOfEnemies: 23
   spawnTime: 1.5
   nbrBoss: 0
+  lifeMultiplicator: 1.5
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 1867327315}
 --- !u!1 &2027723316
