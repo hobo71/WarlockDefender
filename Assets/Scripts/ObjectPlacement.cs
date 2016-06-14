@@ -203,7 +203,7 @@ public class ObjectPlacement : MonoBehaviour
             currentTowerStats.projectileDamage += 10;
             currentTowerStats.attackSpeed -= 0.1f;
             currentTowerStats.lvl += 1;
-            currentTowerStats.ShowTowerInfo();
+            currentInfoPanel = currentTowerStats.ShowTowerInfo();
             currentTowerStats.projectilePrefab = currentTowerStats.projectilePrefabLvl2;
             manager.money -= (int)currentTowerStats.towerPriceUp;
             button.SetActive(false);
