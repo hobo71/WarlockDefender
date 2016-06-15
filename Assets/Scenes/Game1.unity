@@ -133,9 +133,10 @@ MonoBehaviour:
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
   boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 30
+  numberOfEnemies: 15
   spawnTime: 2
   nbrBoss: 2
+  lifeMultiplicator: 1.2
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 205705159}
 --- !u!1 &10128161
@@ -4504,6 +4505,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 214373839}
   m_Mesh: {fileID: 4300138, guid: 08969648eac6acf4da5bfd2458b6c084, type: 3}
+--- !u!1 &233788067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 111160, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 233788068}
+  - 114: {fileID: 233788069}
+  m_Layer: 0
+  m_Name: Wave3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &233788068
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 411242, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233788067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 732143584}
+  m_RootOrder: 2
+--- !u!114 &233788069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11459430, guid: f27168ea0510e3a41bbd36a318047d05,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233788067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6005fae7e8d3e4f8dfcc5b4899243a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
+  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
+  - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
+  boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
+  AddLifeBarToConvas: {fileID: 156002503}
+  numberOfEnemies: 20
+  spawnTime: 2
+  nbrBoss: 2
+  lifeMultiplicator: 1.5
+  EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
+  cameraTexture: {fileID: 205705159}
 --- !u!1 &252244248
 GameObject:
   m_ObjectHideFlags: 0
@@ -11796,6 +11851,60 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &686328332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 111160, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 686328333}
+  - 114: {fileID: 686328334}
+  m_Layer: 0
+  m_Name: Wave4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &686328333
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 411242, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686328332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 732143584}
+  m_RootOrder: 3
+--- !u!114 &686328334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11459430, guid: f27168ea0510e3a41bbd36a318047d05,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686328332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6005fae7e8d3e4f8dfcc5b4899243a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
+  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
+  - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
+  boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
+  AddLifeBarToConvas: {fileID: 156002503}
+  numberOfEnemies: 20
+  spawnTime: 1.5
+  nbrBoss: 3
+  lifeMultiplicator: 1.7
+  EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
+  cameraTexture: {fileID: 205705159}
 --- !u!1 &700467560
 GameObject:
   m_ObjectHideFlags: 0
@@ -11915,6 +12024,9 @@ Transform:
   m_Children:
   - {fileID: 1445215581}
   - {fileID: 1909222}
+  - {fileID: 233788068}
+  - {fileID: 686328333}
+  - {fileID: 1923796536}
   m_Father: {fileID: 0}
   m_RootOrder: 10
 --- !u!1 &739113795
@@ -21320,11 +21432,12 @@ MonoBehaviour:
   - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
   - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
   - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
-  boss: {fileID: 0}
+  boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
   AddLifeBarToConvas: {fileID: 156002503}
-  numberOfEnemies: 20
+  numberOfEnemies: 15
   spawnTime: 2
-  nbrBoss: 0
+  nbrBoss: 1
+  lifeMultiplicator: 1.1
   EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
   cameraTexture: {fileID: 205705159}
 --- !u!1 &1448012206
@@ -25192,6 +25305,9 @@ MonoBehaviour:
   Waves:
   - {fileID: 1445215582}
   - {fileID: 1909223}
+  - {fileID: 233788069}
+  - {fileID: 686328334}
+  - {fileID: 1923796537}
   Spawner:
   - {fileID: 1046616268}
   - {fileID: 1883908658}
@@ -29690,6 +29806,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921182713}
   m_Mesh: {fileID: 4300088, guid: 08969648eac6acf4da5bfd2458b6c084, type: 3}
+--- !u!1 &1923796535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 111160, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1923796536}
+  - 114: {fileID: 1923796537}
+  m_Layer: 0
+  m_Name: Wave5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1923796536
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 411242, guid: f27168ea0510e3a41bbd36a318047d05, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923796535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 732143584}
+  m_RootOrder: 4
+--- !u!114 &1923796537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11459430, guid: f27168ea0510e3a41bbd36a318047d05,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923796535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6005fae7e8d3e4f8dfcc5b4899243a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 176324, guid: 16bdbb3fa20f93e4c864e42d96bc20c1, type: 2}
+  - {fileID: 124312, guid: 17b52f162f36c3646bbd3d4286ba6f0d, type: 2}
+  - {fileID: 100108, guid: 8c00db5be83e04b4c88b073e10fba9b9, type: 2}
+  - {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 2}
+  - {fileID: 100916, guid: 3d79e2898e9a16a4c99cb516d4e9d32c, type: 2}
+  boss: {fileID: 137030, guid: 059715bdd415a3a418303aaea6e763de, type: 2}
+  AddLifeBarToConvas: {fileID: 156002503}
+  numberOfEnemies: 25
+  spawnTime: 1.5
+  nbrBoss: 5
+  lifeMultiplicator: 2
+  EnemyBlipPrefab: {fileID: 173832, guid: b5864d2d57dfcea42832319099544616, type: 2}
+  cameraTexture: {fileID: 205705159}
 --- !u!1 &1924234424
 GameObject:
   m_ObjectHideFlags: 0
